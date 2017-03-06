@@ -75,3 +75,6 @@ In the following example we are excluding React and Lodash:
   }
 }
 ```
+## Data Layer Library
+
+SPOCExt: https://github.com/golincode/SPOCExt.git
