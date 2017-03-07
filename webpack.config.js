@@ -1,8 +1,8 @@
 var libraryName = 'starterpack';
 
-var siteUrl = "https://architect365.sharepoint.com/sites/spcrowd",
-    username = "ddyachenko@architect365.co.uk",
-    password = "Bandit177rus";
+var siteUrl = "",
+    username = "",
+    password = "";
 
 var path = require('path'),
     argv = require('yargs').argv,
