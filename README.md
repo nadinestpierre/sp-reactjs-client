@@ -78,6 +78,7 @@ In the following example we are excluding React and Lodash:
   }
 }
 ```
-## Data Layer Library
+## Additional libraries
 
-SPOCExt: https://github.com/golincode/SPOCExt.git
+* SPOCExt: https://github.com/golincode/SPOCExt.git - a library for working with lists, libraries, users and sites.
+* assets/js/vendor/camljs.js - simplifies creation of SharePoint CAML queries for client-side scripts. Read more: https://camljs.codeplex.com/.
