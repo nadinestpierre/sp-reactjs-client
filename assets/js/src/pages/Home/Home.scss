@@ -1,0 +1,36 @@
+.container {
+    .top_container {
+        display: block;
+
+        .header {
+            display: block;
+
+            .header_title,
+            .header_description {
+                display: block;
+                font-weight: 400;
+                -webkit-font-smoothing: antialiased;
+                color: #333333;
+            }
+
+            .header_title {
+                font-size: 20px;
+            }
+
+             .header_description {
+                font-size: 18px;
+            }
+        }
+    }
+
+    .content_container {}
+
+    .bottom_container {
+        padding-top: 20px;
+
+        :global .ms-Label {
+            font-size: 16px;
+            color: #0078d7;
+        }
+    }
+}
