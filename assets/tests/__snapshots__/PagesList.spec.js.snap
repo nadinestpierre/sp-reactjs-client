@@ -1,18 +1,18 @@
 exports[`test PagesList 1`] = `
 <div
-  className={undefined}>
+  className="container">
   <p
-    className={undefined}>
-    58f86e06-9f9f-0d56-e05d-4b15f245ca12
+    className="header">
+    41671a7a-e791-8ac3-d777-07757f60f579
   </p>
   <p
-    className={undefined}>
+    className="header">
     Site pages:
   </p>
   <div
-    className={undefined}>
+    className="content">
     <div
-      className={undefined}
+      className="item"
       style={
         Object {
           "fontSize": "64",
@@ -21,7 +21,7 @@ exports[`test PagesList 1`] = `
       1. Page 1
     </div>
     <div
-      className={undefined}
+      className="item"
       style={
         Object {
           "fontSize": "64",
