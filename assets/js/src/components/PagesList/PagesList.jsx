@@ -1,44 +1,27 @@
 /* External libraries */
 import $ from 'jquery';
 import React from 'react';
-import SPOC from 'SPOCExt';
 
 /* CSS styles */
 import Styles from './PagesList.scss';
 
 class PagesList extends React.Component {
 	static propTypes = {
-		listName: React.PropTypes.string.isRequired,
+		data: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
 		fontsize: React.PropTypes.string,
 		guid: React.PropTypes.string
 	};
 
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 
 		this.state = {
-			data: []
+			data: this.props.data
 		};
-
-		this.site = new SPOC.SP.Site();
 	}
 
-	componentDidMount() {
-		this.init(this.props.listName);
-	}
-
-	init(listName) {
-		const self = this;		
-		const settings = {
-			select: 'Title'
-		};
-
-		self.site.ListItems(listName).query(settings).then((data) => {
-			self.setState({ data });
-		},
-		(error) => {
-			console.log(error);
-		});
+	componentWillReceiveProps(nextProps) {        
+		this.setState({ data: nextProps.data });
 	}
 
 	render() {

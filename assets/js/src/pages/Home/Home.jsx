@@ -1,6 +1,7 @@
 /* External libraries */
 import $ from 'jquery';
 import React from 'react';
+import SPOC from 'SPOCExt';
 
 /* Components */
 import { Spinner, SpinnerType } from 'office-ui-fabric-react/lib/Spinner';
@@ -25,10 +26,13 @@ class Home extends React.Component {
 		super();
 
 		this.state = {
+			data: [],
 			headerContent: null,
 			fontsize: 14,
 			loading: true
 		};
+
+		this.site = new SPOC.SP.Site();
 	}
 
 	componentDidMount() {
@@ -41,6 +45,9 @@ class Home extends React.Component {
 
 	init() {
 		const self = this;
+		const settings = {
+			select: 'Title'
+		};
 
 		$.ajax({
 			url: `${_spPageContextInfo.siteAbsoluteUrl}/_api/web/Description`,
@@ -65,6 +72,13 @@ class Home extends React.Component {
 				}
 			}
 		});
+
+		self.site.ListItems(self.props.listName).query(settings).then((data) => {
+			self.setState({ data });
+		},
+		(error) => {
+			console.log(error);
+		});
 	}
 
 	render() {
@@ -85,7 +99,9 @@ class Home extends React.Component {
 				<div className={`${Styles.content_container} ms-Grid-row`}>
 					<div className="container">
 						<div className="ms-Grid-col ms-u-sm12">
-							<PagesList listName={PAGESLIST} guid={GenerateGuid()} fontsize={this.state.fontsize.toString()} />
+							<PagesList data={this.state.data} 
+										guid={GenerateGuid()} 
+										fontsize={this.state.fontsize.toString()} />
 						</div>
 					</div>
 				</div>
