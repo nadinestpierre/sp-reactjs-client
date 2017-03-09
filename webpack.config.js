@@ -1,12 +1,11 @@
 var libraryName = 'starterpack';
 
-var siteUrl = "",
-    username = "",
-    password = "";
+var siteUrl = "https://architect365.sharepoint.com/sites/spcrowd",
+    username = "ddyachenko@architect365.co.uk",
+    password = "Bandit177rus";
 
 var path = require('path'),
     argv = require('yargs').argv,
-    mode = argv.mode,
     env = argv.env,
     plugins = [], 
     outputFile;
@@ -17,11 +16,28 @@ var webpack = require('webpack'),
     autoprefixer = require('autoprefixer'),
     spSaveWebpackPlugin = require('spsave-webpack-plugin');
 
-plugins.push(new extractTextPlugin('../css/screen.css', {
+plugins.push(new extractTextPlugin({
+    filename: '../css/screen.css',
     allChunks: true
 }));
 
-if (mode === 'build') {
+plugins.push(new webpack.LoaderOptionsPlugin({
+    minimize: true, 
+    options: {
+        context: __dirname,
+        postcss: [
+            require('autoprefixer')({
+                browsers: ['last 3 versions']
+            })
+        ],
+        sassResources: [
+            __dirname + '/assets/css/utils/_variables.scss', 
+            __dirname + '/assets/css/utils/mixins/_breakpoints.scss'
+        ]
+    }
+}));
+
+if (env === 'build') {
     plugins.push(new webpack.DefinePlugin({
         "process.env": { 
             NODE_ENV: JSON.stringify("production") 
@@ -29,9 +45,7 @@ if (mode === 'build') {
     }));
 
     plugins.push(new uglifyJsPlugin({
-        compress: {
-            warnings: false
-        }
+        minimize: true
     }));
 
     outputFile = libraryName + '.min.js';
@@ -40,7 +54,7 @@ else {
     outputFile = libraryName + '.js';
 }
 
-if(env && env.upload) {
+if(env === 'buildup' || env === 'devup') {
     plugins.push(new spSaveWebpackPlugin({
         "coreOptions": {
             "checkin": true,
@@ -72,35 +86,56 @@ var config = {
         children: false  
     },
     module: {
-        preLoaders: [
+        rules: [
             {
+                enforce: 'pre',
                 test: /(\.jsx|\.js)$/,
                 exclude: /node_modules/,
                 loader: 'eslint-loader'
-            }
-        ],
-        loaders: [
+            },
             {
                 test: /(\.jsx|\.js)$/,
-                loader: 'babel',
+                loader: 'babel-loader',
                 exclude: /(node_modules|bower_components)/
             },
             {
-                test: /\.scss$/,
-                loader: extractTextPlugin.extract('css?url=false&modules&importLoaders=1&localIdentName=[name]_[local]!sass!sass-resources!postcss')
+                test: /(\.css|\.scss)$/,
+                use: extractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: [
+                        {
+                            loader: "css-loader",
+                            options: {
+                                sourceMap: true,
+                                modules: true,
+                                importLoaders: true,
+                                url: false,
+                                localIdentName: "[name]_[local]"
+                            }
+                        },
+                        {
+                            loader: "sass-loader",
+                            options: {
+                                sourceMap: true
+                            }
+                        },
+                        // {
+                        //     loader: "sass-resources-loader"
+                        // },
+                        {
+                            loader: "postcss-loader"
+                        }
+                    ]
+                })
             }
         ]
     },
-    sassResources: [
-        __dirname + '/assets/css/utils/_variables.scss', 
-        __dirname + '/assets/css/utils/mixins/_breakpoints.scss'
-    ],
-    postcss: [
-        autoprefixer({ browsers: ['last 3 versions'] })
-    ],
     resolve: {
-        modulesDirectories: ['node_modules', 'assets'],
-        extensions: ['', '.js', '.jsx']
+        modules: [
+            'node_modules',
+            'assets'
+        ],
+        extensions: ['.js', '.jsx']
     },
     plugins: plugins
 };

@@ -28,7 +28,7 @@ class PagesList extends React.Component {
 		const self = this;
 		const pages = self.state.data;
 		const mainContent = pages && pages.length > 0 ? pages.map((item, i) => 
-			<div key={i} className={Styles.item} style={{ fontSize: self.props.fontsize }}>
+			<div key={item.Id} className={Styles.item} style={{ fontSize: self.props.fontsize }}>
 				{`${i + 1}. ${item.Title}`}
 			</div>
 		) : null;
