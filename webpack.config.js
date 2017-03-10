@@ -29,10 +29,6 @@ plugins.push(new webpack.LoaderOptionsPlugin({
             require('autoprefixer')({
                 browsers: ['last 3 versions']
             })
-        ],
-        sassResources: [
-            __dirname + '/assets/css/utils/_variables.scss', 
-            __dirname + '/assets/css/utils/mixins/_breakpoints.scss'
         ]
     }
 }));
@@ -119,9 +115,6 @@ var config = {
                                 sourceMap: true
                             }
                         },
-                        // {
-                        //     loader: "sass-resources-loader"
-                        // },
                         {
                             loader: "postcss-loader"
                         }

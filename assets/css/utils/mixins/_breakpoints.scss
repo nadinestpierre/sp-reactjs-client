@@ -8,7 +8,7 @@ $fix-mqs: false !default;
 //
 @mixin breakpoint($point) {
     // Get the width of the query based on the passed $point variable
-    $width:map-get($breakpoints, $point);
+    $width: map-get($breakpoints, $point);
 
     // If we're outputting for a fixed media query set...
     @if $fix-mqs {
@@ -30,7 +30,7 @@ $fix-mqs: false !default;
 //
 @mixin max-breakpoint($point) {
     // Get the width of the query based on the passed $point variable
-    $width:map-get($breakpoints, $point) - .0625;
+    $width: map-get($breakpoints, $point) - 0.0625;
 
     // If we're outputting for a fixed media query set...
     @if $fix-mqs {
@@ -39,7 +39,8 @@ $fix-mqs: false !default;
             // ...output the content the user gave us.
             @content;
         }
-    } @else {
+    }
+    @else {
         // Otherwise, output it using a regular media query
         @media screen and (max-width: $width) {
             @content;
@@ -56,13 +57,16 @@ $fix-mqs: false !default;
             // ...output the content the user gave us.
             @content;
         }
-    } @else {
-        @media (min-width: #{$width}) { @content; }
+    }
+    @else {
+        @media (min-width: #{$width}) {
+            @content;
+        }
     }
 }
 
 @mixin max-tweakpoint($width) {
-    $width:$width - .625;
+    $width: $width - 0.625;
 
     @if $fix-mqs {
         // ...and if we should apply these rules...
@@ -70,15 +74,16 @@ $fix-mqs: false !default;
             // ...output the content the user gave us.
             @content;
         }
-    } @else {
-        @media (max-width: #{$width}) { @content; }
+    }
+    @else {
+        @media (max-width: #{$width}) {
+            @content;
+        }
     }
 }
 
-@mixin hidpi-query() {
-    @media only screen and (-webkit-min-device-pixel-ratio: 1.3),
-    only screen and (-o-min-device-pixel-ratio: 13/10),
-    only screen and (min-resolution: 120dpi) {
+@mixin hidpi-query {
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 13 / 10), only screen and (min-resolution: 120dpi) {
         @content;
     }
 }
@@ -87,11 +92,14 @@ $old-ie: false !default;
 
 // Custom breakpoint mixin, can pass a full media query rule here to output if needed
 // for use with max-width/multi-size queries. Pass true as second argument to output in the IE stylesheet
-@mixin custom-breakpoint($query, $output-for-ie:false) {
+@mixin custom-breakpoint($query, $output-for-ie: false) {
     @if $old-ie and $output-for-ie {
         @content;
-    } @else {
-        @media only screen and #{$query} { @content; }
+    }
+    @else {
+        @media only screen and #{$query} {
+            @content;
+        }
     }
 }
 
