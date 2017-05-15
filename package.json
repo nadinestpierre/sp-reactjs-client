@@ -56,10 +56,10 @@
     "react-test-renderer": "^15.4.2",
     "sass-loader": "^4.1.1",
     "sass-resources-loader": "^1.2.0-beta.1",
+    "sp-pnp-js": "^2.0.2",
     "spsave-webpack-plugin": "^1.0.4",
     "style-loader": "^0.13.2",
     "webpack": "^1.14.0",
-    "yargs": "^7.0.1",
-    "identity-obj-proxy": "^3.0.0"
+    "yargs": "^7.0.1"
   }
 }

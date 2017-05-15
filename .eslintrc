@@ -22,6 +22,7 @@
         "sinon": true,
         "SPOCExt": false,
         "SP": false,
+        "pnp": false,
         "_spPageContextInfo": false
     },
     "parser": "babel-eslint",
