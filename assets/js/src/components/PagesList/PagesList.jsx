@@ -7,8 +7,8 @@ import Styles from './PagesList.scss';
 class PagesList extends React.Component {
 	static propTypes = {
 		data: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
-		fontsize: React.PropTypes.string,
-		guid: React.PropTypes.string
+		fontsize: React.PropTypes.string.isRequired,
+		guid: React.PropTypes.string.isRequired
 	};
 
 	constructor(props) {
@@ -27,9 +27,11 @@ class PagesList extends React.Component {
 		const self = this;
 		const pages = self.state.data;
 		const mainContent = pages && pages.length > 0 ? pages.map((item, i) => 
-			<div key={i} className={Styles.item} style={{ fontSize: self.props.fontsize }}>
-				{`${i + 1}. ${item.Title}`}
-			</div>
+			(
+				<div key={item.ID} className={Styles.item} style={{ fontSize: self.props.fontsize }}>
+					{`${i + 1}. ${item.Title}`}
+				</div>
+			)
 		) : null;
 
 		return (

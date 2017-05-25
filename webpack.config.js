@@ -93,7 +93,8 @@ var config = {
     },
     sassResources: [
         __dirname + '/assets/css/utils/_variables.scss', 
-        __dirname + '/assets/css/utils/mixins/_breakpoints.scss'
+        __dirname + '/assets/css/utils/mixins/_breakpoints.scss',
+        __dirname + '/assets/css/utils/mixins/_center.scss'
     ],
     postcss: [
         autoprefixer({ browsers: ['last 3 versions'] })

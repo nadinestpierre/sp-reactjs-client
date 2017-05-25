@@ -46,7 +46,7 @@ class Home extends React.Component {
 	init() {
 		const self = this;
 		const settings = {
-			select: 'Title'
+			select: 'ID, Title'
 		};
 
 		$.ajax({
@@ -109,7 +109,9 @@ class Home extends React.Component {
 					<div className="container">
 						<div className="ms-Grid-col ms-u-sm12">
 							<Slider label="Font size:" 
-									min={8} max={64} step={2}
+									min={8} 
+									max={64} 
+									step={2}
 									defaultValue={14} 
 									showValue
 									onChange={fontsize => this.setState({ fontsize })} />

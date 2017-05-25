@@ -2,9 +2,7 @@
 .DS_Store
 Thumbs.db
 
-# Composer
-composer.phar
-composer.lock
+# Vendor
 /vendor
 
 # Sass
