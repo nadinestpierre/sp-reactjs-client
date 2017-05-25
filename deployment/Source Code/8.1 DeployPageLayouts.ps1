@@ -1,9 +1,9 @@
 ﻿Param (
+    [Parameter(Mandatory = $true)]
     [string]$SiteUrl,
-    [Parameter(Mandatory = $true)]
+    [string]$SubSite,
     [string]$Credential,
-    [Parameter(Mandatory = $true)]
-    [string]$RootLocation 
+    [string]$RootLocation = ".",
 )
 
 $LogFilePath = "$RootLocation\DeployPageLayoutsLog.txt"
@@ -14,10 +14,19 @@ $ErrorActionPreference = "Stop"
 #------------------------------------------------------------------
 
 Try {
-    Connect-PnPOnline -Url $SiteUrl -Credentials $Credential
+    Write-Host -ForegroundColor Green "Connecting to site $SiteUrl$SubSite"
+    
+    if($Credential) {
+        Connect-PnPOnline -Url $SiteUrl -Credentials $Credential
+    } 
+    else {
+        Connect-PnPOnline -Url $SiteUrl -UseWebLogin
+    }
+
+    Write-Host -ForegroundColor Green "Connected"
 
     $ArticlePageContentType = Get-PnPContentType -Identity "Article Page"
-    Add-PnPHtmlPublishingPageLayout -SourceFilePath "$RootLocation\Pagelayouts\CSAGroup.html" -Title "CSA Group PageLayout" -Description "CSA Group PageLayout" -DestinationFolderHierarchy "/" -AssociatedContentTypeID $ArticlePageContentType.Id
+    Add-PnPHtmlPublishingPageLayout -SourceFilePath "$RootLocation\Pagelayouts\starterpack.html" -Title "Starterpack PageLayout" -Description "Starterpack PageLayout" -DestinationFolderHierarchy "/" -AssociatedContentTypeID $ArticlePageContentType.Id
 
     Disconnect-PnPOnline
 }

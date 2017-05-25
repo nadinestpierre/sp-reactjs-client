@@ -1,4 +1,4 @@
-﻿Function RemoveContentType([string]$contentTypeName, [string]$RootLocation) { 
+﻿Function RemoveContentType([string]$contentTypeName, [string]$RootLocation, [bool]$debug) { 
 
     $logFilePath = "$RootLocation\RemoveContentTypeLog.txt"
     $ErrorActionPreference = "Continue"
@@ -6,10 +6,10 @@
     Try {
         if ($contentTypeName -and (Get-PnPContentType -Identity $contentTypeName -ErrorAction SilentlyContinue) -ne $null) {                                                                   
             Remove-PnPContentType -Identity $contentTypeName -Force  
-            #Write-Host "Content type $contentTypeName removed" -ForegroundColor Green               
+            Write-Host "Content type $contentTypeName removed" -ForegroundColor Green               
         }
         else {
-            #Write-Host "Content type $contentTypeName doesn't exist" -ForegroundColor Yellow  
+            Write-Host "Content type $contentTypeName doesn't exist" -ForegroundColor Yellow  
         }
     }
     Catch {

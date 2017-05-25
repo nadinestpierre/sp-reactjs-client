@@ -1,10 +1,10 @@
-﻿Function RemoveLists([string]$inputFile, [string]$RootLocation) { 
+﻿Function RemoveLists([string]$inputFile, [string]$RootLocation, [bool]$debug) { 
 
     $logFilePath = "$RootLocation\RemoveListsLog.txt"
     $ErrorActionPreference = "Stop"
 
     Try {
-        #Write-Host -ForegroundColor Green "Removing lists..."
+        Write-Host -ForegroundColor Green "Removing lists..."
 
         $inputDoc = [xml](Get-Content $inputFile)
         $lists = $inputDoc.Lists
@@ -12,7 +12,7 @@
         foreach($list in $lists.List) {
             $listName = $list.Name
             
-            #Write-Host -ForegroundColor Green "Trying to remove $listName"
+            Write-Host -ForegroundColor Green "Trying to remove $listName"
             Import-Module "$RootLocation\Modules\RemoveList.psm1"	
             RemoveList -listName $listName -RootLocation $RootLocation
         }

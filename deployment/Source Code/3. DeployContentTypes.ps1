@@ -1,10 +1,9 @@
 ﻿Param (
+    [Parameter(Mandatory = $true)]
     [string]$SiteUrl,
-    [Parameter(Mandatory = $true)]
+    [string]$SubSite,
     [string]$Credential,
-    [Parameter(Mandatory = $true)]
-    [string]$RootLocation,
-    [string]$SubSite
+    [string]$RootLocation = ".",
 )
 
 $LogFilePath = "$RootLocation\DeployContentTypesLog.txt"
@@ -15,7 +14,16 @@ $ErrorActionPreference = "Stop"
 #------------------------------------------------------------------
 
 Try {
-    Connect-PnPOnline -Url $SiteUrl -Credentials $Credential
+    Write-Host -ForegroundColor Green "Connecting to site $SiteUrl$SubSite"
+    
+    if($Credential) {
+        Connect-PnPOnline -Url $SiteUrl -Credentials $Credential
+    } 
+    else {
+        Connect-PnPOnline -Url $SiteUrl -UseWebLogin
+    }
+
+    Write-Host -ForegroundColor Green "Connected"
 
     Import-Module "$RootLocation\Modules\CreateContentTypes.psm1"    
     CreateContentTypes -inputFile "$RootLocation\Content\ContentTypes\ContentTypes.xml" -RootLocation $RootLocation -SubSite $SubSite -recreate $false -debug $false

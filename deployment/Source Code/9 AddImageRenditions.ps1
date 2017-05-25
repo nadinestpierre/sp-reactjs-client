@@ -1,10 +1,9 @@
 ﻿Param (
+    [Parameter(Mandatory = $true)]
     [string]$SiteUrl,
-    [Parameter(Mandatory = $true)]
+    [string]$SubSite,
     [string]$Credential,
-    [Parameter(Mandatory = $true)]
-    [string]$RootLocation,
-    [string]$SubSite
+    [string]$RootLocation = ".",
 )
 
 $LogFilePath = "$RootLocation\AddImageRenditionsLog.txt"
@@ -15,7 +14,14 @@ $ErrorActionPreference = "Stop"
 #------------------------------------------------------------------
 
 Try {
-    Connect-PnPOnline -Url $SiteUrl -Credentials $Credential
+    Write-Host -ForegroundColor Green "Connecting to site $SiteUrl$SubSite"
+
+    if($Credential) {
+        Connect-PnPOnline -Url $SiteUrl -Credentials $Credential
+    } 
+    else {
+        Connect-PnPOnline -Url $SiteUrl -UseWebLogin
+    }
 
     $web = ''
 
@@ -26,7 +32,13 @@ Try {
         $web = Get-PnPWeb
     }
 
+    Write-Host -ForegroundColor Green "Connected"
+
+    Write-Host -ForegroundColor Green "Trying to add image rendition"
+
     Add-PnPPublishingImageRendition -Name "Thumbnail" -Width 213 -Height 215 -Web $Web
+
+    Write-Host -ForegroundColor Green "Image rendition added"
 
     Disconnect-PnPOnline
 }
