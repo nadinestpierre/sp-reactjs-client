@@ -59,7 +59,7 @@ if(env && env.upload) {
 }
 
 var config = {
-    entry: __dirname + '/assets/js/src/index.jsx',
+    entry: ['whatwg-fetch', __dirname + '/assets/js/src/index.jsx'],
     devtool: 'source-map',
     output: {
         path: __dirname + '/public/js',

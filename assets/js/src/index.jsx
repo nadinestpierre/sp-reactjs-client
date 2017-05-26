@@ -7,6 +7,7 @@ import 'css/screen.scss';
 /* Global Components */
 import React from 'react';
 import ReactDOM from 'react-dom';
+import ES6Promise from 'es6-promise';
 import AppComponentsList from './AppConfig';
 
 function ready(fn) {
@@ -19,6 +20,8 @@ function ready(fn) {
 
 /* Application Entry Point */
 ready(() => {
+	ES6Promise.polyfill();
+
 	Array.prototype.forEach.call(document.querySelectorAll('.app-component-render'), 
 		(component) => {
 			const AppComponentId = component.getAttribute('id').toLowerCase();
