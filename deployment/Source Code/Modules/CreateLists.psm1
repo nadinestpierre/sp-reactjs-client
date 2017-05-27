@@ -10,6 +10,16 @@ Function CreateLists([string]$inputFile, [string]$RootLocation, [string]$SubSite
 
         if($SubSite) {
             $web = Get-PnPWeb -Identity $SubSite
+
+            $webName = $SubSite -replace '\s', ''
+            $webName = $webName -replace '/', ''
+            $webName = '_' + $webName
+
+            $xmlFilePath = $inputFile -replace '.xml', $webName + '.xml'
+
+            if(Test-Path $xmlFilePath) {
+                $inputFile = $xmlFilePath
+            }
         } 
         else {
             $web = Get-PnPWeb
@@ -23,7 +33,7 @@ Function CreateLists([string]$inputFile, [string]$RootLocation, [string]$SubSite
 
             if($recreate) {
                 Write-Host -ForegroundColor Green "Trying to remove $listName"
-                Import-Module "$RootLocation\Modules\RemoveList.psm1"	
+                Import-Module "$RootLocation\Modules\RemoveList.psm1"   
                 RemoveList -listName $listName -RootLocation $RootLocation
             }
 

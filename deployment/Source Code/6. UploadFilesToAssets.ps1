@@ -9,7 +9,6 @@
 $logFilePath = "$RootLocation\UploadFilesToAssetsLog.txt"
 $ErrorActionPreference = "Stop"
 
-
 #------------------------------------------------------------------
 #                        Uploading Assets
 #------------------------------------------------------------------
