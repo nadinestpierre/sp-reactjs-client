@@ -10,6 +10,11 @@ $LogFilePath = "$RootLocation\DeployMasterPageLog.txt"
 $ErrorActionPreference = "Stop"
 
 #------------------------------------------------------------------
+#                        Master Page Name
+#------------------------------------------------------------------
+
+
+#------------------------------------------------------------------
 #                        Deploying Master Page
 #------------------------------------------------------------------
 
@@ -34,8 +39,15 @@ Try {
 
     Write-Host -ForegroundColor Green "Connected"
 
-    Add-PnPMasterPage -SourceFilePath "$RootLocation\MasterPage\starterpack.master" -Title "Starterpack MasterPage" -Description "Starterpack MasterPage" -DestinationFolderHierarchy "/" -Web $Web
-    Set-PnPMasterPage -CustomMasterPageSiteRelativeUrl "_catalogs/masterpage/starterpack" -Web $Web
+    $masterPage = "$masterPageName.html"
+
+    Add-PnPFile -Path ".\MasterPage\$masterPage" -folder "_catalogs/masterpage" -Checkout -Web $Web
+
+    $fileItem = Get-PnPFile -Url "_catalogs/masterpage/$masterPage" -AsListItem -Web $Web
+    $fileItem.Update()
+    $fileItem.File.Publish("")
+
+    Set-PnPMasterPage -CustomMasterPageSiteRelativeUrl  "_catalogs/masterpage/$masterPageName.master"  -Web $Web
 
     Disconnect-PnPOnline
 }

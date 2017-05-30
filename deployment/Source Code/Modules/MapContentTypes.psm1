@@ -47,16 +47,35 @@ Function MapContentTypes([string]$inputFile, [string]$contentTypesFile, [string]
 
                     Write-Host -ForegroundColor Green "Trying to create view for list $listName"
 
-                    $viewFields = $contentTypesDoc.ContentTypes.SelectSingleNode("ContentType[@Name='$contentTypeName']")
-                    $viewFieldsArray = @()
+                    $viewExists = $false
+                    $views = Get-PnPView -List $listName
 
-                    foreach($viewField in $viewFields.Fields.Field) {
-                        $viewFieldsArray += $viewField.Name
+                    foreach($view in $views) {
+                        if($view.Title -eq $listName) {
+                            $viewExists = $true
+                            break
+                        }
                     }
 
-                    Add-PnPView -List $listName -Title $listName -Fields $viewFieldsArray -SetAsDefault
+                    if(!$viewExists) {
+                        $viewFields = $contentTypesDoc.ContentTypes.SelectSingleNode("ContentType[@Name='$contentTypeName']")
+                        $viewFieldsArray = @("Title")
 
-                    Write-Host -ForegroundColor Green "View for list $listName created"
+                        foreach($viewField in $viewFields.Fields.Field) {
+                            $viewFieldsArray += $viewField.Name
+                        }
+
+                        if($viewFieldsArray.Count -gt 1) {
+                            Add-PnPView -List $listName -Title $listName -Fields $viewFieldsArray -SetAsDefault
+                            Write-Host -ForegroundColor Green "View for list $listName created"
+                        } 
+                        else {
+                            Write-Host -ForegroundColor Yellow "No fields were specified for a custom view"
+                        }
+                    }
+                    else {
+                        Write-Host -ForegroundColor Yellow "View $listName already exists"
+                    }
                 }
             }
         }
