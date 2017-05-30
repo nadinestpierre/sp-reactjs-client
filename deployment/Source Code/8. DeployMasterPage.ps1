@@ -13,6 +13,7 @@ $ErrorActionPreference = "Stop"
 #                        Master Page Name
 #------------------------------------------------------------------
 
+$masterPageName = "masterpage"
 
 #------------------------------------------------------------------
 #                        Deploying Master Page
