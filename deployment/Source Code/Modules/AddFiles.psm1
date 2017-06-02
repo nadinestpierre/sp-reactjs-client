@@ -22,7 +22,7 @@ Function AddFiles
 				Add-PnPFile -Path $Files[$i].FullName -folder $TargetDir -Checkout -Web $Web
 			     
 				$DateTime= Get-Date
-				"Time:" + $DateTime + " Successfully added file:" + $Files[$i].FullName + "in $TargetDir folder "| Out-File $logFilePath –append
+				"Time:" + $DateTime + " Successfully added file:" + $Files[$i].FullName + " in $TargetDir folder "| Out-File $logFilePath –append
 			}
 		}
 	}
@@ -48,7 +48,7 @@ Function AddSolutionFiles
 			{
 				Add-PnPFile -Path $Files[$i].FullName -folder $TargetDir -Checkout
 				$DateTime= Get-Date
-				Write "Time:" + $DateTime + " Successfully added file:" + $Files[$i].FullName + "in $TargetDir folder "
+				Write "Time:" + $DateTime + " Successfully added file:" + $Files[$i].FullName + " in $TargetDir folder "
 			}
 		}
 	}

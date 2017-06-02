@@ -2,7 +2,7 @@ Param (
     [Parameter(Mandatory = $true)]
     [string]$SiteUrl,
     [Parameter(Mandatory = $true)]
-    [string]$SPWebServerRelativeUrl 
+    [string]$SPWebServerRelativeUrl, 
     [string]$SubSite,
     [string]$Credential,
     [string]$RootLocation = "."
@@ -27,7 +27,11 @@ Try {
 
     Write-Host -ForegroundColor Green "Connected"
 
-    & "$RootLocation\Pages\Home.ps1" -SiteUrl $SiteUrl -Credential $Credential -RootLocation $RootLocation -SPWebServerRelativeUrl $SPWebServerRelativeUrl
+    Write-Host -ForegroundColor Green "Adding Pages"
+
+    & "$RootLocation\Pages\Home.ps1" -SiteUrl $SiteUrl -SPWebServerRelativeUrl $SPWebServerRelativeUrl -Credential $Credential -RootLocation $RootLocation
+
+    Write-Host -ForegroundColor Green "Pages were added"
 
     Disconnect-PnPOnline
 }

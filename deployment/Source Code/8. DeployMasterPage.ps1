@@ -40,6 +40,8 @@ Try {
 
     Write-Host -ForegroundColor Green "Connected"
 
+    Write-Host -ForegroundColor Green "Adding MasterPage: $masterPageName"
+
     $masterPage = "$masterPageName.html"
 
     Add-PnPFile -Path ".\MasterPage\$masterPage" -folder "_catalogs/masterpage" -Checkout -Web $Web
@@ -48,7 +50,11 @@ Try {
     $fileItem.Update()
     $fileItem.File.Publish("")
 
-    Set-PnPMasterPage -CustomMasterPageSiteRelativeUrl  "_catalogs/masterpage/$masterPageName.master"  -Web $Web
+    Write-Host -ForegroundColor Green "MasterPage was added"
+
+    Set-PnPMasterPage -CustomMasterPageSiteRelativeUrl  "_catalogs/masterpage/$masterPageName.master" -Web $Web
+
+    Write-Host -ForegroundColor Green "MasterPage was set up as default"
 
     Disconnect-PnPOnline
 }
