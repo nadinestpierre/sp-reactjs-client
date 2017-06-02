@@ -5,6 +5,7 @@
 import 'css/screen.scss';
 
 /* Global Components */
+import 'whatwg-fetch';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ES6Promise from 'es6-promise';
