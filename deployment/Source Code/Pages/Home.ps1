@@ -4,20 +4,27 @@ Param (
 	[Parameter(Mandatory = $true)]
 	[string]$SPWebServerRelativeUrl,
 	[string]$Credential,
-	[string]$RootLocation
+	[string]$RootLocation,
+	[string]$ProjectFolderName
 )
 
-$LogFilePath = "$RootLocation\HomeLog.txt"
+$LogFilePath = "$RootLocation\PageLog.txt"
 $ErrorActionPreference = "Stop"
 
 #------------------------------------------------------------------
-#                        Deploying a Page
+#                        Page Name
+#------------------------------------------------------------------
+
+$PageName = "Home"
+
+#------------------------------------------------------------------
+#                        Deploying Page
 #------------------------------------------------------------------
 
 Try {
-	Add-PnPPublishingPage -PageName 'Home.aspx' -Title 'Home' -PageTemplateName 'BlankWebPartPage'
+	Add-PnPPublishingPage -PageName '$PageName.aspx' -Title '$PageName' -PageTemplateName 'BlankWebPartPage'
 
-	$HomePage = '<?xml version="1.0" encoding="utf-8"?>
+	$Page = '<?xml version="1.0" encoding="utf-8"?>
 	                <WebPart xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/WebPart/v2">
 	                  <Title>Content Editor</Title>
 	                  <FrameType>None</FrameType>
@@ -45,20 +52,20 @@ Try {
 	                  <IsIncludedFilter />
 	                  <Assembly>Microsoft.SharePoint, Version=16.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c</Assembly>
 	                  <TypeName>Microsoft.SharePoint.WebPartPages.ContentEditorWebPart</TypeName>
-	                  <ContentLink xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor">' + $SPWebServerRelativeUrl + '/Style Library/dovelittlewhitebook/templates/Home.html</ContentLink>
+	                  <ContentLink xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor">$SPWebServerRelativeUrl/Style Library/$ProjectFolderName/templates/$PageName.html</ContentLink>
 	                  <Content xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor" />
 	                  <PartStorage xmlns="http://schemas.microsoft.com/WebPart/v2/ContentEditor" />
 	                </WebPart>'
 
-	$PageUrl = "$SPWebServerRelativeUrl/Pages/Home.aspx"
+	$PageUrl = "$SPWebServerRelativeUrl/Pages/$PageName.aspx"
 
 	Set-PnPFileCheckedOut -Url $PageUrl
 
-	Add-PnPWebPartToWebPartPage -ServerRelativePageUrl $PageUrl -XML $HomePage -ZoneId "Hero" -ZoneIndex 0
+	Add-PnPWebPartToWebPartPage -ServerRelativePageUrl $PageUrl -XML $Page -ZoneId "Hero" -ZoneIndex 0
 
 	Set-PnPFileCheckedIn -Url $PageUrl -CheckinType MajorCheckIn -Comment "Added webpart to the page"
 
-	Set-PnPHomePage -RootFolderRelativeUrl "Pages/Home.aspx"
+	Set-PnPHomePage -RootFolderRelativeUrl "Pages/$PageName.aspx"
 }
 Catch {
     $DateTime = Get-Date

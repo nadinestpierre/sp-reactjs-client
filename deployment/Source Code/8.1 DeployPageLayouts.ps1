@@ -13,7 +13,7 @@ $ErrorActionPreference = "Stop"
 #                        Page Layout Name
 #------------------------------------------------------------------
 
-$pageLayoutName = "Starterpack"
+$PageLayoutName = "Starterpack"
 
 #------------------------------------------------------------------
 #                        Deploying Page Layouts
@@ -31,12 +31,12 @@ Try {
 
     Write-Host -ForegroundColor Green "Connected"
 
-    Write-Host -ForegroundColor Green "Adding PageLayout: $pageLayoutName"
+    Write-Host -ForegroundColor Green "Adding PageLayout: $PageLayoutName"
 
     $ArticlePageContentType = Get-PnPContentType -Identity "Article Page"
-    Add-PnPHtmlPublishingPageLayout -SourceFilePath "$RootLocation\Pagelayouts\$pageLayoutName.html" -Title "$pageLayoutName Page Layout" -Description "$pageLayoutName Page Layout" -DestinationFolderHierarchy "/" -AssociatedContentTypeID $ArticlePageContentType.Id
+    Add-PnPHtmlPublishingPageLayout -SourceFilePath "$RootLocation\Pagelayouts\$PageLayoutName.html" -Title "$PageLayoutName Page Layout" -Description "$PageLayoutName Page Layout" -DestinationFolderHierarchy "/" -AssociatedContentTypeID $ArticlePageContentType.Id
 
-     Write-Host -ForegroundColor Green "PageLayout was added"
+    Write-Host -ForegroundColor Green "PageLayout was added"
 
     Disconnect-PnPOnline
 }

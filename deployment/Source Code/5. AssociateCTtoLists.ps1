@@ -6,7 +6,7 @@ Param (
     [string]$RootLocation = "."
 )
 
-$LogFilePath = "$RootLocation\MapContentTypesLog.txt"
+$LogFilePath = "$RootLocation\AssociateCTtoListsLog.txt"
 $ErrorActionPreference = "Stop"
 
 #------------------------------------------------------------------

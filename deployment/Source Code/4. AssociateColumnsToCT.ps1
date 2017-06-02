@@ -6,7 +6,7 @@ Param (
     [string]$RootLocation = "."
 )
 
-$LogFilePath = "$RootLocation\MapSiteColumnsLog.txt"
+$LogFilePath = "$RootLocation\AssociateColumnsToCTLog.txt"
 $ErrorActionPreference = "Stop"
 
 #------------------------------------------------------------------

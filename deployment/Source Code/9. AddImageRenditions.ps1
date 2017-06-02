@@ -39,7 +39,7 @@ Try {
     Add-PnPPublishingImageRendition -Name "Agency Profile Photo" -Width 200 -Height -1 -Web $Web
     Add-PnPPublishingImageRendition -Name "Agency Photos" -Width 230 -Height -1 -Web $Web
 
-    Write-Host -ForegroundColor Green "Image rendition added"
+    Write-Host -ForegroundColor Green "Image rendition was added"
 
     Disconnect-PnPOnline
 }

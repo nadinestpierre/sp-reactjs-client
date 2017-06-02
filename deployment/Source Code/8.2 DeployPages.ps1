@@ -12,6 +12,12 @@ $LogFilePath = "$RootLocation\DeployPagesLog.txt"
 $ErrorActionPreference = "Stop"
 
 #------------------------------------------------------------------
+#                        Project Folder Name
+#------------------------------------------------------------------
+
+$ProjectFolderName = "starterpack"
+
+#------------------------------------------------------------------
 #                        Deploying Pages
 #------------------------------------------------------------------
 
@@ -29,7 +35,7 @@ Try {
 
     Write-Host -ForegroundColor Green "Adding Pages"
 
-    & "$RootLocation\Pages\Home.ps1" -SiteUrl $SiteUrl -SPWebServerRelativeUrl $SPWebServerRelativeUrl -Credential $Credential -RootLocation $RootLocation
+    & "$RootLocation\Pages\Home.ps1" -SiteUrl $SiteUrl -SPWebServerRelativeUrl $SPWebServerRelativeUrl -Credential $Credential -RootLocation $RootLocation -ProjectFolderName $ProjectFolderName 
 
     Write-Host -ForegroundColor Green "Pages were added"
 

@@ -8,8 +8,12 @@ Param (
 $LogFilePath = "$RootLocation\ConnectionLog.txt"
 $ErrorActionPreference = "Stop"
 
+#------------------------------------------------------------------
+#                        Connecting to site
+#------------------------------------------------------------------
+
 Try {
-    Write-Host "Connecting to the site..." -ForegroundColor Green
+    Write-Host "Connecting to site" -ForegroundColor Green
     
     if($Credential) {
         Connect-PnPOnline -Url $SiteUrl -Credentials $Credential
@@ -18,7 +22,7 @@ Try {
         Connect-PnPOnline -Url $SiteUrl -UseWebLogin
     }
 
-    Write-Host "Connected to the site" -ForegroundColor Green
+    Write-Host "Connected" -ForegroundColor Green
 }
 Catch {
     $DateTime = Get-Date

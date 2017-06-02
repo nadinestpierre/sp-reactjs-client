@@ -29,9 +29,9 @@ Try {
 
     Import-Module "$RootLocation\Modules\AddFiles.psm1"
 
-    [System.Xml.XmlDocument] $inputDoc = new-object System.Xml.XmlDocument
+    [System.Xml.XmlDocument]$inputDoc = New-Object System.Xml.XmlDocument
 
-    $inputFile = resolve-path($inputFilePathForFiles)
+    $inputFile = Resolve-Path($inputFilePathForFiles)
     $inputDoc = [xml](Get-Content $inputFile)    
 
     foreach($module in $inputDoc.Input.Module)
