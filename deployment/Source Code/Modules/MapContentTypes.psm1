@@ -62,7 +62,9 @@ Function MapContentTypes([string]$inputFile, [string]$contentTypesFile, [string]
                         $viewFieldsArray = @("Title")
 
                         foreach($viewField in $viewFields.Fields.Field) {
-                            $viewFieldsArray += $viewField.Name
+                            if($viewField.Name -ne "Title") {
+                                $viewFieldsArray += $viewField.Name
+                            }
                         }
 
                         if($viewFieldsArray.Count -gt 1) {
