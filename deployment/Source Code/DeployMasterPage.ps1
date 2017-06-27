@@ -44,7 +44,7 @@ Try {
 
     $masterPage = "$masterPageName.html"
 
-    Add-PnPFile -Path ".\MasterPage\$masterPage" -folder "_catalogs/masterpage" -Checkout -Web $Web
+    Add-PnPFile -Path "$RootLocation\MasterPage\$masterPage" -folder "_catalogs/masterpage" -Checkout -Web $Web
 
     $fileItem = Get-PnPFile -Url "_catalogs/masterpage/$masterPage" -AsListItem -Web $Web
     $fileItem.Update()
