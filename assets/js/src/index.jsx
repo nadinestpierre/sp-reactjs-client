@@ -13,7 +13,7 @@ import AppComponentsList from './AppConfig';
 
 function ready(fn) {
 	if (document.readyState !== 'loading') {
-		fn();
+		ExecuteOrDelayUntilScriptLoaded(fn, 'sp.js');
 	} else {
 		document.addEventListener('DOMContentLoaded', fn);
 	}

@@ -23,7 +23,8 @@
         "SPOCExt": false,
         "SP": false,
         "pnp": false,
-        "_spPageContextInfo": false
+        "_spPageContextInfo": false,
+        "ExecuteOrDelayUntilScriptLoaded": false
     },
     "parser": "babel-eslint",
     "plugins": [
