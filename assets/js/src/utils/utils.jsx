@@ -103,6 +103,7 @@ export function DetectIE() {
 export function GetFileNameFromUrl(url) {
 	const splittedUrl = url.split('/');
 	const splittedUrlLength = splittedUrl.length;
+	
 	return splittedUrlLength > 0 ? splittedUrl[splittedUrlLength - 1] : '';
 }
 

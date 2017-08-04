@@ -516,50 +516,33 @@
   .starterpack .fa.pull-right {
     margin-left: .3em; }
   .starterpack .fa-spin {
-    -webkit-animation: fa-spin 2s infinite linear;
     animation: fa-spin 2s infinite linear; }
   .starterpack .fa-pulse {
-    -webkit-animation: fa-spin 1s infinite steps(8);
     animation: fa-spin 1s infinite steps(8); }
-
-@-webkit-keyframes screen_fa-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg); } }
 
 @keyframes screen_fa-spin {
   0% {
-    -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
   100% {
-    -webkit-transform: rotate(359deg);
     transform: rotate(359deg); } }
   .starterpack .fa-rotate-90 {
     -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
-    -webkit-transform: rotate(90deg);
     -ms-transform: rotate(90deg);
     transform: rotate(90deg); }
   .starterpack .fa-rotate-180 {
     -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
-    -webkit-transform: rotate(180deg);
     -ms-transform: rotate(180deg);
     transform: rotate(180deg); }
   .starterpack .fa-rotate-270 {
     -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
-    -webkit-transform: rotate(270deg);
     -ms-transform: rotate(270deg);
     transform: rotate(270deg); }
   .starterpack .fa-flip-horizontal {
     -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
-    -webkit-transform: scale(-1, 1);
     -ms-transform: scale(-1, 1);
     transform: scale(-1, 1); }
   .starterpack .fa-flip-vertical {
     -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
-    -webkit-transform: scale(1, -1);
     -ms-transform: scale(1, -1);
     transform: scale(1, -1); }
   .starterpack :root .fa-rotate-90,
@@ -6370,7 +6353,8 @@
 .PagesList_container {
   display: block; }
   .PagesList_container .PagesList_header {
-    display: block;
+    display: -ms-flexbox;
+    display: flex;
     font-size: 14px;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;

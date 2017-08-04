@@ -1,9 +1,4 @@
 {
-    "ecmaFeatures": {
-        "globalReturn": true,
-        "jsx": true,
-        "modules": true
-    },
     "env": {
         "browser": true,
         "es6": true,
@@ -33,11 +28,31 @@
     "extends": "airbnb",
     "rules": {
         "no-tabs": 0,
-        "indent": [2, "tab", {"SwitchCase": 1}],
-        "react/jsx-indent": [2, "tab"],
+        "indent": [
+            2,
+            "tab",
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "react/jsx-indent": [
+            2,
+            "tab"
+        ],
         "react/prefer-stateless-function": 1,
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "comma-dangle": [2, "never"],
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        "comma-dangle": [
+            2,
+            "never"
+        ],
         "no-console": 0,
         "no-plusplus": 0,
         "no-nested-ternary": 0,
@@ -65,4 +80,3 @@
         "react/require-default-props": 1
     }
 }
-
