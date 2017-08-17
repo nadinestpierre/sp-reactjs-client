@@ -1,7 +1,13 @@
 import Moment from 'moment';
+import CamlBuilder from '../../vendor/camljs';
+import { IMGPATH } from './settings';
 
 export function GetAssetsPath(projectName) {
 	return `${_spPageContextInfo.siteAbsoluteUrl}/Style%20Library/${projectName}/`;
+}
+
+export function GetImgPath(projectName) {
+	return `${GetAssetsPath(projectName) + IMGPATH}`;
 }
 
 export function GetEqNeqOrAndFilter(fields, values, comp, cond) {
@@ -9,7 +15,8 @@ export function GetEqNeqOrAndFilter(fields, values, comp, cond) {
 
 	for (let i = 0; i < fields.length; i++) {
 		for (let j = 0; j < values.length; j++) {
-			filterString += (`${fields[i]} ${comp || 'eq'} ${values[j] === 1 || values[j] === 0 ? values[j] : `'${values[j]}'`} ${cond || 'or'} `);
+			const value = values[j] === 1 || values[j] === 0 ? values[j] : `'${values[j].indexOf(';#') !== -1 ? values[j].split(';#')[0] : values[j]}'`;
+			filterString += (`${fields[i]} ${comp || 'eq'} ${value} ${cond || 'or'} `);
 		}
 	}
 
@@ -25,6 +32,32 @@ export function GetSubStringOfFilter(value, fields, cond) {
 	}
 
 	return filterString.trim().replace(/ or$| and$/, '');
+}
+
+export function GetEqNeqOrAndFilterCaml(field, type, values) {
+	const exps = [];
+
+	for (let i = 0; i < values.length; i++) {
+		let fieldExpression = '';
+
+		switch (type) {
+			case 'lookup':
+				fieldExpression = CamlBuilder.Expression().LookupField(field).Value();
+				break;
+			case 'lookupmulti':
+				fieldExpression = CamlBuilder.Expression().LookupMultiField(field).Value();
+				break;
+			default:
+				fieldExpression = CamlBuilder.Expression().TextField(field);
+				break;
+		}
+
+		const value = values[i] && values[i].indexOf(';#') !== -1 ? values[i].split(';#')[0] : values[i];
+
+		exps.push(fieldExpression.EqualTo(value));
+	}
+
+	return exps;
 }
 
 export function MergeObjects(obj1, obj2) {
@@ -103,7 +136,6 @@ export function DetectIE() {
 export function GetFileNameFromUrl(url) {
 	const splittedUrl = url.split('/');
 	const splittedUrlLength = splittedUrl.length;
-	
 	return splittedUrlLength > 0 ? splittedUrl[splittedUrlLength - 1] : '';
 }
 
@@ -150,4 +182,97 @@ export function SelectSrcValue(imageString) {
 
 export function ArrayAdiff(a1, a2) {
 	return a1.filter(x => a2.indexOf(x) < 0);
+}
+
+export function GetTermsFromTaxonomyStore(termSetId, onComplete) {
+	const context = SP.ClientContext.get_current();
+	const taxSession = SP.Taxonomy.TaxonomySession.getTaxonomySession(context);
+	const termStore = taxSession.getDefaultSiteCollectionTermStore();
+	const termSet = termStore.getTermSet(termSetId);
+	const terms = termSet.get_terms();
+
+	context.load(terms);
+
+	context.executeQueryAsync(() => {
+		const termEnumerator = terms.getEnumerator();
+		const values = [];
+
+		while (termEnumerator.moveNext()) {
+			const currentTerm = termEnumerator.get_current();
+
+			values.push({
+				Id: currentTerm.get_id()._m_guidString$p$0,
+				Title: currentTerm.get_name()
+			});
+		}
+
+		onComplete(values);
+	},
+	(sender, args) => {
+		console.log(args.get_message());
+	});
+}
+
+export function GetQueryString(variable, query) {
+	const _query = query ? query.split('?')[1] : window.location.search.substring(1);
+	const vars = _query.split('&');
+
+	for (let i = 0; i < vars.length; i++) {
+		const pair = vars[i].split('=');
+
+		if (pair[0] === variable) {
+			return unescape(pair[1]);
+		}
+	}
+}
+
+export function GetItemsCSOM(siteUrl, listName, camlQuery) {
+	return new Promise((resolve, reject) => {
+		const ctx = new SP.ClientContext(siteUrl);
+		const list = ctx.get_web().get_lists().getByTitle(listName);
+		let query = null;
+
+		if (camlQuery) {
+			query = new SP.CamlQuery();
+			query.set_viewXml(camlQuery);
+		} else {
+			query = SP.CamlQuery.createAllItemsQuery();
+		}
+
+		const items = list.getItems(query);
+
+		ctx.load(items);
+		ctx.executeQueryAsync(() => {
+			const result = items.get_data().map(i => i.get_fieldValues());
+			resolve(result);
+		}, (err) => {
+			reject(err);
+		});
+	});
+}
+
+export function GetListItemPermissions(listName, itemId) {
+	return $.ajax({  
+		url: `${_spPageContextInfo.siteAbsoluteUrl}/_api/web/lists/getByTitle('${listName}')/getItemById(${itemId})/roleassignments(principalid=${_spPageContextInfo.userId})/RoleDefinitionBindings?$select=Name`,  
+		type: 'POST',  
+		headers: {  
+			Accept: 'application/json;odata=verbose',  
+			'content-Type': 'application/json;odata=verbose',  
+			'X-RequestDigest': $('#__REQUESTDIGEST').val()  
+		},  
+		dataType: 'json'
+	}); 
+}
+
+export function FormatBytes(bytes, decimals) {
+	if (bytes === 0) {
+		return '0 Byte';
+	}
+
+	const k = 1000;
+	const dm = decimals + 1 || 3;
+	const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+	const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+	return `${parseFloat((bytes / (k ** i)).toFixed(dm))} ${sizes[i]}`;
 }
