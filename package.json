@@ -58,7 +58,7 @@
     "sass-loader": "^6.0.6",
     "sass-resources-loader": "^1.3.1",
     "sp-pnp-js": "^3.0.1",
-    "spsave-webpack-plugin": "^1.0.7",
+    "spsave-webpack-plugin": "^1.0.4",
     "style-loader": "^0.18.2",
     "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^3.6.0",
