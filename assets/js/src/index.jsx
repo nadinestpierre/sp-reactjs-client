@@ -1,3 +1,5 @@
+/* APPVERSION 0.1 */
+
 /* eslint import/no-unresolved: 0 */
 /* eslint import/no-extraneous-dependencies: 0 */
 

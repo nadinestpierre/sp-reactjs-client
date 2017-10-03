@@ -1,8 +1,7 @@
 import $ from 'jquery';
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import SPOC from 'SPOCExt';
-
+import pnp from 'sp-pnp-js';
 import { Spinner, SpinnerType } from 'office-ui-fabric-react/lib/Spinner';
 import { Slider } from 'office-ui-fabric-react/lib/Slider';
 import { GenerateGuid } from '../../utils/utils';
@@ -21,8 +20,6 @@ export default class Home extends Component {
 			fontsize: 14,
 			loading: true
 		};
-
-		this.site = new SPOC.SP.Site();
 	}
 
 	componentDidMount() {
@@ -35,9 +32,6 @@ export default class Home extends Component {
 
 	init() {
 		const self = this;
-		const settings = {
-			select: 'ID, Title'
-		};
 
 		$.ajax({
 			url: `${_spPageContextInfo.siteAbsoluteUrl}/_api/web/Description`,
@@ -63,12 +57,13 @@ export default class Home extends Component {
 			}
 		});
 
-		self.site.ListItems(self.props.listName).query(settings).then((data) => {
-			self.setState({ data });
-		},
-		(error) => {
-			console.log(error);
-		});
+		pnp.sp.web.lists
+			.getByTitle(self.props.listName).items
+			.select('ID, Title')
+			.get()
+			.then((data) => {
+				self.setState({ data });
+			});
 	}
 
 	render() {
@@ -89,7 +84,8 @@ export default class Home extends Component {
 					<div className={`${Styles.content_container} ms-Grid-row`}>
 						<div className="container">
 							<div className="ms-Grid-col ms-u-sm12">
-								<PagesList data={this.state.data}
+								<PagesList
+									data={this.state.data}
 									guid={GenerateGuid()}
 									fontsize={this.state.fontsize.toString()} />
 							</div>
@@ -98,7 +94,8 @@ export default class Home extends Component {
 					<div className={`${Styles.bottom_container} ms-Grid-row`}>
 						<div className="container">
 							<div className="ms-Grid-col ms-u-sm12">
-								<Slider label="Font size:"
+								<Slider
+									label="Font size:"
 									min={8}
 									max={64}
 									step={2}
