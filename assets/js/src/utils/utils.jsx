@@ -251,19 +251,6 @@ export function GetItemsCSOM(siteUrl, listName, camlQuery) {
 	});
 }
 
-export function GetListItemPermissions(listName, itemId) {
-	return $.ajax({  
-		url: `${_spPageContextInfo.siteAbsoluteUrl}/_api/web/lists/getByTitle('${listName}')/getItemById(${itemId})/roleassignments(principalid=${_spPageContextInfo.userId})/RoleDefinitionBindings?$select=Name`,  
-		type: 'POST',  
-		headers: {  
-			Accept: 'application/json;odata=verbose',  
-			'content-Type': 'application/json;odata=verbose',  
-			'X-RequestDigest': $('#__REQUESTDIGEST').val()  
-		},  
-		dataType: 'json'
-	}); 
-}
-
 export function FormatBytes(bytes, decimals) {
 	if (bytes === 0) {
 		return '0 Byte';

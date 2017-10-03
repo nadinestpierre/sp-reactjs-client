@@ -1,0 +1,15 @@
+<ContentTypes Group="Starterpack">
+    <!-- Item Content Types -->
+    <ContentType Name="Header Links" ParentContentType="Item">
+        <Fields>
+            <Field Name="ItemOrder"></Field>
+            <Field Name="URL" Required="True"></Field>
+        </Fields>
+    </ContentType>
+    <ContentType Name="Footer Links" ParentContentType="Item">
+        <Fields>
+            <Field Name="ItemOrder"></Field>
+            <Field Name="URL" Required="True"></Field>
+        </Fields>
+    </ContentType>
+</ContentTypes>

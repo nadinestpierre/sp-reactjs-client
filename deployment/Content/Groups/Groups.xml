@@ -1,0 +1,5 @@
+<Groups>
+	<Group Name="Starterpack Owners" PermissionLevel="Full Control" />   
+	<Group Name="Starterpack Leaders" PermissionLevel="Contribute" />   
+	<Group Name="Starterpack Visitors" PermissionLevel="Read" />   
+</Groups>

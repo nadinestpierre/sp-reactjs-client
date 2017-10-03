@@ -1,0 +1,21 @@
+<Lists>
+    <!-- Generic Lists -->
+    <List Name="Header Links" Template="GenericList">
+        <ContentTypes>
+            <ContentType Name="Header Links"></ContentType>
+        </ContentTypes>
+    </List>
+    <List Name="Footer Links" Template="GenericList">
+        <ContentTypes>
+            <ContentType Name="Footer Links"></ContentType>
+        </ContentTypes>
+    </List>
+
+    <!-- Document Libraries -->
+    <List Name="Cast Additional Info" Template="DocumentLibrary"></List>
+    <List Name="Cast Images" Template="DocumentLibrary">
+        <ContentTypes>
+            <ContentType Name="Picture"></ContentType>
+        </ContentTypes>
+    </List>
+</Lists>

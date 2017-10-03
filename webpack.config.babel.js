@@ -12,8 +12,8 @@ const siteUrl = 'https://architect365.sharepoint.com/sites/spcrowd';
 const username = 'ddyachenko@architect365.co.uk';
 const password = 'Chancery2017.';
 
-const deploySourceCodePath = 'deployment/Source Code';
-const deployAssetsPath = deploySourceCodePath + '/Assets';
+const deployPath = 'deployment';
+const deployAssetsPath = deployPath + '/Assets';
 
 const defaultEnv = {
     dev: true,
@@ -21,7 +21,7 @@ const defaultEnv = {
 };
 
 const paths = GetPaths(['templates', 'fonts', 'img'], 'public', deployAssetsPath)
-    .concat(GetPaths(['masterpage', 'pagelayouts'], 'public', deploySourceCodePath));
+    .concat(GetPaths(['masterpage', 'pagelayouts'], 'public', deployPath));
 
 export default (env = defaultEnv) => ({
     entry: env.upload ? __dirname + '/assets/js/src/index.jsx' : {
