@@ -1,9 +1,17 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+/* External libraries */
+import $ from 'jquery';
+import React from 'react';
 
+/* CSS styles */
 import Styles from './PagesList.scss';
 
-export default class PagesList extends Component {
+class PagesList extends React.Component {
+	static propTypes = {
+		data: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
+		fontsize: React.PropTypes.string,
+		guid: React.PropTypes.string
+	};
+
 	constructor(props) {
 		super(props);
 
@@ -12,19 +20,17 @@ export default class PagesList extends Component {
 		};
 	}
 
-	componentWillReceiveProps(nextProps) {
+	componentWillReceiveProps(nextProps) {        
 		this.setState({ data: nextProps.data });
 	}
 
 	render() {
 		const self = this;
 		const pages = self.state.data;
-		const mainContent = pages && pages.length > 0 ? pages.map((item, i) =>
-			(
-				<div key={item.ID} className={Styles.item} style={{ fontSize: self.props.fontsize }}>
-					{`${i + 1}. ${item.Title}`}
-				</div>
-			)
+		const mainContent = pages && pages.length > 0 ? pages.map((item, i) => 
+			<div key={item.Id} className={Styles.item} style={{ fontSize: self.props.fontsize }}>
+				{`${i + 1}. ${item.Title}`}
+			</div>
 		) : null;
 
 		return (
@@ -43,8 +49,4 @@ export default class PagesList extends Component {
 	}
 }
 
-PagesList.propTypes = {
-	data: PropTypes.arrayOf(PropTypes.object).isRequired,
-	fontsize: PropTypes.string.isRequired,
-	guid: PropTypes.string.isRequired
-};
+export default PagesList;
