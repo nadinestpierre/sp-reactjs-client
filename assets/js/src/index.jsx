@@ -2,7 +2,10 @@
 
 /* eslint import/no-unresolved: 0 */
 /* eslint import/no-extraneous-dependencies: 0 */
+require('es6-promise').polyfill();
 
+/* eslint-disable import/first */
+import 'babel-polyfill';
 /* Global Styles */
 import 'css/screen.scss';
 
@@ -12,6 +15,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ES6Promise from 'es6-promise';
 import AppComponentsList from './AppConfig';
+/* eslint-enable import/first */
 
 function ready(fn) {
 	if (document.readyState !== 'loading') {
