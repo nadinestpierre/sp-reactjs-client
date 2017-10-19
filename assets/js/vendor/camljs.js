@@ -36,7 +36,9 @@ var CamlBuilder;
         ViewScope[ViewScope["RecursiveAll"] = 1] = "RecursiveAll";
         ViewScope[ViewScope["FilesOnly"] = 2] = "FilesOnly";
     })(CamlBuilder.ViewScope || (CamlBuilder.ViewScope = {}));
+
     var ViewScope = CamlBuilder.ViewScope;
+
     (function(DateRangesOverlapType) {
         /** Returns events for today */
         DateRangesOverlapType[DateRangesOverlapType["Now"] = 0] = "Now";
@@ -50,7 +52,9 @@ var CamlBuilder;
         /** Returns events for one year, specified by CalendarDate in QueryOptions */
         DateRangesOverlapType[DateRangesOverlapType["Year"] = 4] = "Year";
     })(CamlBuilder.DateRangesOverlapType || (CamlBuilder.DateRangesOverlapType = {}));
+
     var DateRangesOverlapType = CamlBuilder.DateRangesOverlapType;
+
     var Internal = (function() {
         function Internal() {}
         Internal.createView = function(viewFields) {
@@ -70,12 +74,14 @@ var CamlBuilder;
         };
         return Internal;
     })();
+
     CamlBuilder.Internal = Internal;
+
     var ViewInternal = (function() {
         function ViewInternal() {
             this.builder = new Builder();
         }
-        /** Adds View element. */
+        
         ViewInternal.prototype.View = function(viewFields) {
             this.builder.WriteStart("View");
             this.builder.unclosedTags++;
@@ -84,6 +90,7 @@ var CamlBuilder;
             this.joinsManager = new JoinsManager(this.builder, this);
             return this;
         };
+
         ViewInternal.prototype.CreateViewFields = function(viewFields) {
             this.builder.WriteStart("ViewFields");
             for (var i = 0; i < viewFields.length; i++) {
@@ -92,10 +99,12 @@ var CamlBuilder;
             this.builder.WriteEnd();
             return this;
         };
+
         ViewInternal.prototype.RowLimit = function(limit, paged) {
             this.builder.WriteRowLimit(paged || false, limit);
             return this;
         };
+
         ViewInternal.prototype.Scope = function(scope) {
             switch (scope) {
                 case ViewScope.FilesOnly:
@@ -113,35 +122,40 @@ var CamlBuilder;
             }
             return this;
         };
+
         ViewInternal.prototype.InnerJoin = function(lookupFieldInternalName, alias) {
             return this.joinsManager.Join(lookupFieldInternalName, alias, "INNER");
         };
+
         ViewInternal.prototype.LeftJoin = function(lookupFieldInternalName, alias) {
             return this.joinsManager.Join(lookupFieldInternalName, alias, "LEFT");
         };
-        /** Select projected field for using in the main Query body
-            @param remoteFieldAlias By this alias, the field can be used in the main Query body. */
+
         ViewInternal.prototype.Select = function(remoteFieldInternalName, remoteFieldAlias) {
             return this.joinsManager.ProjectedField(remoteFieldInternalName, remoteFieldAlias);
         };
+
         ViewInternal.prototype.ToString = function() {
             if (this.joinsManager != null)
                 this.joinsManager.Finalize();
             return this.builder.Finalize();
         };
+
         ViewInternal.prototype.ToCamlQuery = function() {
             this.joinsManager.Finalize();
             return this.builder.FinalizeToSPQuery();
         };
-        /** Adds Query clause to the View XML. */
+
         ViewInternal.prototype.Query = function() {
             this.joinsManager.Finalize();
             this.builder.WriteStart("Query");
             this.builder.unclosedTags++;
             return new QueryInternal(this.builder);
         };
+
         return ViewInternal;
     })();
+    
     /** Represents SharePoint CAML Query element */
     var QueryInternal = (function() {
         function QueryInternal(builder) {
@@ -1209,29 +1223,29 @@ if (typeof(window["Sys"]) == "undefined" || window["Sys"] == null) {
         this._len = 0;
     };
 
-    function Sys$StringBuilder$append(text) {
+    Sys$StringBuilder$append = function (text) {
         this._parts[this._parts.length] = text;
     }
 
-    function Sys$StringBuilder$appendLine(text) {
+    Sys$StringBuilder$appendLine = function (text) {
         this._parts[this._parts.length] =
             ((typeof(text) === 'undefined') || (text === null) || (text === '')) ?
             '\r\n' : text + '\r\n';
     }
 
-    function Sys$StringBuilder$clear() {
+    Sys$StringBuilder$clear = function () {
         this._parts = [];
         this._value = {};
         this._len = 0;
     }
 
-    function Sys$StringBuilder$isEmpty() {
+    Sys$StringBuilder$isEmpty = function () {
         if (this._parts.length === 0)
             return true;
         return this.toString() === '';
     }
 
-    function Sys$StringBuilder$toString(separator) {
+    Sys$StringBuilder$toString = function (separator) {
         separator = separator || '';
         var parts = this._parts;
         if (this._len !== parts.length) {
@@ -1253,6 +1267,7 @@ if (typeof(window["Sys"]) == "undefined" || window["Sys"] == null) {
         }
         return val[separator];
     }
+
     window["Sys"].StringBuilder.prototype = {
         append: Sys$StringBuilder$append,
         appendLine: Sys$StringBuilder$appendLine,
@@ -1265,18 +1280,21 @@ if (typeof(window["Sys"]) == "undefined" || window["Sys"] == null) {
 if (typeof window["SP"] == 'undefined') {
     window["SP"] = {};
 
-    function SP_ScriptUtility$isNullOrEmptyString(str) {
+    SP_ScriptUtility$isNullOrEmptyString = function(str) {
         var strNull = null;
         return str === strNull || typeof str === 'undefined' || !str.length;
     };
+
     window["SP"].XmlWriter = function SP_XmlWriter($p0) {
         this.$f_0 = [];
         this.$1_0 = $p0;
         this.$V_0 = true;
     };
+
     window["SP"].XmlWriter.create = function SP_XmlWriter$create(sb) {
         return new window["SP"].XmlWriter(sb);
     };
+
     window["SP"].XmlWriter.prototype = {
         $1_0: null,
         $11_0: null,
