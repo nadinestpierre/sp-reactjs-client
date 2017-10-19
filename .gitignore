@@ -13,3 +13,8 @@ scss-lint-report.xml
 # Node
 /node_modules
 /npm-debug.log
+/package-lock.json
+
+# Hide generated files
+/public/js
+/public/css
