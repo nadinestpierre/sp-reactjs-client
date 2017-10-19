@@ -1,9 +1,4 @@
 {
-    "ecmaFeatures": {
-        "globalReturn": true,
-        "jsx": true,
-        "modules": true
-    },
     "env": {
         "browser": true,
         "es6": true,
@@ -22,7 +17,9 @@
         "sinon": true,
         "SPOCExt": false,
         "SP": false,
-        "_spPageContextInfo": false
+        "pnp": false,
+        "_spPageContextInfo": false,
+        "ExecuteOrDelayUntilScriptLoaded": false
     },
     "parser": "babel-eslint",
     "plugins": [
@@ -31,11 +28,31 @@
     "extends": "airbnb",
     "rules": {
         "no-tabs": 0,
-        "indent": [2, "tab", {"SwitchCase": 1}],
-        "react/jsx-indent": [2, "tab"],
+        "indent": [
+            2,
+            "tab",
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "react/jsx-indent": [
+            2,
+            "tab"
+        ],
         "react/prefer-stateless-function": 1,
-        "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "comma-dangle": [2, "never"],
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        "comma-dangle": [
+            2,
+            "never"
+        ],
         "no-console": 0,
         "no-plusplus": 0,
         "no-nested-ternary": 0,
@@ -60,7 +77,6 @@
         "react/no-did-mount-set-state": 0,
         "import/prefer-default-export": 0,
         "import/no-extraneous-dependencies": 0,
-        "react/require-default-props": 0
+        "react/require-default-props": 1
     }
 }
-
