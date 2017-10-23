@@ -43,7 +43,7 @@
         <!--SPM:<asp:ContentPlaceHolder id="PlaceHolderAdditionalPageHead" runat="server"/>-->
         <!--SPM:<SharePoint:DelegateControl runat="server" ControlId="AdditionalPageHead" AllowMultipleControls="true"/>-->
         <!--SPM:</SharePoint:AjaxDelta>-->
-        <!--SPM:<SharePoint:SPShortcutIcon runat="server" IconUrl="../Style Library/Starterpack/img/favicon.ico"/>-->
+        <!--SPM:<SharePoint:SPShortcutIcon runat="server" IconUrl="../Style Library/spreactjsclient/img/favicon.ico"/>-->
         <![CDATA[ [if IE 9] ]]>
         <style type="text/css">//<![CDATA[
         .ms-core-animation-transparent
@@ -76,7 +76,7 @@
         </script>
         <!--SPM:<SharePoint:CssRegistration Name="Themable/corev15.css" runat="server"/>-->
 
-        <!--SPM:<SharePoint:CssRegistration runat="server" Name="&#60;% $SPUrl:~sitecollection/Style Library/Starterpack/css/screen.css %&#62;" After="corev15.css"/>-->
+        <!--SPM:<SharePoint:CssRegistration runat="server" Name="&#60;% $SPUrl:~sitecollection/Style Library/spreactjsclient/css/screen.css %&#62;" After="corev15.css"/>-->
 
         <!--[if gte mso 9]>
         <xml>
@@ -114,7 +114,7 @@
         <!--MS:<SharePoint:SPSecurityTrimmedControl runat="server" AuthenticationRestrictions="AnonymousUsersOnly">-->
         <!--SPM:<wssucw:Welcome runat="server" EnableViewState="false"/>-->
         <!--ME:</SharePoint:SPSecurityTrimmedControl>-->
-        <div id="s4-workspace" class="ms-core-overlay starterpack">
+        <div id="s4-workspace" class="ms-core-overlay spreactjsclient">
             <div id="s4-bodyContainer">
                 <div class="top-container">
                     <div id="header" class="app-component-render"></div>
@@ -166,8 +166,8 @@
               }
           }
 
-          loadJsfile(_spPageContextInfo.siteAbsoluteUrl + '/Style Library/Starterpack/js/starterpack.js');
-          loadCssfile(_spPageContextInfo.siteAbsoluteUrl + '/Style Library/Starterpack/css/screen.css');
+          loadJsfile(_spPageContextInfo.siteAbsoluteUrl + '/Style Library/spreactjsclient/js/spreactjsclient.js');
+          loadCssfile(_spPageContextInfo.siteAbsoluteUrl + '/Style Library/spreactjsclient/css/screen.css');
         </script>
     </body>
 </html>

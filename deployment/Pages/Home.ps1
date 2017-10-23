@@ -16,7 +16,7 @@ $ErrorActionPreference = "Stop"
 #------------------------------------------------------------------
 
 $PageName = "Home"
-$PageLayoutName = "Starterpack"
+$PageLayoutName = "SpReactJsClient"
 
 #------------------------------------------------------------------
 #                        Deploying Page

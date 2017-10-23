@@ -1,5 +1,5 @@
 <Groups>
-	<Group Name="Starterpack Owners" PermissionLevel="Full Control" />   
-	<Group Name="Starterpack Leaders" PermissionLevel="Contribute" />   
-	<Group Name="Starterpack Visitors" PermissionLevel="Read" />   
+	<Group Name="SpReactJsClient Owners" PermissionLevel="Full Control" />   
+	<Group Name="SpReactJsClient Leaders" PermissionLevel="Contribute" />   
+	<Group Name="SpReactJsClient Visitors" PermissionLevel="Read" />   
 </Groups>

@@ -1,6 +1,3 @@
-# sharepoint-starterpack
-A frontend starter pack for Sharepoint projects at Golin. 
-
 ## Features
 
 * Webpack 3 based.
@@ -28,7 +25,6 @@ ES6 source files
 1. Setting up the name of your library
   * Open `webpack.config.js` file and change the value of `libraryName` variable so it matches the name of your library.
   * Open `webpack.config.js` file and provide values for `siteUrl`, `username` and `password` to be able to upload assets to a site.
-  * Open `package.json` file and change all occurrences of `sharepoint-starterpack` and `starterpack` so it matches the name of your library.
 2. production mode
   * Run `npm install` to get the project's dependencies
   * Run `npm run prod` to produce a minified version of your library.

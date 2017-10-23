@@ -1,10 +1,10 @@
 {
-  "name": "sharepoint-starterpack",
-  "version": "0.0.5",
-  "description": "Sharepoint starterpack",
+  "name": "sp-reactjs-client",
+  "version": "1.0.0",
+  "description": "sp-reactjs-client",
   "repository": {
     "type": "git",
-    "url": "https://github.com/golincode/sharepoint-starterpack.git"
+    "url": "https://github.com/dmitrydyachenko/sp-reactjs-client.git"
   },
   "scripts": {
     "dev": "webpack --env.dev",
@@ -18,7 +18,7 @@
   "author": "Dmitry Dyachenko <ddyachenko@golin.com>",
   "license": "Unlicense",
   "bugs": {
-    "url": "https://github.com/golincode/sharepoint-starterpack/issues"
+    "url": "https://github.com/dmitrydyachenko/sp-reactjs-client/issues"
   },
   "jest": {
     "moduleNameMapper": {
@@ -26,7 +26,7 @@
       "\\.(css|scss)$": "identity-obj-proxy"
     }
   },
-  "homepage": "https://github.com/golincode/sharepoint-starterpack#readme",
+  "homepage": "https://github.com/dmitrydyachenko/sp-reactjs-client#readme",
   "dependencies": {
     "autoprefixer": "^7.1.4",
     "babel-core": "^6.26.0",

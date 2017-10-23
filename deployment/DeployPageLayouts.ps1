@@ -13,7 +13,7 @@ $ErrorActionPreference = "Stop"
 #                        Page Layout Name
 #------------------------------------------------------------------
 
-$PageLayoutName = "Starterpack"
+$PageLayoutName = "SpReactJsClient"
 
 #------------------------------------------------------------------
 #                        Deploying Page Layouts

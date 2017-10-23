@@ -15,7 +15,7 @@ $ErrorActionPreference = "Stop"
 #                        Project Folder Name
 #------------------------------------------------------------------
 
-$ProjectFolderName = "starterpack"
+$ProjectFolderName = "spreactjsclient"
 
 #------------------------------------------------------------------
 #                        Deploying Pages

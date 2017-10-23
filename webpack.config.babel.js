@@ -6,7 +6,7 @@ import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import SpSaveWebpackPlugin from 'spsave-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 
-const libraryName = 'starterpack';
+const libraryName = 'spreactjsclient';
 
 const siteUrl = 'https://architect365.sharepoint.com/sites/spcrowd';
 const username = 'ddyachenko@architect365.co.uk';

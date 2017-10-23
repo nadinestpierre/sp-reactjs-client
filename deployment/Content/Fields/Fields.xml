@@ -1,4 +1,4 @@
-<Fields Group="Starterpack">
+<Fields Group="spreactjsclient">
     <!-- Text Fields -->
     <Field Name="Strapline" DisplayName="Strapline" Type="Text"></Field>
 
