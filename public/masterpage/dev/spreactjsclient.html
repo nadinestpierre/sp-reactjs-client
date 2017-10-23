@@ -139,20 +139,35 @@
         <!--SPM:var g_Workspace = "s4-workspace";-->
         <!--SPM:</SharePoint:ScriptBlock>-->
         <script>
-            function loadjsfile(filename, filetype){
-                function s4() {
-                    return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
-                }
-                var guid = s4() + s4() + s4() + s4() + s4() + s4() + s4() + s4();
-                var fileref = document.createElement('script');
-                fileref.setAttribute("type", "text/javascript");
-                fileref.setAttribute("src", filename + "?" + (new Date().getTime()) + guid + "=true");
-                if (fileref) {
-                    document.getElementsByTagName("head")[0].appendChild(fileref);
-                }
-            }
-            
-            loadjsfile("../Style Library/spreactjsclient/js/spreactjsclient.js");
+            function createRandomString() {
+            return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+          }
+
+          function loadJsfile(filename) {
+            var guid = createRandomString() + createRandomString() + createRandomString() + createRandomString() + createRandomString() + createRandomString() + createRandomString() + createRandomString();
+
+            var fileref = document.createElement('script');
+              fileref.setAttribute('type', 'text/javascript');
+              fileref.setAttribute('src', filename + '?' + (new Date().getTime()) + guid + '=true');
+              if (fileref) {
+                  document.getElementsByTagName('head')[0].appendChild(fileref);
+              }
+          }
+
+          function loadCssfile(filename) {
+              var guid = createRandomString() + createRandomString() + createRandomString() + createRandomString() + createRandomString() + createRandomString() + createRandomString() + createRandomString();
+
+              var fileref = document.createElement('link');
+              fileref.setAttribute('rel', 'stylesheet');
+              fileref.setAttribute('type', 'text/css');
+              fileref.setAttribute('href', filename + '?' + (new Date().getTime()) + guid + '=true');
+              if (fileref) {
+                  document.getElementsByTagName('head')[0].appendChild(fileref);
+              }
+          }
+
+          loadJsfile(_spPageContextInfo.siteAbsoluteUrl + '/Style Library/spreactjsclient/js/spreactjsclient.js');
+          loadCssfile(_spPageContextInfo.siteAbsoluteUrl + '/Style Library/spreactjsclient/css/screen.css');
         </script>
     </body>
 </html>
