@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import pnp from 'sp-pnp-js';
 import { Spinner, SpinnerType } from 'office-ui-fabric-react/lib/Spinner';
 import { Slider } from 'office-ui-fabric-react/lib/Slider';
+import DirectLineClient from '../../bot/DirectLineClient';
 import { GenerateGuid } from '../../utils/utils';
 import { PAGESLIST } from '../../utils/settings';
 import PagesList from '../../components/PagesList/PagesList';
@@ -18,7 +19,9 @@ export default class Home extends Component {
 			data: [],
 			headerContent: null,
 			fontsize: 14,
-			loading: true
+			loading: true,
+			token: '',
+			conversation: {}
 		};
 	}
 
@@ -31,39 +34,44 @@ export default class Home extends Component {
 	}
 
 	init() {
-		const self = this;
+		const directLineClient = new DirectLineClient('2K0kn2Mt6A0.cwA.rck.VC-2uwp8C5ImsJNQ-I8pCE5qIHdvpnhpEeY64SferUk');
 
-		$.ajax({
-			url: `${_spPageContextInfo.siteAbsoluteUrl}/_api/web/Description`,
-			type: 'GET',
-			headers: { accept: 'application/json;odata=verbose' },
-			success: (data) => {
-				const description = data && data.d ? data.d.Description : null;
+		directLineClient.GetToken()
+			.then(token => this.setState({ token, headerContent: token }, () => {
+				directLineClient.CreateConversation(this.state.token)
+					.then((conversation) => {
+						this.setState({ conversation }, () => {
+							directLineClient.PostMessage(conversation.token, conversation.conversationId, {
+								type: 'message',
+								from: {
+									id: _spPageContextInfo.userLoginName
+								},
+								text: 'Hello world!'
+							}).then((result) => {
+								this.setState({ loading: false }, () => {
+									console.log(result);
+								});
+							});
+						});
+					});
+			}));
 
-				if (description) {
-					const headerContent = (
-						<div>
-							<div className={Styles.header_title}>
-								{_spPageContextInfo.webTitle}
-							</div>
-							<div className={Styles.header_description}>
-								{description}
-							</div>
-						</div>
-					);
+		// $.ajax({
+		// 	url: 'https://sp-nodejs-restapi-azure.azurewebsites.net/api',
+		// 	type: 'GET',
+		// 	dataType: 'json',
+		// 	success: (data) => {
+		// 		console.log(data);
+		// 	}
+		// });
 
-					self.setState({ headerContent, loading: false });
-				}
-			}
-		});
-
-		pnp.sp.web.lists
-			.getByTitle(self.props.listName).items
-			.select('ID, Title')
-			.get()
-			.then((data) => {
-				self.setState({ data });
-			});
+		// pnp.sp.web.lists
+		// 	.getByTitle(self.props.listName).items
+		// 	.select('ID, Title')
+		// 	.get()
+		// 	.then((data) => {
+		// 		this.setState({ data, loading: false });
+		// 	});
 	}
 
 	render() {

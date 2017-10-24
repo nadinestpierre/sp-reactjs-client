@@ -8,9 +8,13 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 const libraryName = 'spreactjsclient';
 
-const siteUrl = 'https://architect365.sharepoint.com/sites/spcrowd';
+const siteUrl = 'https://architect365.sharepoint.com/sites/chatbot';
 const username = 'ddyachenko@architect365.co.uk';
 const password = 'Chancery2017.';
+
+// const siteUrl = 'https://unileverdev.sharepoint.com/teams/Dev_DIG Events Plan';
+// const username = 'dmitry.dyachenko@unileverpp.com';
+// const password = 'Chancery2017.';
 
 const deployPath = 'deployment';
 const deployAssetsPath = deployPath + '/Assets';
@@ -155,8 +159,10 @@ export default (env = defaultEnv) => ({
         ]
     },
     node: {
-        fs: "empty",
-        Buffer: false
+        console: true,
+        fs: 'empty',
+        tls: 'empty',
+        net: 'empty'
     },
     resolve: {
         modules: [
