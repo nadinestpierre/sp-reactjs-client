@@ -26,6 +26,8 @@ export default class DirectLineClient {
 			}
 
 			if (response.statusCode === 200) {
+				console.log(`GetToken: ${JSON.stringify(response)}`);
+
 				return defer.resolve(JSON.parse(body).token);
 			}
 
@@ -49,7 +51,7 @@ export default class DirectLineClient {
 				Accept: 'application/json'
 			}
 		}, 
-		(err, response, body) => {
+		(err, response, responseBody) => {
 			if (err) {
 				return defer.reject({
 					rc: 1,
@@ -58,9 +60,9 @@ export default class DirectLineClient {
 			}
 
 			if (response.statusCode === 200 || response.statusCode === 201) {
-				console.log(`Got response: ${JSON.stringify(response)}`);
+				console.log(`CreateConversation: ${JSON.stringify(response)}`);
 
-				return defer.resolve(JSON.parse(body));
+				return defer.resolve(JSON.parse(responseBody));
 			} 
 
 			return defer.reject({
@@ -85,7 +87,7 @@ export default class DirectLineClient {
 			json: true,
 			body
 		}, 
-		(err, response) => {
+		(err, response, responseBody) => {
 			if (err) {
 				return defer.reject({
 					rc: 1,
@@ -94,12 +96,46 @@ export default class DirectLineClient {
 			} 
 
 			if (response.statusCode === 204 || response.statusCode === 200) {
-				return defer.resolve();
+				console.log(`PostMessage: ${JSON.stringify(response)}`);
+
+				return defer.resolve(response);
 			} 
 
 			return defer.reject({
 				rc: 2,
 				error: 'Wrong status code returned by directline api in postMessage'
+			});
+		});
+	
+		return defer.promise;
+	}
+
+	GetMessages(token, conversationId, watermark) {
+		const defer = Q.defer();
+
+		request({
+			method: 'GET',
+			uri: `${this.baseUrl}/conversations/${conversationId}/activities/${watermark ? `?watermark=${watermark}` : ''}`,
+			headers: {
+				Authorization: `Bearer ${token || this.secret}`,
+				Accept: 'application/json'
+			}
+		}, 
+		(err, response, responseBody) => {
+			if (err) {
+				return defer.reject({
+					rc: 1,
+					error: err
+				});
+			}
+
+			if (response.statusCode === 200) {
+				return defer.resolve(JSON.parse(responseBody));
+			} 
+
+			return defer.reject({
+				rc: 2,
+				error: 'Wrong status code'
 			});
 		});
 	

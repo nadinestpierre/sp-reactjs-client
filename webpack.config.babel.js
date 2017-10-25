@@ -8,7 +8,7 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 const libraryName = 'spreactjsclient';
 
-const siteUrl = 'https://architect365.sharepoint.com/sites/chatbot';
+const siteUrl = 'https://architect365.sharepoint.com/sites/spcrowd';
 const username = 'ddyachenko@architect365.co.uk';
 const password = 'Chancery2017.';
 
@@ -42,7 +42,7 @@ export default (env = defaultEnv) => ({
         path: __dirname,
         filename: path.join('[name]/js/', libraryName + '.js')
     },
-    devtool: 'source-map',
+    devtool: 'eval-source-map',
     plugins: [
         ...env.upload ?
             [new ExtractTextPlugin('../css/screen.css', {

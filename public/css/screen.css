@@ -8071,39 +8071,6 @@
 /**
  * Paths to Sharepoint assets 
  */
-.PagesList_container {
-  display: block; }
-  .PagesList_container .PagesList_header {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    font-size: 14px;
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-    color: #333333; }
-  .PagesList_container .PagesList_content {
-    display: block; }
-    .PagesList_container .PagesList_content .PagesList_item {
-      display: block;
-      font-size: 14px;
-      font-weight: 400;
-      -webkit-font-smoothing: antialiased;
-      color: #333333; }
-/**
- * Breakpoints
- */
-/**
- * Tweakpoints
- */
-/**
- * Other variables
- */
-/**
- * Colours
- */
-/**
- * Paths to Sharepoint assets 
- */
 .Home_container .Home_top_container {
   display: block; }
   .Home_container .Home_top_container .Home_header {
@@ -8124,5 +8091,3 @@
   .Home_container .Home_bottom_container .ms-Label {
     font-size: 16px;
     color: #0078d7; }
-
-/*# sourceMappingURL=screen.css.map*/
