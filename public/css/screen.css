@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * Breakpoints
  */
@@ -35,6 +36,7 @@
 /**
  * Import fonts
  */
+/* FabricUI fonts start */
 @font-face {
   font-family: 'Leelawadee UI Web';
   src: url("https://static2.sharepointonline.com/files/fabric/assets/fonts/leelawadeeui-thai/leelawadeeui-light.woff2") format("woff2"), url("https://static2.sharepointonline.com/files/fabric/assets/fonts/leelawadeeui-thai/leelawadeeui-light.woff") format("woff");
@@ -265,10 +267,11 @@
 
 @font-face {
   font-family: 'FabricMDL2Icons';
-  src: url("https://static2.sharepointonline.com/files/fabric/assets/icons/fabricmdl2icons-2.47.woff2") format("woff2"), url("https://static2.sharepointonline.com/files/fabric/assets/icons/fabricmdl2icons-2.47.woff") format("woff"), url("https://static2.sharepointonline.com/files/fabric/assets/icons/fabricmdl2icons-2.47.ttf") format("truetype");
+  src: url("https://static2.sharepointonline.com/files/fabric/assets/icons/fabricmdl2icons-2.51.woff2") format("woff2"), url("https://static2.sharepointonline.com/files/fabric/assets/icons/fabricmdl2icons-2.51.woff") format("woff"), url("https://static2.sharepointonline.com/files/fabric/assets/icons/fabricmdl2icons-2.51.ttf") format("truetype");
   font-weight: normal;
   font-style: normal; }
 
+/* FabricUI fonts end */
 @font-face {
   font-family: 'FontAwesome';
   src: url("../fonts/fontawesome-webfont.eot?v=4.7.0");
@@ -469,7 +472,7 @@
    readers do not read off random characters that represent icons */
   /* Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license. See LICENSE in the project root for license information. */
   /**
- * Office UI Fabric Core 7.3.0
+ * Office UI Fabric Core 9.0.0
  * The front-end framework for building experiences for Office 365.
  **/
   /*
@@ -589,7 +592,6 @@
   .spreactjsclient optgroup,
   .spreactjsclient select,
   .spreactjsclient textarea {
-    font-family: sans-serif;
     /* 1 */
     font-size: 100%;
     /* 1 */
@@ -2736,7 +2738,7 @@
   to {
     -webkit-transform: rotateZ(0deg);
             transform: rotateZ(0deg); } }
-  .spreactjsclient .ms-slideRightIn10 {
+  .spreactjsclient [dir='ltr'] .ms-slideRightIn10 {
     -webkit-animation-name: ms-fadeIn, ms-slideRightIn10;
             animation-name: ms-fadeIn, ms-slideRightIn10;
     -webkit-animation-duration: 0.367s;
@@ -2745,52 +2747,7 @@
             animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both; }
-  .spreactjsclient .ms-slideRightIn20 {
-    -webkit-animation-name: ms-fadeIn, ms-slideRightIn20;
-            animation-name: ms-fadeIn, ms-slideRightIn20;
-    -webkit-animation-duration: 0.367s;
-            animation-duration: 0.367s;
-    -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
-            animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
-    -webkit-animation-fill-mode: both;
-            animation-fill-mode: both; }
-  .spreactjsclient .ms-slideRightIn40 {
-    -webkit-animation-name: ms-fadeIn, ms-slideRightIn40;
-            animation-name: ms-fadeIn, ms-slideRightIn40;
-    -webkit-animation-duration: 0.367s;
-            animation-duration: 0.367s;
-    -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
-            animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
-    -webkit-animation-fill-mode: both;
-            animation-fill-mode: both; }
-  .spreactjsclient .ms-slideRightIn400 {
-    -webkit-animation-name: ms-fadeIn, ms-slideRightIn400;
-            animation-name: ms-fadeIn, ms-slideRightIn400;
-    -webkit-animation-duration: 0.367s;
-            animation-duration: 0.367s;
-    -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
-            animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
-    -webkit-animation-fill-mode: both;
-            animation-fill-mode: both; }
-  .spreactjsclient .ms-slideRightOut40 {
-    -webkit-animation-name: ms-fadeOut, ms-slideRightOut40;
-            animation-name: ms-fadeOut, ms-slideRightOut40;
-    -webkit-animation-duration: 0.167s;
-            animation-duration: 0.167s;
-    -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-            animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-    -webkit-animation-fill-mode: both;
-            animation-fill-mode: both; }
-  .spreactjsclient .ms-slideRightOut400 {
-    -webkit-animation-name: ms-fadeOut, ms-slideRightOut400;
-            animation-name: ms-fadeOut, ms-slideRightOut400;
-    -webkit-animation-duration: 0.167s;
-            animation-duration: 0.167s;
-    -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-            animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
-    -webkit-animation-fill-mode: both;
-            animation-fill-mode: both; }
-  .spreactjsclient .ms-slideLeftIn10 {
+  .spreactjsclient [dir='rtl'] .ms-slideRightIn10 {
     -webkit-animation-name: ms-fadeIn, ms-slideLeftIn10;
             animation-name: ms-fadeIn, ms-slideLeftIn10;
     -webkit-animation-duration: 0.367s;
@@ -2799,7 +2756,16 @@
             animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both; }
-  .spreactjsclient .ms-slideLeftIn20 {
+  .spreactjsclient [dir='ltr'] .ms-slideRightIn20 {
+    -webkit-animation-name: ms-fadeIn, ms-slideRightIn20;
+            animation-name: ms-fadeIn, ms-slideRightIn20;
+    -webkit-animation-duration: 0.367s;
+            animation-duration: 0.367s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+            animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both; }
+  .spreactjsclient [dir='rtl'] .ms-slideRightIn20 {
     -webkit-animation-name: ms-fadeIn, ms-slideLeftIn20;
             animation-name: ms-fadeIn, ms-slideLeftIn20;
     -webkit-animation-duration: 0.367s;
@@ -2808,7 +2774,16 @@
             animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both; }
-  .spreactjsclient .ms-slideLeftIn40 {
+  .spreactjsclient [dir='ltr'] .ms-slideRightIn40 {
+    -webkit-animation-name: ms-fadeIn, ms-slideRightIn40;
+            animation-name: ms-fadeIn, ms-slideRightIn40;
+    -webkit-animation-duration: 0.367s;
+            animation-duration: 0.367s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+            animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both; }
+  .spreactjsclient [dir='rtl'] .ms-slideRightIn40 {
     -webkit-animation-name: ms-fadeIn, ms-slideLeftIn40;
             animation-name: ms-fadeIn, ms-slideLeftIn40;
     -webkit-animation-duration: 0.367s;
@@ -2817,7 +2792,16 @@
             animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both; }
-  .spreactjsclient .ms-slideLeftIn400 {
+  .spreactjsclient [dir='ltr'] .ms-slideRightIn400 {
+    -webkit-animation-name: ms-fadeIn, ms-slideRightIn400;
+            animation-name: ms-fadeIn, ms-slideRightIn400;
+    -webkit-animation-duration: 0.367s;
+            animation-duration: 0.367s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+            animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both; }
+  .spreactjsclient [dir='rtl'] .ms-slideRightIn400 {
     -webkit-animation-name: ms-fadeIn, ms-slideLeftIn400;
             animation-name: ms-fadeIn, ms-slideLeftIn400;
     -webkit-animation-duration: 0.367s;
@@ -2826,7 +2810,16 @@
             animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both; }
-  .spreactjsclient .ms-slideLeftOut40 {
+  .spreactjsclient [dir='ltr'] .ms-slideRightOut40 {
+    -webkit-animation-name: ms-fadeOut, ms-slideRightOut40;
+            animation-name: ms-fadeOut, ms-slideRightOut40;
+    -webkit-animation-duration: 0.167s;
+            animation-duration: 0.167s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+            animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both; }
+  .spreactjsclient [dir='rtl'] .ms-slideRightOut40 {
     -webkit-animation-name: ms-fadeOut, ms-slideLeftOut40;
             animation-name: ms-fadeOut, ms-slideLeftOut40;
     -webkit-animation-duration: 0.167s;
@@ -2835,9 +2828,126 @@
             animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both; }
-  .spreactjsclient .ms-slideLeftOut400 {
+  .spreactjsclient [dir='ltr'] .ms-slideRightOut400 {
+    -webkit-animation-name: ms-fadeOut, ms-slideRightOut400;
+            animation-name: ms-fadeOut, ms-slideRightOut400;
+    -webkit-animation-duration: 0.167s;
+            animation-duration: 0.167s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+            animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both; }
+  .spreactjsclient [dir='rtl'] .ms-slideRightOut400 {
     -webkit-animation-name: ms-fadeOut, ms-slideLeftOut400;
             animation-name: ms-fadeOut, ms-slideLeftOut400;
+    -webkit-animation-duration: 0.167s;
+            animation-duration: 0.167s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+            animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both; }
+  .spreactjsclient [dir='ltr'] .ms-slideLeftIn10 {
+    -webkit-animation-name: ms-fadeIn, ms-slideLeftIn10;
+            animation-name: ms-fadeIn, ms-slideLeftIn10;
+    -webkit-animation-duration: 0.367s;
+            animation-duration: 0.367s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+            animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both; }
+  .spreactjsclient [dir='rtl'] .ms-slideLeftIn10 {
+    -webkit-animation-name: ms-fadeIn, ms-slideRightIn10;
+            animation-name: ms-fadeIn, ms-slideRightIn10;
+    -webkit-animation-duration: 0.367s;
+            animation-duration: 0.367s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+            animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both; }
+  .spreactjsclient [dir='ltr'] .ms-slideLeftIn20 {
+    -webkit-animation-name: ms-fadeIn, ms-slideLeftIn20;
+            animation-name: ms-fadeIn, ms-slideLeftIn20;
+    -webkit-animation-duration: 0.367s;
+            animation-duration: 0.367s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+            animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both; }
+  .spreactjsclient [dir='rtl'] .ms-slideLeftIn20 {
+    -webkit-animation-name: ms-fadeIn, ms-slideRightIn20;
+            animation-name: ms-fadeIn, ms-slideRightIn20;
+    -webkit-animation-duration: 0.367s;
+            animation-duration: 0.367s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+            animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both; }
+  .spreactjsclient [dir='ltr'] .ms-slideLeftIn40 {
+    -webkit-animation-name: ms-fadeIn, ms-slideLeftIn40;
+            animation-name: ms-fadeIn, ms-slideLeftIn40;
+    -webkit-animation-duration: 0.367s;
+            animation-duration: 0.367s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+            animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both; }
+  .spreactjsclient [dir='rtl'] .ms-slideLeftIn40 {
+    -webkit-animation-name: ms-fadeIn, ms-slideRightIn40;
+            animation-name: ms-fadeIn, ms-slideRightIn40;
+    -webkit-animation-duration: 0.367s;
+            animation-duration: 0.367s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+            animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both; }
+  .spreactjsclient [dir='ltr'] .ms-slideLeftIn400 {
+    -webkit-animation-name: ms-fadeIn, ms-slideLeftIn400;
+            animation-name: ms-fadeIn, ms-slideLeftIn400;
+    -webkit-animation-duration: 0.367s;
+            animation-duration: 0.367s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+            animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both; }
+  .spreactjsclient [dir='rtl'] .ms-slideLeftIn400 {
+    -webkit-animation-name: ms-fadeIn, ms-slideRightIn400;
+            animation-name: ms-fadeIn, ms-slideRightIn400;
+    -webkit-animation-duration: 0.367s;
+            animation-duration: 0.367s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+            animation-timing-function: cubic-bezier(0.1, 0.9, 0.2, 1);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both; }
+  .spreactjsclient [dir='ltr'] .ms-slideLeftOut40 {
+    -webkit-animation-name: ms-fadeOut, ms-slideLeftOut40;
+            animation-name: ms-fadeOut, ms-slideLeftOut40;
+    -webkit-animation-duration: 0.167s;
+            animation-duration: 0.167s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+            animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both; }
+  .spreactjsclient [dir='rtl'] .ms-slideLeftOut40 {
+    -webkit-animation-name: ms-fadeOut, ms-slideRightOut40;
+            animation-name: ms-fadeOut, ms-slideRightOut40;
+    -webkit-animation-duration: 0.167s;
+            animation-duration: 0.167s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+            animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both; }
+  .spreactjsclient [dir='ltr'] .ms-slideLeftOut400 {
+    -webkit-animation-name: ms-fadeOut, ms-slideLeftOut400;
+            animation-name: ms-fadeOut, ms-slideLeftOut400;
+    -webkit-animation-duration: 0.167s;
+            animation-duration: 0.167s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+            animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both; }
+  .spreactjsclient [dir='rtl'] .ms-slideLeftOut400 {
+    -webkit-animation-name: ms-fadeOut, ms-slideRightOut400;
+            animation-name: ms-fadeOut, ms-slideRightOut400;
     -webkit-animation-duration: 0.167s;
             animation-duration: 0.167s;
     -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
@@ -3026,7 +3136,7 @@
   .spreactjsclient .ms-delay200 {
     -webkit-animation-delay: 0.267s;
             animation-delay: 0.267s; }
-  .spreactjsclient .ms-rotate90deg {
+  .spreactjsclient [dir='ltr'] .ms-rotate90deg {
     -webkit-animation-name: ms-rotate90;
             animation-name: ms-rotate90;
     -webkit-animation-duration: 0.1s;
@@ -3035,9 +3145,27 @@
             animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
     -webkit-animation-fill-mode: both;
             animation-fill-mode: both; }
-  .spreactjsclient .ms-rotateN90deg {
+  .spreactjsclient [dir='rtl'] .ms-rotate90deg {
     -webkit-animation-name: ms-rotateN90;
             animation-name: ms-rotateN90;
+    -webkit-animation-duration: 0.1s;
+            animation-duration: 0.1s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+            animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both; }
+  .spreactjsclient [dir='ltr'] .ms-rotateN90deg {
+    -webkit-animation-name: ms-rotateN90;
+            animation-name: ms-rotateN90;
+    -webkit-animation-duration: 0.1s;
+            animation-duration: 0.1s;
+    -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+            animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
+    -webkit-animation-fill-mode: both;
+            animation-fill-mode: both; }
+  .spreactjsclient [dir='rtl'] .ms-rotateN90deg {
+    -webkit-animation-name: ms-rotate90;
+            animation-name: ms-rotate90;
     -webkit-animation-duration: 0.1s;
             animation-duration: 0.1s;
     -webkit-animation-timing-function: cubic-bezier(0.1, 0.25, 0.75, 0.9);
@@ -4127,9 +4255,6 @@
     border-color: #107c10; }
   .spreactjsclient .ms-borderColor-greenLight {
     border-color: #bad80a; }
-  .spreactjsclient .ms-borderColorTop-themePrimary,
-  .spreactjsclient .ms-borderColorTop-themePrimary--hover:hover {
-    border-top-color: #0078d7; }
   .spreactjsclient .ms-font-su {
     font-size: 42px;
     font-weight: 100; }
@@ -4163,17 +4288,13 @@
   .spreactjsclient .ms-font-mi {
     font-size: 10px;
     font-weight: 600; }
-  .spreactjsclient .ms-fontWeight-light,
-  .spreactjsclient .ms-fontWeight-light--hover:hover {
+  .spreactjsclient .ms-fontWeight-light {
     font-weight: 100; }
-  .spreactjsclient .ms-fontWeight-semilight,
-  .spreactjsclient .ms-fontWeight-semilight--hover:hover {
+  .spreactjsclient .ms-fontWeight-semilight {
     font-weight: 300; }
-  .spreactjsclient .ms-fontWeight-regular,
-  .spreactjsclient .ms-fontWeight-regular--hover:hover {
+  .spreactjsclient .ms-fontWeight-regular {
     font-weight: 400; }
-  .spreactjsclient .ms-fontWeight-semibold,
-  .spreactjsclient .ms-fontWeight-semibold--hover:hover {
+  .spreactjsclient .ms-fontWeight-semibold {
     font-weight: 600; }
   .spreactjsclient .ms-fontSize-su {
     font-size: 42px; }
@@ -4377,8 +4498,11 @@
     padding-left: 8px;
     padding-right: 8px;
     -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+            box-sizing: border-box; }
+  .spreactjsclient [dir='ltr'] .ms-Grid-col {
     float: left; }
+  .spreactjsclient [dir='rtl'] .ms-Grid-col {
+    float: right; }
   .spreactjsclient .ms-Grid-col .ms-Grid {
     padding: 0; }
   .spreactjsclient .ms-Icon {
@@ -4388,14 +4512,16 @@
     font-weight: normal;
     speak: none; }
   .spreactjsclient .ms-Icon--circle {
+    margin: 0 0.5em 0 0;
     position: relative;
     display: inline-block;
     font-size: 1rem;
     width: 1em;
     height: 1em;
-    margin: 0 0.5em 0 0;
     padding: 0;
     text-align: left; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--circle {
+    margin: 0 0 0 0.5em; }
   .spreactjsclient .ms-Icon--circle::before,
   .spreactjsclient .ms-Icon--circle::after {
     line-height: 1;
@@ -4428,38 +4554,6 @@
     font-size: 16px; }
   .spreactjsclient .ms-Icon--l {
     font-size: 20px; }
-  .spreactjsclient .ms-Icon--SwayLogo::before {
-    content: '\ED29'; }
-  .spreactjsclient .ms-Icon--ClassNotebookLogo::before {
-    content: '\EDC8'; }
-  .spreactjsclient .ms-Icon--DocsLogo::before {
-    content: '\EDCB'; }
-  .spreactjsclient .ms-Icon--OneNoteEduLogo::before {
-    content: '\EDD0'; }
-  .spreactjsclient .ms-Icon--ProjectLogo::before {
-    content: '\EDD4'; }
-  .spreactjsclient .ms-Icon--AdminALogo::before {
-    content: '\ED6A'; }
-  .spreactjsclient .ms-Icon--AdminCLogo::before {
-    content: '\ED6B'; }
-  .spreactjsclient .ms-Icon--AdminDLogo::before {
-    content: '\ED6C'; }
-  .spreactjsclient .ms-Icon--AdminELogo::before {
-    content: '\ED6D'; }
-  .spreactjsclient .ms-Icon--AdminLLogo::before {
-    content: '\ED6E'; }
-  .spreactjsclient .ms-Icon--AdminMLogo::before {
-    content: '\ED6F'; }
-  .spreactjsclient .ms-Icon--AdminOLogo::before {
-    content: '\ED70'; }
-  .spreactjsclient .ms-Icon--AdminPLogo::before {
-    content: '\ED71'; }
-  .spreactjsclient .ms-Icon--AdminSLogo::before {
-    content: '\ED72'; }
-  .spreactjsclient .ms-Icon--AdminYLogo::before {
-    content: '\ED73'; }
-  .spreactjsclient .ms-Icon--OfficeFormLogo::before {
-    content: '\EF86'; }
   .spreactjsclient .ms-Icon--AADLogo::before {
     content: '\ED68'; }
   .spreactjsclient .ms-Icon--Accept::before {
@@ -4542,8 +4636,6 @@
     content: '\F1DF'; }
   .spreactjsclient .ms-Icon--AnalyticsReport::before {
     content: '\F1E1'; }
-  .spreactjsclient .ms-Icon--AndroidLogo::before {
-    content: '\EF8B'; }
   .spreactjsclient .ms-Icon--Annotation::before {
     content: '\E924'; }
   .spreactjsclient .ms-Icon--AppIconDefault::before {
@@ -4554,10 +4646,14 @@
     content: '\E9D2'; }
   .spreactjsclient .ms-Icon--Arrivals::before {
     content: '\EB34'; }
-  .spreactjsclient .ms-Icon--ArrowDownRight8::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--ArrowDownRight8::before {
     content: '\EED5'; }
-  .spreactjsclient .ms-Icon--ArrowDownRightMirrored8::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--ArrowDownRight8::before {
     content: '\EEF0'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--ArrowDownRightMirrored8::before {
+    content: '\EEF0'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--ArrowDownRightMirrored8::before {
+    content: '\EED5'; }
   .spreactjsclient .ms-Icon--ArrowTallDownLeft::before {
     content: '\F2BF'; }
   .spreactjsclient .ms-Icon--ArrowTallDownRight::before {
@@ -4566,10 +4662,14 @@
     content: '\F2BD'; }
   .spreactjsclient .ms-Icon--ArrowTallUpRight::before {
     content: '\F2BE'; }
-  .spreactjsclient .ms-Icon--ArrowUpRight8::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--ArrowUpRight8::before {
     content: '\EED4'; }
-  .spreactjsclient .ms-Icon--ArrowUpRightMirrored8::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--ArrowUpRight8::before {
     content: '\EEEF'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--ArrowUpRightMirrored8::before {
+    content: '\EEEF'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--ArrowUpRightMirrored8::before {
+    content: '\EED4'; }
   .spreactjsclient .ms-Icon--Articles::before {
     content: '\EAC1'; }
   .spreactjsclient .ms-Icon--Ascending::before {
@@ -4614,6 +4714,8 @@
     content: '\F380'; }
   .spreactjsclient .ms-Icon--Back::before {
     content: '\E72B'; }
+  .spreactjsclient .ms-Icon--BackgroundColor::before {
+    content: '\F42B'; }
   .spreactjsclient .ms-Icon--Backlog::before {
     content: '\F2AC'; }
   .spreactjsclient .ms-Icon--BacklogBoard::before {
@@ -4658,16 +4760,18 @@
     content: '\E8DD'; }
   .spreactjsclient .ms-Icon--BookingsLogo::before {
     content: '\EDC7'; }
-  .spreactjsclient .ms-Icon--Bookmarks::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--Bookmarks::before {
     content: '\E8A4'; }
-  .spreactjsclient .ms-Icon--BookmarksMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--Bookmarks::before {
     content: '\EA41'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--BookmarksMirrored::before {
+    content: '\EA41'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--BookmarksMirrored::before {
+    content: '\E8A4'; }
   .spreactjsclient .ms-Icon--BoxAdditionSolid::before {
     content: '\F2D4'; }
   .spreactjsclient .ms-Icon--BoxCheckmarkSolid::before {
     content: '\F2D7'; }
-  .spreactjsclient .ms-Icon--BoxLogo::before {
-    content: '\ED75'; }
   .spreactjsclient .ms-Icon--BoxMultiplySolid::before {
     content: '\F2D5'; }
   .spreactjsclient .ms-Icon--BoxPlaySolid::before {
@@ -4722,14 +4826,22 @@
     content: '\F24F'; }
   .spreactjsclient .ms-Icon--BuildQueueNew::before {
     content: '\F250'; }
-  .spreactjsclient .ms-Icon--BulletedList::before {
-    content: '\E8FD'; }
-  .spreactjsclient .ms-Icon--BulletedList2::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--BulletedList2::before {
     content: '\F2C7'; }
-  .spreactjsclient .ms-Icon--BulletedList2Mirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--BulletedList2::before {
     content: '\F2C8'; }
-  .spreactjsclient .ms-Icon--BulletedListMirrored::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--BulletedList2Mirrored::before {
+    content: '\F2C8'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--BulletedList2Mirrored::before {
+    content: '\F2C7'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--BulletedList::before {
+    content: '\E8FD'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--BulletedList::before {
     content: '\EA42'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--BulletedListMirrored::before {
+    content: '\EA42'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--BulletedListMirrored::before {
+    content: '\E8FD'; }
   .spreactjsclient .ms-Icon--Bus::before {
     content: '\E806'; }
   .spreactjsclient .ms-Icon--BusinessCenterLogo::before {
@@ -4752,14 +4864,18 @@
     content: '\F2D2'; }
   .spreactjsclient .ms-Icon--CalculatorSubtract::before {
     content: '\E949'; }
-  .spreactjsclient .ms-Icon--Calendar::before {
-    content: '\E787'; }
   .spreactjsclient .ms-Icon--CalendarAgenda::before {
     content: '\EE9A'; }
   .spreactjsclient .ms-Icon--CalendarDay::before {
     content: '\E8BF'; }
-  .spreactjsclient .ms-Icon--CalendarMirrored::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--Calendar::before {
+    content: '\E787'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--Calendar::before {
     content: '\ED28'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--CalendarMirrored::before {
+    content: '\ED28'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--CalendarMirrored::before {
+    content: '\E787'; }
   .spreactjsclient .ms-Icon--CalendarReply::before {
     content: '\E8F5'; }
   .spreactjsclient .ms-Icon--CalendarWeek::before {
@@ -4788,10 +4904,14 @@
     content: '\EDD8'; }
   .spreactjsclient .ms-Icon--CaretDownSolid8::before {
     content: '\EDDC'; }
-  .spreactjsclient .ms-Icon--CaretHollow::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--CaretHollow::before {
     content: '\E817'; }
-  .spreactjsclient .ms-Icon--CaretHollowMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--CaretHollow::before {
     content: '\EA45'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--CaretHollowMirrored::before {
+    content: '\EA45'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--CaretHollowMirrored::before {
+    content: '\E817'; }
   .spreactjsclient .ms-Icon--CaretLeft8::before {
     content: '\EDD5'; }
   .spreactjsclient .ms-Icon--CaretLeftSolid8::before {
@@ -4802,16 +4922,20 @@
     content: '\EDD6'; }
   .spreactjsclient .ms-Icon--CaretRightSolid8::before {
     content: '\EDDA'; }
-  .spreactjsclient .ms-Icon--CaretSolid::before {
-    content: '\E818'; }
   .spreactjsclient .ms-Icon--CaretSolid16::before {
     content: '\EE62'; }
   .spreactjsclient .ms-Icon--CaretSolidDown::before {
     content: '\F08E'; }
   .spreactjsclient .ms-Icon--CaretSolidLeft::before {
     content: '\F08D'; }
-  .spreactjsclient .ms-Icon--CaretSolidMirrored::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--CaretSolid::before {
+    content: '\E818'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--CaretSolid::before {
     content: '\EA46'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--CaretSolidMirrored::before {
+    content: '\EA46'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--CaretSolidMirrored::before {
+    content: '\E818'; }
   .spreactjsclient .ms-Icon--CaretSolidRight::before {
     content: '\F08F'; }
   .spreactjsclient .ms-Icon--CaretSolidUp::before {
@@ -4892,10 +5016,14 @@
     content: '\E96D'; }
   .spreactjsclient .ms-Icon--Chopsticks::before {
     content: '\F4A2'; }
-  .spreactjsclient .ms-Icon--ChromeBack::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--ChromeBack::before {
     content: '\E830'; }
-  .spreactjsclient .ms-Icon--ChromeBackMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--ChromeBack::before {
     content: '\EA47'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--ChromeBackMirrored::before {
+    content: '\EA47'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--ChromeBackMirrored::before {
+    content: '\E830'; }
   .spreactjsclient .ms-Icon--ChromeClose::before {
     content: '\E8BB'; }
   .spreactjsclient .ms-Icon--ChromeMinimize::before {
@@ -4952,10 +5080,14 @@
     content: '\F28C'; }
   .spreactjsclient .ms-Icon--ClosedCaption::before {
     content: '\EF84'; }
-  .spreactjsclient .ms-Icon--ClosePane::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--ClosePane::before {
     content: '\E89F'; }
-  .spreactjsclient .ms-Icon--ClosePaneMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--ClosePane::before {
     content: '\EA49'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--ClosePaneMirrored::before {
+    content: '\EA49'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--ClosePaneMirrored::before {
+    content: '\E89F'; }
   .spreactjsclient .ms-Icon--Cloud::before {
     content: '\E753'; }
   .spreactjsclient .ms-Icon--CloudAdd::before {
@@ -5034,6 +5166,8 @@
     content: '\EEBD'; }
   .spreactjsclient .ms-Icon--ContactInfo::before {
     content: '\E779'; }
+  .spreactjsclient .ms-Icon--ContextMenu::before {
+    content: '\F37C'; }
   .spreactjsclient .ms-Icon--Contrast::before {
     content: '\E7A1'; }
   .spreactjsclient .ms-Icon--Copy::before {
@@ -5048,6 +5182,8 @@
     content: '\EB1E'; }
   .spreactjsclient .ms-Icon--CRMReport::before {
     content: '\EFFE'; }
+  .spreactjsclient .ms-Icon--Crop::before {
+    content: '\E7A8'; }
   .spreactjsclient .ms-Icon--Crown::before {
     content: '\ED01'; }
   .spreactjsclient .ms-Icon--CrownSolid::before {
@@ -5058,10 +5194,14 @@
     content: '\F2EF'; }
   .spreactjsclient .ms-Icon--CSS::before {
     content: '\EBEF'; }
-  .spreactjsclient .ms-Icon--CustomList::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--CustomList::before {
     content: '\EEBE'; }
-  .spreactjsclient .ms-Icon--CustomListMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--CustomList::before {
     content: '\EEBF'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--CustomListMirrored::before {
+    content: '\EEBF'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--CustomListMirrored::before {
+    content: '\EEBE'; }
   .spreactjsclient .ms-Icon--Cut::before {
     content: '\E8C6'; }
   .spreactjsclient .ms-Icon--Cycling::before {
@@ -5070,12 +5210,16 @@
     content: '\EFC7'; }
   .spreactjsclient .ms-Icon--DataConnectionLibrary::before {
     content: '\EEB7'; }
-  .spreactjsclient .ms-Icon--DateTime::before {
-    content: '\EC92'; }
   .spreactjsclient .ms-Icon--DateTime2::before {
     content: '\EA17'; }
-  .spreactjsclient .ms-Icon--DateTimeMirrored::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--DateTime::before {
+    content: '\EC92'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--DateTime::before {
     content: '\EE93'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--DateTimeMirrored::before {
+    content: '\EE93'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--DateTimeMirrored::before {
+    content: '\EC92'; }
   .spreactjsclient .ms-Icon--DecisionSolid::before {
     content: '\F350'; }
   .spreactjsclient .ms-Icon--DeclineCall::before {
@@ -5130,10 +5274,14 @@
     content: '\E8E0'; }
   .spreactjsclient .ms-Icon--DislikeSolid::before {
     content: '\F3C0'; }
-  .spreactjsclient .ms-Icon--DockLeft::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--DockLeft::before {
     content: '\E90C'; }
-  .spreactjsclient .ms-Icon--DockLeftMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--DockLeft::before {
     content: '\EA4C'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--DockLeftMirrored::before {
+    content: '\EA4C'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--DockLeftMirrored::before {
+    content: '\E90C'; }
   .spreactjsclient .ms-Icon--DockRight::before {
     content: '\E90D'; }
   .spreactjsclient .ms-Icon--DocLibrary::before {
@@ -5172,10 +5320,14 @@
     content: '\EE98'; }
   .spreactjsclient .ms-Icon--DoubleChevronLeft8::before {
     content: '\F36D'; }
-  .spreactjsclient .ms-Icon--DoubleChevronLeftMed::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--DoubleChevronLeftMed::before {
     content: '\E991'; }
-  .spreactjsclient .ms-Icon--DoubleChevronLeftMedMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--DoubleChevronLeftMed::before {
     content: '\EA4D'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--DoubleChevronLeftMedMirrored::before {
+    content: '\EA4D'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--DoubleChevronLeftMedMirrored::before {
+    content: '\E991'; }
   .spreactjsclient .ms-Icon--DoubleChevronRight::before {
     content: '\EDBF'; }
   .spreactjsclient .ms-Icon--DoubleChevronRight12::before {
@@ -5200,8 +5352,6 @@
     content: '\ECA8'; }
   .spreactjsclient .ms-Icon--Drop::before {
     content: '\EB42'; }
-  .spreactjsclient .ms-Icon--DropboxLogo::before {
-    content: '\ED77'; }
   .spreactjsclient .ms-Icon--Dropdown::before {
     content: '\EDC5'; }
   .spreactjsclient .ms-Icon--Duststorm::before {
@@ -5214,26 +5364,32 @@
     content: '\E807'; }
   .spreactjsclient .ms-Icon--EdgeLogo::before {
     content: '\EC60'; }
-  .spreactjsclient .ms-Icon--Edit::before {
-    content: '\E70F'; }
   .spreactjsclient .ms-Icon--EditMail::before {
     content: '\EF61'; }
-  .spreactjsclient .ms-Icon--EditMirrored::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--Edit::before {
+    content: '\E70F'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--Edit::before {
     content: '\EB7E'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--EditMirrored::before {
+    content: '\EB7E'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--EditMirrored::before {
+    content: '\E70F'; }
   .spreactjsclient .ms-Icon--EditNote::before {
     content: '\ED9D'; }
   .spreactjsclient .ms-Icon--EditPhoto::before {
     content: '\EF77'; }
-  .spreactjsclient .ms-Icon--EditSolid12::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--EditSolid12::before {
     content: '\F4B5'; }
-  .spreactjsclient .ms-Icon--EditSolidMirrored12::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--EditSolid12::before {
     content: '\F4B6'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--EditSolidMirrored12::before {
+    content: '\F4B6'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--EditSolidMirrored12::before {
+    content: '\F4B5'; }
   .spreactjsclient .ms-Icon--EditStyle::before {
     content: '\EF60'; }
   .spreactjsclient .ms-Icon--Education::before {
     content: '\E7BE'; }
-  .spreactjsclient .ms-Icon--EgnyteLogo::before {
-    content: '\F373'; }
   .spreactjsclient .ms-Icon--Embed::before {
     content: '\ECCE'; }
   .spreactjsclient .ms-Icon--EMI::before {
@@ -5246,6 +5402,8 @@
     content: '\EA88'; }
   .spreactjsclient .ms-Icon--EmojiNeutral::before {
     content: '\EA87'; }
+  .spreactjsclient .ms-Icon--EmojiTabSymbols::before {
+    content: '\ED58'; }
   .spreactjsclient .ms-Icon--EmptyRecycleBin::before {
     content: '\EF88'; }
   .spreactjsclient .ms-Icon--EngineeringGroup::before {
@@ -5268,10 +5426,14 @@
     content: '\F425'; }
   .spreactjsclient .ms-Icon--EventInfo::before {
     content: '\ED8B'; }
-  .spreactjsclient .ms-Icon--EventTentative::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--EventTentative::before {
     content: '\F423'; }
-  .spreactjsclient .ms-Icon--EventTentativeMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--EventTentative::before {
     content: '\F424'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--EventTentativeMirrored::before {
+    content: '\F424'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--EventTentativeMirrored::before {
+    content: '\F423'; }
   .spreactjsclient .ms-Icon--ExcelDocument::before {
     content: '\EF73'; }
   .spreactjsclient .ms-Icon--ExcelLogo::before {
@@ -5300,16 +5462,22 @@
     content: '\ECCD'; }
   .spreactjsclient .ms-Icon--ExploreContentSingle::before {
     content: '\F164'; }
-  .spreactjsclient .ms-Icon--Export::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--Export::before {
     content: '\EDE1'; }
-  .spreactjsclient .ms-Icon--ExportMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--Export::before {
     content: '\EDE2'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--ExportMirrored::before {
+    content: '\EDE2'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--ExportMirrored::before {
+    content: '\EDE1'; }
   .spreactjsclient .ms-Icon--ExternalBuild::before {
     content: '\F445'; }
   .spreactjsclient .ms-Icon--ExternalTFVC::before {
     content: '\F446'; }
   .spreactjsclient .ms-Icon--ExternalXAML::before {
     content: '\F447'; }
+  .spreactjsclient .ms-Icon--F12DevTools::before {
+    content: '\EBEE'; }
   .spreactjsclient .ms-Icon--FabricAssetLibrary::before {
     content: '\F09C'; }
   .spreactjsclient .ms-Icon--FabricDataConnectionLibrary::before {
@@ -5322,10 +5490,14 @@
     content: '\F0AA'; }
   .spreactjsclient .ms-Icon--FabricFolderSearch::before {
     content: '\F0A4'; }
-  .spreactjsclient .ms-Icon--FabricFormLibrary::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--FabricFormLibrary::before {
     content: '\F09F'; }
-  .spreactjsclient .ms-Icon--FabricFormLibraryMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--FabricFormLibrary::before {
     content: '\F0A0'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--FabricFormLibraryMirrored::before {
+    content: '\F0A0'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--FabricFormLibraryMirrored::before {
+    content: '\F09F'; }
   .spreactjsclient .ms-Icon--FabricMovetoFolder::before {
     content: '\F0A5'; }
   .spreactjsclient .ms-Icon--FabricNewFolder::before {
@@ -5336,16 +5508,18 @@
     content: '\F0AC'; }
   .spreactjsclient .ms-Icon--FabricPublicFolder::before {
     content: '\F0A3'; }
-  .spreactjsclient .ms-Icon--FabricReportLibrary::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--FabricReportLibrary::before {
     content: '\F0A1'; }
-  .spreactjsclient .ms-Icon--FabricReportLibraryMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--FabricReportLibrary::before {
     content: '\F0A2'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--FabricReportLibraryMirrored::before {
+    content: '\F0A2'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--FabricReportLibraryMirrored::before {
+    content: '\F0A1'; }
   .spreactjsclient .ms-Icon--FabricSyncFolder::before {
     content: '\F0A7'; }
   .spreactjsclient .ms-Icon--FabricUnsyncFolder::before {
     content: '\F0A6'; }
-  .spreactjsclient .ms-Icon--FacebookLogo::before {
-    content: '\ECB3'; }
   .spreactjsclient .ms-Icon--Family::before {
     content: '\EBDA'; }
   .spreactjsclient .ms-Icon--FangBody::before {
@@ -5364,9 +5538,13 @@
     content: '\EF5C'; }
   .spreactjsclient .ms-Icon--Feedback::before {
     content: '\ED15'; }
-  .spreactjsclient .ms-Icon--FeedbackRequestMirroredSolid::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--FeedbackRequestSolid::before {
+    content: '\F359'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--FeedbackRequestSolid::before {
     content: '\F35A'; }
-  .spreactjsclient .ms-Icon--FeedbackRequestSolid::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--FeedbackRequestMirroredSolid::before {
+    content: '\F35A'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--FeedbackRequestMirroredSolid::before {
     content: '\F359'; }
   .spreactjsclient .ms-Icon--FeedbackResponseSolid::before {
     content: '\F35B'; }
@@ -5426,9 +5604,13 @@
     content: '\F353'; }
   .spreactjsclient .ms-Icon--Financial::before {
     content: '\E7BB'; }
-  .spreactjsclient .ms-Icon--FinancialMirroredSolid::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--FinancialSolid::before {
+    content: '\F346'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--FinancialSolid::before {
     content: '\F347'; }
-  .spreactjsclient .ms-Icon--FinancialSolid::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--FinancialMirroredSolid::before {
+    content: '\F347'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--FinancialMirroredSolid::before {
     content: '\F346'; }
   .spreactjsclient .ms-Icon--Fingerprint::before {
     content: '\E928'; }
@@ -5458,10 +5640,14 @@
     content: '\E8D5'; }
   .spreactjsclient .ms-Icon--FolderHorizontal::before {
     content: '\F12B'; }
-  .spreactjsclient .ms-Icon--FolderList::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--FolderList::before {
     content: '\F2CE'; }
-  .spreactjsclient .ms-Icon--FolderListMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--FolderList::before {
     content: '\F2CF'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--FolderListMirrored::before {
+    content: '\F2CF'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--FolderListMirrored::before {
+    content: '\F2CE'; }
   .spreactjsclient .ms-Icon--FolderOpen::before {
     content: '\E838'; }
   .spreactjsclient .ms-Icon--FolderQuery::before {
@@ -5478,10 +5664,14 @@
     content: '\E8E8'; }
   .spreactjsclient .ms-Icon--FontSize::before {
     content: '\E8E9'; }
-  .spreactjsclient .ms-Icon--FormLibrary::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--FormLibrary::before {
     content: '\EEB9'; }
-  .spreactjsclient .ms-Icon--FormLibraryMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--FormLibrary::before {
     content: '\EEBA'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--FormLibraryMirrored::before {
+    content: '\EEBA'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--FormLibraryMirrored::before {
+    content: '\EEB9'; }
   .spreactjsclient .ms-Icon--Forward::before {
     content: '\E72A'; }
   .spreactjsclient .ms-Icon--ForwardEvent::before {
@@ -5508,6 +5698,8 @@
     content: '\F496'; }
   .spreactjsclient .ms-Icon--Generate::before {
     content: '\E9DA'; }
+  .spreactjsclient .ms-Icon--GenericScan::before {
+    content: '\EE6F'; }
   .spreactjsclient .ms-Icon--Giftbox::before {
     content: '\EC1F'; }
   .spreactjsclient .ms-Icon--GiftboxOpen::before {
@@ -5532,14 +5724,6 @@
     content: '\EF53'; }
   .spreactjsclient .ms-Icon--Golf::before {
     content: '\EB1F'; }
-  .spreactjsclient .ms-Icon--GoogleDriveLogo::before {
-    content: '\EE0B'; }
-  .spreactjsclient .ms-Icon--GoogleDriveLogoBottomBlue::before {
-    content: '\F375'; }
-  .spreactjsclient .ms-Icon--GoogleDriveLogoLeftGreen::before {
-    content: '\F374'; }
-  .spreactjsclient .ms-Icon--GoogleDriveLogoRightYellow::before {
-    content: '\F376'; }
   .spreactjsclient .ms-Icon--GotoToday::before {
     content: '\E8D1'; }
   .spreactjsclient .ms-Icon--GridViewLarge::before {
@@ -5594,10 +5778,14 @@
     content: '\EB51'; }
   .spreactjsclient .ms-Icon--HeartFill::before {
     content: '\EB52'; }
-  .spreactjsclient .ms-Icon--Help::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--Help::before {
     content: '\E897'; }
-  .spreactjsclient .ms-Icon--HelpMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--Help::before {
     content: '\EA51'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--HelpMirrored::before {
+    content: '\EA51'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--HelpMirrored::before {
+    content: '\E897'; }
   .spreactjsclient .ms-Icon--Hide::before {
     content: '\ED1A'; }
   .spreactjsclient .ms-Icon--Hide2::before {
@@ -5626,12 +5814,16 @@
     content: '\F30B'; }
   .spreactjsclient .ms-Icon--ImagePixel::before {
     content: '\F30C'; }
-  .spreactjsclient .ms-Icon--Import::before {
-    content: '\E8B5'; }
   .spreactjsclient .ms-Icon--Important::before {
     content: '\E8C9'; }
-  .spreactjsclient .ms-Icon--ImportMirrored::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--Import::before {
+    content: '\E8B5'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--Import::before {
     content: '\EA52'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--ImportMirrored::before {
+    content: '\EA52'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--ImportMirrored::before {
+    content: '\E8B5'; }
   .spreactjsclient .ms-Icon--Inbox::before {
     content: '\F41C'; }
   .spreactjsclient .ms-Icon--InboxCheck::before {
@@ -5652,22 +5844,32 @@
     content: '\F28D'; }
   .spreactjsclient .ms-Icon--InternetSharing::before {
     content: '\E704'; }
-  .spreactjsclient .ms-Icon--iOSAppStoreLogo::before {
-    content: '\EF8A'; }
-  .spreactjsclient .ms-Icon--IRMForward::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--IRMForward::before {
     content: '\F41F'; }
-  .spreactjsclient .ms-Icon--IRMForwardMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--IRMForward::before {
     content: '\F420'; }
-  .spreactjsclient .ms-Icon--IRMReply::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--IRMForwardMirrored::before {
+    content: '\F420'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--IRMForwardMirrored::before {
+    content: '\F41F'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--IRMReply::before {
     content: '\F41D'; }
-  .spreactjsclient .ms-Icon--IRMReplyMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--IRMReply::before {
     content: '\F41E'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--IRMReplyMirrored::before {
+    content: '\F41E'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--IRMReplyMirrored::before {
+    content: '\F41D'; }
   .spreactjsclient .ms-Icon--IssueSolid::before {
     content: '\F448'; }
-  .spreactjsclient .ms-Icon--IssueTracking::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--IssueTracking::before {
     content: '\EEC0'; }
-  .spreactjsclient .ms-Icon--IssueTrackingMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--IssueTracking::before {
     content: '\EEC1'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--IssueTrackingMirrored::before {
+    content: '\EEC1'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--IssueTrackingMirrored::before {
+    content: '\EEC0'; }
   .spreactjsclient .ms-Icon--Italic::before {
     content: '\E8DB'; }
   .spreactjsclient .ms-Icon--JavaScriptLanguage::before {
@@ -5710,10 +5912,14 @@
     content: '\E71B'; }
   .spreactjsclient .ms-Icon--LinkedInLogo::before {
     content: '\F20A'; }
-  .spreactjsclient .ms-Icon--List::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--List::before {
     content: '\EA37'; }
-  .spreactjsclient .ms-Icon--ListMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--List::before {
     content: '\EA55'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--ListMirrored::before {
+    content: '\EA55'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--ListMirrored::before {
+    content: '\EA37'; }
   .spreactjsclient .ms-Icon--LocaleLanguage::before {
     content: '\F2B7'; }
   .spreactjsclient .ms-Icon--Location::before {
@@ -5744,10 +5950,14 @@
     content: '\ED81'; }
   .spreactjsclient .ms-Icon--MailFill::before {
     content: '\E8A8'; }
-  .spreactjsclient .ms-Icon--MailForward::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--MailForward::before {
     content: '\E89C'; }
-  .spreactjsclient .ms-Icon--MailForwardMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--MailForward::before {
     content: '\EA56'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--MailForwardMirrored::before {
+    content: '\EA56'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--MailForwardMirrored::before {
+    content: '\E89C'; }
   .spreactjsclient .ms-Icon--MailLowImportance::before {
     content: '\ED82'; }
   .spreactjsclient .ms-Icon--MailPause::before {
@@ -5756,20 +5966,32 @@
     content: '\F418'; }
   .spreactjsclient .ms-Icon--MailRepeat::before {
     content: '\ED84'; }
-  .spreactjsclient .ms-Icon--MailReply::before {
-    content: '\E8CA'; }
-  .spreactjsclient .ms-Icon--MailReplyAll::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--MailReplyAll::before {
     content: '\E8C2'; }
-  .spreactjsclient .ms-Icon--MailReplyAllMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--MailReplyAll::before {
     content: '\EA58'; }
-  .spreactjsclient .ms-Icon--MailReplyMirrored::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--MailReplyAllMirrored::before {
+    content: '\EA58'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--MailReplyAllMirrored::before {
+    content: '\E8C2'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--MailReply::before {
+    content: '\E8CA'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--MailReply::before {
     content: '\EA57'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--MailReplyMirrored::before {
+    content: '\EA57'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--MailReplyMirrored::before {
+    content: '\E8CA'; }
   .spreactjsclient .ms-Icon--MailSolid::before {
     content: '\F343'; }
-  .spreactjsclient .ms-Icon--MailTentative::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--MailTentative::before {
     content: '\F416'; }
-  .spreactjsclient .ms-Icon--MailTentativeMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--MailTentative::before {
     content: '\F417'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--MailTentativeMirrored::before {
+    content: '\F417'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--MailTentativeMirrored::before {
+    content: '\F416'; }
   .spreactjsclient .ms-Icon--MailUndelivered::before {
     content: '\F415'; }
   .spreactjsclient .ms-Icon--MapDirections::before {
@@ -5806,8 +6028,12 @@
     content: '\F4B1'; }
   .spreactjsclient .ms-Icon--MicrosoftStaffhubLogo::before {
     content: '\F130'; }
+  .spreactjsclient .ms-Icon--MiniExpand::before {
+    content: '\E93A'; }
   .spreactjsclient .ms-Icon--MiniLink::before {
     content: '\E732'; }
+  .spreactjsclient .ms-Icon--MobileReport::before {
+    content: '\F18A'; }
   .spreactjsclient .ms-Icon--MobileSelected::before {
     content: '\EC75'; }
   .spreactjsclient .ms-Icon--Money::before {
@@ -5820,6 +6046,8 @@
     content: '\F2BC'; }
   .spreactjsclient .ms-Icon--Move::before {
     content: '\E7C2'; }
+  .spreactjsclient .ms-Icon--Movers::before {
+    content: '\EBCD'; }
   .spreactjsclient .ms-Icon--MoveToFolder::before {
     content: '\E8DE'; }
   .spreactjsclient .ms-Icon--MSNLogo::before {
@@ -5830,10 +6058,14 @@
     content: '\F2DA'; }
   .spreactjsclient .ms-Icon--MTMLogo::before {
     content: '\F44B'; }
-  .spreactjsclient .ms-Icon--MultiSelect::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--MultiSelect::before {
     content: '\E762'; }
-  .spreactjsclient .ms-Icon--MultiSelectMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--MultiSelect::before {
     content: '\EA98'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--MultiSelectMirrored::before {
+    content: '\EA98'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--MultiSelectMirrored::before {
+    content: '\E762'; }
   .spreactjsclient .ms-Icon--MusicInCollection::before {
     content: '\E940'; }
   .spreactjsclient .ms-Icon--MusicInCollectionFill::before {
@@ -5844,16 +6076,24 @@
     content: '\EE6C'; }
   .spreactjsclient .ms-Icon--Nav2DMapView::before {
     content: '\E800'; }
-  .spreactjsclient .ms-Icon--NavigateBack::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--NavigateBack::before {
     content: '\F2DD'; }
-  .spreactjsclient .ms-Icon--NavigateBackMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--NavigateBack::before {
     content: '\F2DE'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--NavigateBackMirrored::before {
+    content: '\F2DE'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--NavigateBackMirrored::before {
+    content: '\F2DD'; }
   .spreactjsclient .ms-Icon--NavigateExternalInline::before {
     content: '\F35F'; }
-  .spreactjsclient .ms-Icon--NavigateForward::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--NavigateForward::before {
     content: '\F2DF'; }
-  .spreactjsclient .ms-Icon--NavigateForwardMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--NavigateForward::before {
     content: '\F2E0'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--NavigateForwardMirrored::before {
+    content: '\F2E0'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--NavigateForwardMirrored::before {
+    content: '\F2DF'; }
   .spreactjsclient .ms-Icon--NetworkTower::before {
     content: '\EC05'; }
   .spreactjsclient .ms-Icon--NewAnalyticsQuery::before {
@@ -5946,14 +6186,20 @@
     content: '\ED25'; }
   .spreactjsclient .ms-Icon--OpenInNewWindow::before {
     content: '\E8A7'; }
-  .spreactjsclient .ms-Icon--OpenPane::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--OpenPane::before {
     content: '\E8A0'; }
-  .spreactjsclient .ms-Icon--OpenPaneMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--OpenPane::before {
     content: '\EA5B'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--OpenPaneMirrored::before {
+    content: '\EA5B'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--OpenPaneMirrored::before {
+    content: '\E8A0'; }
   .spreactjsclient .ms-Icon--OpenSource::before {
     content: '\EBC2'; }
   .spreactjsclient .ms-Icon--Org::before {
     content: '\ECA6'; }
+  .spreactjsclient .ms-Icon--Orientation::before {
+    content: '\E8B4'; }
   .spreactjsclient .ms-Icon--OutlookLogo::before {
     content: '\F1E9'; }
   .spreactjsclient .ms-Icon--OutlookLogo16::before {
@@ -5984,9 +6230,13 @@
     content: '\EFB6'; }
   .spreactjsclient .ms-Icon--PageLeft::before {
     content: '\E760'; }
-  .spreactjsclient .ms-Icon--PageListMirroredSolid::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--PageListSolid::before {
+    content: '\F33A'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--PageListSolid::before {
     content: '\F33B'; }
-  .spreactjsclient .ms-Icon--PageListSolid::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--PageListMirroredSolid::before {
+    content: '\F33B'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--PageListMirroredSolid::before {
     content: '\F33A'; }
   .spreactjsclient .ms-Icon--PageLock::before {
     content: '\F43F'; }
@@ -6002,15 +6252,21 @@
     content: '\F352'; }
   .spreactjsclient .ms-Icon--Parameter::before {
     content: '\F306'; }
-  .spreactjsclient .ms-Icon--ParatureLogo::before {
-    content: '\ED7B'; }
-  .spreactjsclient .ms-Icon--ParkingLocation::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--ParkingLocation::before {
     content: '\E811'; }
-  .spreactjsclient .ms-Icon--ParkingLocationMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--ParkingLocation::before {
     content: '\EA5E'; }
-  .spreactjsclient .ms-Icon--ParkingMirroredSolid::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--ParkingLocationMirrored::before {
+    content: '\EA5E'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--ParkingLocationMirrored::before {
+    content: '\E811'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--ParkingSolid::before {
+    content: '\F34A'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--ParkingSolid::before {
     content: '\F34B'; }
-  .spreactjsclient .ms-Icon--ParkingSolid::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--ParkingMirroredSolid::before {
+    content: '\F34B'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--ParkingMirroredSolid::before {
     content: '\F34A'; }
   .spreactjsclient .ms-Icon--PartlyCloudyDay::before {
     content: '\E9C0'; }
@@ -6144,6 +6400,8 @@
     content: '\F290'; }
   .spreactjsclient .ms-Icon--Product::before {
     content: '\ECDC'; }
+  .spreactjsclient .ms-Icon--ProfileSearch::before {
+    content: '\EF35'; }
   .spreactjsclient .ms-Icon--ProFootball::before {
     content: '\EB27'; }
   .spreactjsclient .ms-Icon--ProgressLoopInner::before {
@@ -6198,10 +6456,14 @@
     content: '\F2F8'; }
   .spreactjsclient .ms-Icon--QueryList::before {
     content: '\F2B8'; }
-  .spreactjsclient .ms-Icon--Questionnaire::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--Questionnaire::before {
     content: '\EE19'; }
-  .spreactjsclient .ms-Icon--QuestionnaireMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--Questionnaire::before {
     content: '\EE4B'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--QuestionnaireMirrored::before {
+    content: '\EE4B'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--QuestionnaireMirrored::before {
+    content: '\EE19'; }
   .spreactjsclient .ms-Icon--QuickNote::before {
     content: '\E70B'; }
   .spreactjsclient .ms-Icon--QuickNoteSolid::before {
@@ -6234,16 +6496,22 @@
     content: '\EF59'; }
   .spreactjsclient .ms-Icon--ReceiptReply::before {
     content: '\EF5A'; }
-  .spreactjsclient .ms-Icon--ReceiptTentative::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--ReceiptTentative::before {
     content: '\F41A'; }
-  .spreactjsclient .ms-Icon--ReceiptTentativeMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--ReceiptTentative::before {
     content: '\F41B'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--ReceiptTentativeMirrored::before {
+    content: '\F41B'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--ReceiptTentativeMirrored::before {
+    content: '\F41A'; }
   .spreactjsclient .ms-Icon--ReceiptUndelivered::before {
     content: '\F419'; }
   .spreactjsclient .ms-Icon--Recent::before {
     content: '\E823'; }
   .spreactjsclient .ms-Icon--Record2::before {
     content: '\EA3F'; }
+  .spreactjsclient .ms-Icon--RectangularClipping::before {
+    content: '\F407'; }
   .spreactjsclient .ms-Icon--RecurringEvent::before {
     content: '\EF5D'; }
   .spreactjsclient .ms-Icon--RecurringTask::before {
@@ -6278,31 +6546,47 @@
     content: '\ED50'; }
   .spreactjsclient .ms-Icon--Repair::before {
     content: '\E90F'; }
-  .spreactjsclient .ms-Icon--Reply::before {
-    content: '\E97A'; }
-  .spreactjsclient .ms-Icon--ReplyAll::before {
-    content: '\EE0A'; }
   .spreactjsclient .ms-Icon--ReplyAllAlt::before {
     content: '\EF5F'; }
-  .spreactjsclient .ms-Icon--ReplyAllMirrored::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--ReplyAll::before {
+    content: '\EE0A'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--ReplyAll::before {
     content: '\EE36'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--ReplyAllMirrored::before {
+    content: '\EE36'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--ReplyAllMirrored::before {
+    content: '\EE0A'; }
   .spreactjsclient .ms-Icon--ReplyAlt::before {
     content: '\EF5E'; }
-  .spreactjsclient .ms-Icon--ReplyMirrored::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--Reply::before {
+    content: '\E97A'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--Reply::before {
     content: '\EE35'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--ReplyMirrored::before {
+    content: '\EE35'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--ReplyMirrored::before {
+    content: '\E97A'; }
   .spreactjsclient .ms-Icon--Repo::before {
     content: '\F2CB'; }
-  .spreactjsclient .ms-Icon--ReportLibrary::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--ReportLibrary::before {
     content: '\EEBB'; }
-  .spreactjsclient .ms-Icon--ReportLibraryMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--ReportLibrary::before {
     content: '\EEBC'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--ReportLibraryMirrored::before {
+    content: '\EEBC'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--ReportLibraryMirrored::before {
+    content: '\EEBB'; }
   .spreactjsclient .ms-Icon--RepoSolid::before {
     content: '\F2CC'; }
   .spreactjsclient .ms-Icon--ReturnToSession::before {
     content: '\ED24'; }
-  .spreactjsclient .ms-Icon--ReviewRequestMirroredSolid::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--ReviewRequestSolid::before {
+    content: '\F356'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--ReviewRequestSolid::before {
     content: '\F357'; }
-  .spreactjsclient .ms-Icon--ReviewRequestSolid::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--ReviewRequestMirroredSolid::before {
+    content: '\F357'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--ReviewRequestMirroredSolid::before {
     content: '\F356'; }
   .spreactjsclient .ms-Icon--ReviewResponseSolid::before {
     content: '\F358'; }
@@ -6352,6 +6636,8 @@
     content: '\E792'; }
   .spreactjsclient .ms-Icon--Savings::before {
     content: '\EB0B'; }
+  .spreactjsclient .ms-Icon--ScaleUp::before {
+    content: '\ED09'; }
   .spreactjsclient .ms-Icon--ScheduleEventAction::before {
     content: '\F1EF'; }
   .spreactjsclient .ms-Icon--ScopeTemplate::before {
@@ -6366,20 +6652,30 @@
     content: '\E773'; }
   .spreactjsclient .ms-Icon--SearchCalendar::before {
     content: '\F4AF'; }
-  .spreactjsclient .ms-Icon--SearchIssue::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--SearchIssue::before {
     content: '\F09A'; }
-  .spreactjsclient .ms-Icon--SearchIssueMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--SearchIssue::before {
     content: '\F09B'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--SearchIssueMirrored::before {
+    content: '\F09B'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--SearchIssueMirrored::before {
+    content: '\F09A'; }
   .spreactjsclient .ms-Icon--Section::before {
     content: '\EC0C'; }
   .spreactjsclient .ms-Icon--Sections::before {
     content: '\EF76'; }
   .spreactjsclient .ms-Icon--SecurityGroup::before {
     content: '\ED85'; }
-  .spreactjsclient .ms-Icon--Send::before {
+  .spreactjsclient .ms-Icon--Sell::before {
+    content: '\EB0C'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--Send::before {
     content: '\E724'; }
-  .spreactjsclient .ms-Icon--SendMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--Send::before {
     content: '\EA63'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--SendMirrored::before {
+    content: '\EA63'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--SendMirrored::before {
+    content: '\E724'; }
   .spreactjsclient .ms-Icon--Separator::before {
     content: '\F35E'; }
   .spreactjsclient .ms-Icon--Server::before {
@@ -6414,14 +6710,22 @@
     content: '\F342'; }
   .spreactjsclient .ms-Icon--ShopServer::before {
     content: '\F2B6'; }
-  .spreactjsclient .ms-Icon--ShowResults::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--ShowResults::before {
     content: '\E8BC'; }
-  .spreactjsclient .ms-Icon--ShowResultsMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--ShowResults::before {
     content: '\EA65'; }
-  .spreactjsclient .ms-Icon--SidePanel::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--ShowResultsMirrored::before {
+    content: '\EA65'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--ShowResultsMirrored::before {
+    content: '\E8BC'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--SidePanel::before {
     content: '\EF52'; }
-  .spreactjsclient .ms-Icon--SidePanelMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--SidePanel::before {
     content: '\F221'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--SidePanelMirrored::before {
+    content: '\F221'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--SidePanelMirrored::before {
+    content: '\EF52'; }
   .spreactjsclient .ms-Icon--SignOut::before {
     content: '\F3B1'; }
   .spreactjsclient .ms-Icon--SingleBookmark::before {
@@ -6432,6 +6736,8 @@
     content: '\F321'; }
   .spreactjsclient .ms-Icon--SIPMove::before {
     content: '\E759'; }
+  .spreactjsclient .ms-Icon--SizeLegacy::before {
+    content: '\E2B2'; }
   .spreactjsclient .ms-Icon--SkiResorts::before {
     content: '\EB45'; }
   .spreactjsclient .ms-Icon--SkypeCheck::before {
@@ -6496,6 +6802,8 @@
     content: '\F3B0'; }
   .spreactjsclient .ms-Icon--Squalls::before {
     content: '\E9CC'; }
+  .spreactjsclient .ms-Icon--Stack::before {
+    content: '\F26F'; }
   .spreactjsclient .ms-Icon--StackedBarChart::before {
     content: '\F24D'; }
   .spreactjsclient .ms-Icon--StackedLineChart::before {
@@ -6566,6 +6874,8 @@
     content: '\EDA1'; }
   .spreactjsclient .ms-Icon--Subscript::before {
     content: '\EDDF'; }
+  .spreactjsclient .ms-Icon--SubstitutionsIn::before {
+    content: '\EB31'; }
   .spreactjsclient .ms-Icon--Suitcase::before {
     content: '\EDD3'; }
   .spreactjsclient .ms-Icon--SunAdd::before {
@@ -6606,22 +6916,32 @@
     content: '\ED86'; }
   .spreactjsclient .ms-Icon--Tablet::before {
     content: '\E70A'; }
+  .spreactjsclient .ms-Icon--TabletMode::before {
+    content: '\EBFC'; }
   .spreactjsclient .ms-Icon--TabletSelected::before {
     content: '\EC74'; }
   .spreactjsclient .ms-Icon--Tag::before {
     content: '\E8EC'; }
   .spreactjsclient .ms-Icon--Taskboard::before {
     content: '\F1C2'; }
-  .spreactjsclient .ms-Icon--TaskGroup::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--TaskGroup::before {
     content: '\F2AE'; }
-  .spreactjsclient .ms-Icon--TaskGroupMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--TaskGroup::before {
     content: '\F2AF'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--TaskGroupMirrored::before {
+    content: '\F2AF'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--TaskGroupMirrored::before {
+    content: '\F2AE'; }
   .spreactjsclient .ms-Icon--TaskLogo::before {
     content: '\F493'; }
-  .spreactjsclient .ms-Icon--TaskManager::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--TaskManager::before {
     content: '\EDB7'; }
-  .spreactjsclient .ms-Icon--TaskManagerMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--TaskManager::before {
     content: '\EDB8'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--TaskManagerMirrored::before {
+    content: '\EDB8'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--TaskManagerMirrored::before {
+    content: '\EDB7'; }
   .spreactjsclient .ms-Icon--TaskSolid::before {
     content: '\F333'; }
   .spreactjsclient .ms-Icon--Taxi::before {
@@ -6676,10 +6996,14 @@
     content: '\F44D'; }
   .spreactjsclient .ms-Icon--ThisPC::before {
     content: '\EC4E'; }
-  .spreactjsclient .ms-Icon--ThumbnailView::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--ThumbnailView::before {
     content: '\E7B6'; }
-  .spreactjsclient .ms-Icon--ThumbnailViewMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--ThumbnailView::before {
     content: '\EA67'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--ThumbnailViewMirrored::before {
+    content: '\EA67'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--ThumbnailViewMirrored::before {
+    content: '\E7B6'; }
   .spreactjsclient .ms-Icon--Thunderstorms::before {
     content: '\E9C6'; }
   .spreactjsclient .ms-Icon--Ticket::before {
@@ -6766,23 +7090,35 @@
     content: '\E8DC'; }
   .spreactjsclient .ms-Icon--Undo::before {
     content: '\E7A7'; }
-  .spreactjsclient .ms-Icon--Uneditable::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--Uneditable::before {
     content: '\ED1D'; }
-  .spreactjsclient .ms-Icon--UneditableMirrored::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--Uneditable::before {
     content: '\F4B9'; }
-  .spreactjsclient .ms-Icon--UneditableSolid12::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--UneditableMirrored::before {
+    content: '\F4B9'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--UneditableMirrored::before {
+    content: '\ED1D'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--UneditableSolid12::before {
     content: '\F4B7'; }
-  .spreactjsclient .ms-Icon--UneditableSolidMirrored12::before {
+  .spreactjsclient [dir='rtl'] .ms-Icon--UneditableSolid12::before {
     content: '\F4B8'; }
+  .spreactjsclient [dir='ltr'] .ms-Icon--UneditableSolidMirrored12::before {
+    content: '\F4B8'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--UneditableSolidMirrored12::before {
+    content: '\F4B7'; }
   .spreactjsclient .ms-Icon--Unfavorite::before {
     content: '\E8D9'; }
   .spreactjsclient .ms-Icon--Unknown::before {
     content: '\E9CE'; }
   .spreactjsclient .ms-Icon--UnknownCall::before {
     content: '\ED97'; }
-  .spreactjsclient .ms-Icon--UnknownMirroredSolid::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--UnknownSolid::before {
+    content: '\F2E1'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--UnknownSolid::before {
     content: '\F2E2'; }
-  .spreactjsclient .ms-Icon--UnknownSolid::before {
+  .spreactjsclient [dir='ltr'] .ms-Icon--UnknownMirroredSolid::before {
+    content: '\F2E2'; }
+  .spreactjsclient [dir='rtl'] .ms-Icon--UnknownMirroredSolid::before {
     content: '\F2E1'; }
   .spreactjsclient .ms-Icon--Unlock::before {
     content: '\E785'; }
@@ -7006,82 +7342,158 @@
     width: 16.666666666666664%; }
   .spreactjsclient .ms-sm1 {
     width: 8.333333333333332%; }
-  .spreactjsclient .ms-smPull12 {
+  .spreactjsclient [dir='ltr'] .ms-smPull12 {
     right: 100%; }
-  .spreactjsclient .ms-smPull11 {
-    right: 91.66666666666666%; }
-  .spreactjsclient .ms-smPull10 {
-    right: 83.33333333333334%; }
-  .spreactjsclient .ms-smPull9 {
-    right: 75%; }
-  .spreactjsclient .ms-smPull8 {
-    right: 66.66666666666666%; }
-  .spreactjsclient .ms-smPull7 {
-    right: 58.333333333333336%; }
-  .spreactjsclient .ms-smPull6 {
-    right: 50%; }
-  .spreactjsclient .ms-smPull5 {
-    right: 41.66666666666667%; }
-  .spreactjsclient .ms-smPull4 {
-    right: 33.33333333333333%; }
-  .spreactjsclient .ms-smPull3 {
-    right: 25%; }
-  .spreactjsclient .ms-smPull2 {
-    right: 16.666666666666664%; }
-  .spreactjsclient .ms-smPull1 {
-    right: 8.333333333333332%; }
-  .spreactjsclient .ms-smPull0 {
-    right: auto; }
-  .spreactjsclient .ms-smPush12 {
+  .spreactjsclient [dir='rtl'] .ms-smPull12 {
     left: 100%; }
-  .spreactjsclient .ms-smPush11 {
-    left: 91.66666666666666%; }
-  .spreactjsclient .ms-smPush10 {
-    left: 83.33333333333334%; }
-  .spreactjsclient .ms-smPush9 {
+  .spreactjsclient [dir='ltr'] .ms-smPull11 {
+    right: 91.66667%; }
+  .spreactjsclient [dir='rtl'] .ms-smPull11 {
+    left: 91.66667%; }
+  .spreactjsclient [dir='ltr'] .ms-smPull10 {
+    right: 83.33333%; }
+  .spreactjsclient [dir='rtl'] .ms-smPull10 {
+    left: 83.33333%; }
+  .spreactjsclient [dir='ltr'] .ms-smPull9 {
+    right: 75%; }
+  .spreactjsclient [dir='rtl'] .ms-smPull9 {
     left: 75%; }
-  .spreactjsclient .ms-smPush8 {
-    left: 66.66666666666666%; }
-  .spreactjsclient .ms-smPush7 {
-    left: 58.333333333333336%; }
-  .spreactjsclient .ms-smPush6 {
+  .spreactjsclient [dir='ltr'] .ms-smPull8 {
+    right: 66.66667%; }
+  .spreactjsclient [dir='rtl'] .ms-smPull8 {
+    left: 66.66667%; }
+  .spreactjsclient [dir='ltr'] .ms-smPull7 {
+    right: 58.33333%; }
+  .spreactjsclient [dir='rtl'] .ms-smPull7 {
+    left: 58.33333%; }
+  .spreactjsclient [dir='ltr'] .ms-smPull6 {
+    right: 50%; }
+  .spreactjsclient [dir='rtl'] .ms-smPull6 {
     left: 50%; }
-  .spreactjsclient .ms-smPush5 {
-    left: 41.66666666666667%; }
-  .spreactjsclient .ms-smPush4 {
-    left: 33.33333333333333%; }
-  .spreactjsclient .ms-smPush3 {
+  .spreactjsclient [dir='ltr'] .ms-smPull5 {
+    right: 41.66667%; }
+  .spreactjsclient [dir='rtl'] .ms-smPull5 {
+    left: 41.66667%; }
+  .spreactjsclient [dir='ltr'] .ms-smPull4 {
+    right: 33.33333%; }
+  .spreactjsclient [dir='rtl'] .ms-smPull4 {
+    left: 33.33333%; }
+  .spreactjsclient [dir='ltr'] .ms-smPull3 {
+    right: 25%; }
+  .spreactjsclient [dir='rtl'] .ms-smPull3 {
     left: 25%; }
-  .spreactjsclient .ms-smPush2 {
-    left: 16.666666666666664%; }
-  .spreactjsclient .ms-smPush1 {
-    left: 8.333333333333332%; }
-  .spreactjsclient .ms-smPush0 {
+  .spreactjsclient [dir='ltr'] .ms-smPull2 {
+    right: 16.66667%; }
+  .spreactjsclient [dir='rtl'] .ms-smPull2 {
+    left: 16.66667%; }
+  .spreactjsclient [dir='ltr'] .ms-smPull1 {
+    right: 8.33333%; }
+  .spreactjsclient [dir='rtl'] .ms-smPull1 {
+    left: 8.33333%; }
+  .spreactjsclient [dir='ltr'] .ms-smPull0 {
+    right: auto; }
+  .spreactjsclient [dir='rtl'] .ms-smPull0 {
     left: auto; }
-  .spreactjsclient .ms-smOffset11 {
-    margin-left: 91.66666666666666%; }
-  .spreactjsclient .ms-smOffset10 {
-    margin-left: 83.33333333333334%; }
-  .spreactjsclient .ms-smOffset9 {
+  .spreactjsclient [dir='ltr'] .ms-smPush12 {
+    left: 100%; }
+  .spreactjsclient [dir='rtl'] .ms-smPush12 {
+    right: 100%; }
+  .spreactjsclient [dir='ltr'] .ms-smPush11 {
+    left: 91.66667%; }
+  .spreactjsclient [dir='rtl'] .ms-smPush11 {
+    right: 91.66667%; }
+  .spreactjsclient [dir='ltr'] .ms-smPush10 {
+    left: 83.33333%; }
+  .spreactjsclient [dir='rtl'] .ms-smPush10 {
+    right: 83.33333%; }
+  .spreactjsclient [dir='ltr'] .ms-smPush9 {
+    left: 75%; }
+  .spreactjsclient [dir='rtl'] .ms-smPush9 {
+    right: 75%; }
+  .spreactjsclient [dir='ltr'] .ms-smPush8 {
+    left: 66.66667%; }
+  .spreactjsclient [dir='rtl'] .ms-smPush8 {
+    right: 66.66667%; }
+  .spreactjsclient [dir='ltr'] .ms-smPush7 {
+    left: 58.33333%; }
+  .spreactjsclient [dir='rtl'] .ms-smPush7 {
+    right: 58.33333%; }
+  .spreactjsclient [dir='ltr'] .ms-smPush6 {
+    left: 50%; }
+  .spreactjsclient [dir='rtl'] .ms-smPush6 {
+    right: 50%; }
+  .spreactjsclient [dir='ltr'] .ms-smPush5 {
+    left: 41.66667%; }
+  .spreactjsclient [dir='rtl'] .ms-smPush5 {
+    right: 41.66667%; }
+  .spreactjsclient [dir='ltr'] .ms-smPush4 {
+    left: 33.33333%; }
+  .spreactjsclient [dir='rtl'] .ms-smPush4 {
+    right: 33.33333%; }
+  .spreactjsclient [dir='ltr'] .ms-smPush3 {
+    left: 25%; }
+  .spreactjsclient [dir='rtl'] .ms-smPush3 {
+    right: 25%; }
+  .spreactjsclient [dir='ltr'] .ms-smPush2 {
+    left: 16.66667%; }
+  .spreactjsclient [dir='rtl'] .ms-smPush2 {
+    right: 16.66667%; }
+  .spreactjsclient [dir='ltr'] .ms-smPush1 {
+    left: 8.33333%; }
+  .spreactjsclient [dir='rtl'] .ms-smPush1 {
+    right: 8.33333%; }
+  .spreactjsclient [dir='ltr'] .ms-smPush0 {
+    left: auto; }
+  .spreactjsclient [dir='rtl'] .ms-smPush0 {
+    right: auto; }
+  .spreactjsclient [dir='ltr'] .ms-smOffset11 {
+    margin-left: 91.66667%; }
+  .spreactjsclient [dir='rtl'] .ms-smOffset11 {
+    margin-right: 91.66667%; }
+  .spreactjsclient [dir='ltr'] .ms-smOffset10 {
+    margin-left: 83.33333%; }
+  .spreactjsclient [dir='rtl'] .ms-smOffset10 {
+    margin-right: 83.33333%; }
+  .spreactjsclient [dir='ltr'] .ms-smOffset9 {
     margin-left: 75%; }
-  .spreactjsclient .ms-smOffset8 {
-    margin-left: 66.66666666666666%; }
-  .spreactjsclient .ms-smOffset7 {
-    margin-left: 58.333333333333336%; }
-  .spreactjsclient .ms-smOffset6 {
+  .spreactjsclient [dir='rtl'] .ms-smOffset9 {
+    margin-right: 75%; }
+  .spreactjsclient [dir='ltr'] .ms-smOffset8 {
+    margin-left: 66.66667%; }
+  .spreactjsclient [dir='rtl'] .ms-smOffset8 {
+    margin-right: 66.66667%; }
+  .spreactjsclient [dir='ltr'] .ms-smOffset7 {
+    margin-left: 58.33333%; }
+  .spreactjsclient [dir='rtl'] .ms-smOffset7 {
+    margin-right: 58.33333%; }
+  .spreactjsclient [dir='ltr'] .ms-smOffset6 {
     margin-left: 50%; }
-  .spreactjsclient .ms-smOffset5 {
-    margin-left: 41.66666666666667%; }
-  .spreactjsclient .ms-smOffset4 {
-    margin-left: 33.33333333333333%; }
-  .spreactjsclient .ms-smOffset3 {
+  .spreactjsclient [dir='rtl'] .ms-smOffset6 {
+    margin-right: 50%; }
+  .spreactjsclient [dir='ltr'] .ms-smOffset5 {
+    margin-left: 41.66667%; }
+  .spreactjsclient [dir='rtl'] .ms-smOffset5 {
+    margin-right: 41.66667%; }
+  .spreactjsclient [dir='ltr'] .ms-smOffset4 {
+    margin-left: 33.33333%; }
+  .spreactjsclient [dir='rtl'] .ms-smOffset4 {
+    margin-right: 33.33333%; }
+  .spreactjsclient [dir='ltr'] .ms-smOffset3 {
     margin-left: 25%; }
-  .spreactjsclient .ms-smOffset2 {
-    margin-left: 16.666666666666664%; }
-  .spreactjsclient .ms-smOffset1 {
-    margin-left: 8.333333333333332%; }
-  .spreactjsclient .ms-smOffset0 {
+  .spreactjsclient [dir='rtl'] .ms-smOffset3 {
+    margin-right: 25%; }
+  .spreactjsclient [dir='ltr'] .ms-smOffset2 {
+    margin-left: 16.66667%; }
+  .spreactjsclient [dir='rtl'] .ms-smOffset2 {
+    margin-right: 16.66667%; }
+  .spreactjsclient [dir='ltr'] .ms-smOffset1 {
+    margin-left: 8.33333%; }
+  .spreactjsclient [dir='rtl'] .ms-smOffset1 {
+    margin-right: 8.33333%; }
+  .spreactjsclient [dir='ltr'] .ms-smOffset0 {
     margin-left: 0; }
+  .spreactjsclient [dir='rtl'] .ms-smOffset0 {
+    margin-right: 0; }
   @media (min-width: 480px) {
     .spreactjsclient .ms-md12 {
       width: 100%; } }
@@ -7119,119 +7531,195 @@
     .spreactjsclient .ms-md1 {
       width: 8.333333333333332%; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPull12 {
-      right: 100%; } }
-  @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPull11 {
-      right: 91.66666666666666%; } }
-  @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPull10 {
-      right: 83.33333333333334%; } }
-  @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPull9 {
-      right: 75%; } }
-  @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPull8 {
-      right: 66.66666666666666%; } }
-  @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPull7 {
-      right: 58.333333333333336%; } }
-  @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPull6 {
-      right: 50%; } }
-  @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPull5 {
-      right: 41.66666666666667%; } }
-  @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPull4 {
-      right: 33.33333333333333%; } }
-  @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPull3 {
-      right: 25%; } }
-  @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPull2 {
-      right: 16.666666666666664%; } }
-  @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPull1 {
-      right: 8.333333333333332%; } }
-  @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPull0 {
-      right: auto; } }
-  @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPush12 {
+    .spreactjsclient [dir='ltr'] .ms-mdPull12 {
+      right: 100%; }
+    .spreactjsclient [dir='rtl'] .ms-mdPull12 {
       left: 100%; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPush11 {
-      left: 91.66666666666666%; } }
+    .spreactjsclient [dir='ltr'] .ms-mdPull11 {
+      right: 91.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-mdPull11 {
+      left: 91.66667%; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPush10 {
-      left: 83.33333333333334%; } }
+    .spreactjsclient [dir='ltr'] .ms-mdPull10 {
+      right: 83.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-mdPull10 {
+      left: 83.33333%; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPush9 {
+    .spreactjsclient [dir='ltr'] .ms-mdPull9 {
+      right: 75%; }
+    .spreactjsclient [dir='rtl'] .ms-mdPull9 {
       left: 75%; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPush8 {
-      left: 66.66666666666666%; } }
+    .spreactjsclient [dir='ltr'] .ms-mdPull8 {
+      right: 66.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-mdPull8 {
+      left: 66.66667%; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPush7 {
-      left: 58.333333333333336%; } }
+    .spreactjsclient [dir='ltr'] .ms-mdPull7 {
+      right: 58.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-mdPull7 {
+      left: 58.33333%; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPush6 {
+    .spreactjsclient [dir='ltr'] .ms-mdPull6 {
+      right: 50%; }
+    .spreactjsclient [dir='rtl'] .ms-mdPull6 {
       left: 50%; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPush5 {
-      left: 41.66666666666667%; } }
+    .spreactjsclient [dir='ltr'] .ms-mdPull5 {
+      right: 41.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-mdPull5 {
+      left: 41.66667%; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPush4 {
-      left: 33.33333333333333%; } }
+    .spreactjsclient [dir='ltr'] .ms-mdPull4 {
+      right: 33.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-mdPull4 {
+      left: 33.33333%; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPush3 {
+    .spreactjsclient [dir='ltr'] .ms-mdPull3 {
+      right: 25%; }
+    .spreactjsclient [dir='rtl'] .ms-mdPull3 {
       left: 25%; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPush2 {
-      left: 16.666666666666664%; } }
+    .spreactjsclient [dir='ltr'] .ms-mdPull2 {
+      right: 16.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-mdPull2 {
+      left: 16.66667%; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPush1 {
-      left: 8.333333333333332%; } }
+    .spreactjsclient [dir='ltr'] .ms-mdPull1 {
+      right: 8.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-mdPull1 {
+      left: 8.33333%; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdPush0 {
+    .spreactjsclient [dir='ltr'] .ms-mdPull0 {
+      right: auto; }
+    .spreactjsclient [dir='rtl'] .ms-mdPull0 {
       left: auto; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdOffset11 {
-      margin-left: 91.66666666666666%; } }
+    .spreactjsclient [dir='ltr'] .ms-mdPush12 {
+      left: 100%; }
+    .spreactjsclient [dir='rtl'] .ms-mdPush12 {
+      right: 100%; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdOffset10 {
-      margin-left: 83.33333333333334%; } }
+    .spreactjsclient [dir='ltr'] .ms-mdPush11 {
+      left: 91.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-mdPush11 {
+      right: 91.66667%; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdOffset9 {
-      margin-left: 75%; } }
+    .spreactjsclient [dir='ltr'] .ms-mdPush10 {
+      left: 83.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-mdPush10 {
+      right: 83.33333%; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdOffset8 {
-      margin-left: 66.66666666666666%; } }
+    .spreactjsclient [dir='ltr'] .ms-mdPush9 {
+      left: 75%; }
+    .spreactjsclient [dir='rtl'] .ms-mdPush9 {
+      right: 75%; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdOffset7 {
-      margin-left: 58.333333333333336%; } }
+    .spreactjsclient [dir='ltr'] .ms-mdPush8 {
+      left: 66.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-mdPush8 {
+      right: 66.66667%; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdOffset6 {
-      margin-left: 50%; } }
+    .spreactjsclient [dir='ltr'] .ms-mdPush7 {
+      left: 58.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-mdPush7 {
+      right: 58.33333%; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdOffset5 {
-      margin-left: 41.66666666666667%; } }
+    .spreactjsclient [dir='ltr'] .ms-mdPush6 {
+      left: 50%; }
+    .spreactjsclient [dir='rtl'] .ms-mdPush6 {
+      right: 50%; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdOffset4 {
-      margin-left: 33.33333333333333%; } }
+    .spreactjsclient [dir='ltr'] .ms-mdPush5 {
+      left: 41.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-mdPush5 {
+      right: 41.66667%; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdOffset3 {
-      margin-left: 25%; } }
+    .spreactjsclient [dir='ltr'] .ms-mdPush4 {
+      left: 33.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-mdPush4 {
+      right: 33.33333%; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdOffset2 {
-      margin-left: 16.666666666666664%; } }
+    .spreactjsclient [dir='ltr'] .ms-mdPush3 {
+      left: 25%; }
+    .spreactjsclient [dir='rtl'] .ms-mdPush3 {
+      right: 25%; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdOffset1 {
-      margin-left: 8.333333333333332%; } }
+    .spreactjsclient [dir='ltr'] .ms-mdPush2 {
+      left: 16.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-mdPush2 {
+      right: 16.66667%; } }
   @media (min-width: 480px) {
-    .spreactjsclient .ms-mdOffset0 {
-      margin-left: 0; } }
+    .spreactjsclient [dir='ltr'] .ms-mdPush1 {
+      left: 8.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-mdPush1 {
+      right: 8.33333%; } }
+  @media (min-width: 480px) {
+    .spreactjsclient [dir='ltr'] .ms-mdPush0 {
+      left: auto; }
+    .spreactjsclient [dir='rtl'] .ms-mdPush0 {
+      right: auto; } }
+  @media (min-width: 480px) {
+    .spreactjsclient [dir='ltr'] .ms-mdOffset11 {
+      margin-left: 91.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-mdOffset11 {
+      margin-right: 91.66667%; } }
+  @media (min-width: 480px) {
+    .spreactjsclient [dir='ltr'] .ms-mdOffset10 {
+      margin-left: 83.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-mdOffset10 {
+      margin-right: 83.33333%; } }
+  @media (min-width: 480px) {
+    .spreactjsclient [dir='ltr'] .ms-mdOffset9 {
+      margin-left: 75%; }
+    .spreactjsclient [dir='rtl'] .ms-mdOffset9 {
+      margin-right: 75%; } }
+  @media (min-width: 480px) {
+    .spreactjsclient [dir='ltr'] .ms-mdOffset8 {
+      margin-left: 66.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-mdOffset8 {
+      margin-right: 66.66667%; } }
+  @media (min-width: 480px) {
+    .spreactjsclient [dir='ltr'] .ms-mdOffset7 {
+      margin-left: 58.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-mdOffset7 {
+      margin-right: 58.33333%; } }
+  @media (min-width: 480px) {
+    .spreactjsclient [dir='ltr'] .ms-mdOffset6 {
+      margin-left: 50%; }
+    .spreactjsclient [dir='rtl'] .ms-mdOffset6 {
+      margin-right: 50%; } }
+  @media (min-width: 480px) {
+    .spreactjsclient [dir='ltr'] .ms-mdOffset5 {
+      margin-left: 41.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-mdOffset5 {
+      margin-right: 41.66667%; } }
+  @media (min-width: 480px) {
+    .spreactjsclient [dir='ltr'] .ms-mdOffset4 {
+      margin-left: 33.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-mdOffset4 {
+      margin-right: 33.33333%; } }
+  @media (min-width: 480px) {
+    .spreactjsclient [dir='ltr'] .ms-mdOffset3 {
+      margin-left: 25%; }
+    .spreactjsclient [dir='rtl'] .ms-mdOffset3 {
+      margin-right: 25%; } }
+  @media (min-width: 480px) {
+    .spreactjsclient [dir='ltr'] .ms-mdOffset2 {
+      margin-left: 16.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-mdOffset2 {
+      margin-right: 16.66667%; } }
+  @media (min-width: 480px) {
+    .spreactjsclient [dir='ltr'] .ms-mdOffset1 {
+      margin-left: 8.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-mdOffset1 {
+      margin-right: 8.33333%; } }
+  @media (min-width: 480px) {
+    .spreactjsclient [dir='ltr'] .ms-mdOffset0 {
+      margin-left: 0; }
+    .spreactjsclient [dir='rtl'] .ms-mdOffset0 {
+      margin-right: 0; } }
   @media (min-width: 640px) {
     .spreactjsclient .ms-lg12 {
       width: 100%; } }
@@ -7269,119 +7757,195 @@
     .spreactjsclient .ms-lg1 {
       width: 8.333333333333332%; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPull12 {
-      right: 100%; } }
-  @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPull11 {
-      right: 91.66666666666666%; } }
-  @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPull10 {
-      right: 83.33333333333334%; } }
-  @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPull9 {
-      right: 75%; } }
-  @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPull8 {
-      right: 66.66666666666666%; } }
-  @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPull7 {
-      right: 58.333333333333336%; } }
-  @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPull6 {
-      right: 50%; } }
-  @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPull5 {
-      right: 41.66666666666667%; } }
-  @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPull4 {
-      right: 33.33333333333333%; } }
-  @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPull3 {
-      right: 25%; } }
-  @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPull2 {
-      right: 16.666666666666664%; } }
-  @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPull1 {
-      right: 8.333333333333332%; } }
-  @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPull0 {
-      right: auto; } }
-  @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPush12 {
+    .spreactjsclient [dir='ltr'] .ms-lgPull12 {
+      right: 100%; }
+    .spreactjsclient [dir='rtl'] .ms-lgPull12 {
       left: 100%; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPush11 {
-      left: 91.66666666666666%; } }
+    .spreactjsclient [dir='ltr'] .ms-lgPull11 {
+      right: 91.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-lgPull11 {
+      left: 91.66667%; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPush10 {
-      left: 83.33333333333334%; } }
+    .spreactjsclient [dir='ltr'] .ms-lgPull10 {
+      right: 83.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-lgPull10 {
+      left: 83.33333%; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPush9 {
+    .spreactjsclient [dir='ltr'] .ms-lgPull9 {
+      right: 75%; }
+    .spreactjsclient [dir='rtl'] .ms-lgPull9 {
       left: 75%; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPush8 {
-      left: 66.66666666666666%; } }
+    .spreactjsclient [dir='ltr'] .ms-lgPull8 {
+      right: 66.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-lgPull8 {
+      left: 66.66667%; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPush7 {
-      left: 58.333333333333336%; } }
+    .spreactjsclient [dir='ltr'] .ms-lgPull7 {
+      right: 58.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-lgPull7 {
+      left: 58.33333%; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPush6 {
+    .spreactjsclient [dir='ltr'] .ms-lgPull6 {
+      right: 50%; }
+    .spreactjsclient [dir='rtl'] .ms-lgPull6 {
       left: 50%; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPush5 {
-      left: 41.66666666666667%; } }
+    .spreactjsclient [dir='ltr'] .ms-lgPull5 {
+      right: 41.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-lgPull5 {
+      left: 41.66667%; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPush4 {
-      left: 33.33333333333333%; } }
+    .spreactjsclient [dir='ltr'] .ms-lgPull4 {
+      right: 33.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-lgPull4 {
+      left: 33.33333%; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPush3 {
+    .spreactjsclient [dir='ltr'] .ms-lgPull3 {
+      right: 25%; }
+    .spreactjsclient [dir='rtl'] .ms-lgPull3 {
       left: 25%; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPush2 {
-      left: 16.666666666666664%; } }
+    .spreactjsclient [dir='ltr'] .ms-lgPull2 {
+      right: 16.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-lgPull2 {
+      left: 16.66667%; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPush1 {
-      left: 8.333333333333332%; } }
+    .spreactjsclient [dir='ltr'] .ms-lgPull1 {
+      right: 8.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-lgPull1 {
+      left: 8.33333%; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgPush0 {
+    .spreactjsclient [dir='ltr'] .ms-lgPull0 {
+      right: auto; }
+    .spreactjsclient [dir='rtl'] .ms-lgPull0 {
       left: auto; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgOffset11 {
-      margin-left: 91.66666666666666%; } }
+    .spreactjsclient [dir='ltr'] .ms-lgPush12 {
+      left: 100%; }
+    .spreactjsclient [dir='rtl'] .ms-lgPush12 {
+      right: 100%; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgOffset10 {
-      margin-left: 83.33333333333334%; } }
+    .spreactjsclient [dir='ltr'] .ms-lgPush11 {
+      left: 91.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-lgPush11 {
+      right: 91.66667%; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgOffset9 {
-      margin-left: 75%; } }
+    .spreactjsclient [dir='ltr'] .ms-lgPush10 {
+      left: 83.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-lgPush10 {
+      right: 83.33333%; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgOffset8 {
-      margin-left: 66.66666666666666%; } }
+    .spreactjsclient [dir='ltr'] .ms-lgPush9 {
+      left: 75%; }
+    .spreactjsclient [dir='rtl'] .ms-lgPush9 {
+      right: 75%; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgOffset7 {
-      margin-left: 58.333333333333336%; } }
+    .spreactjsclient [dir='ltr'] .ms-lgPush8 {
+      left: 66.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-lgPush8 {
+      right: 66.66667%; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgOffset6 {
-      margin-left: 50%; } }
+    .spreactjsclient [dir='ltr'] .ms-lgPush7 {
+      left: 58.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-lgPush7 {
+      right: 58.33333%; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgOffset5 {
-      margin-left: 41.66666666666667%; } }
+    .spreactjsclient [dir='ltr'] .ms-lgPush6 {
+      left: 50%; }
+    .spreactjsclient [dir='rtl'] .ms-lgPush6 {
+      right: 50%; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgOffset4 {
-      margin-left: 33.33333333333333%; } }
+    .spreactjsclient [dir='ltr'] .ms-lgPush5 {
+      left: 41.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-lgPush5 {
+      right: 41.66667%; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgOffset3 {
-      margin-left: 25%; } }
+    .spreactjsclient [dir='ltr'] .ms-lgPush4 {
+      left: 33.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-lgPush4 {
+      right: 33.33333%; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgOffset2 {
-      margin-left: 16.666666666666664%; } }
+    .spreactjsclient [dir='ltr'] .ms-lgPush3 {
+      left: 25%; }
+    .spreactjsclient [dir='rtl'] .ms-lgPush3 {
+      right: 25%; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgOffset1 {
-      margin-left: 8.333333333333332%; } }
+    .spreactjsclient [dir='ltr'] .ms-lgPush2 {
+      left: 16.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-lgPush2 {
+      right: 16.66667%; } }
   @media (min-width: 640px) {
-    .spreactjsclient .ms-lgOffset0 {
-      margin-left: 0; } }
+    .spreactjsclient [dir='ltr'] .ms-lgPush1 {
+      left: 8.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-lgPush1 {
+      right: 8.33333%; } }
+  @media (min-width: 640px) {
+    .spreactjsclient [dir='ltr'] .ms-lgPush0 {
+      left: auto; }
+    .spreactjsclient [dir='rtl'] .ms-lgPush0 {
+      right: auto; } }
+  @media (min-width: 640px) {
+    .spreactjsclient [dir='ltr'] .ms-lgOffset11 {
+      margin-left: 91.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-lgOffset11 {
+      margin-right: 91.66667%; } }
+  @media (min-width: 640px) {
+    .spreactjsclient [dir='ltr'] .ms-lgOffset10 {
+      margin-left: 83.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-lgOffset10 {
+      margin-right: 83.33333%; } }
+  @media (min-width: 640px) {
+    .spreactjsclient [dir='ltr'] .ms-lgOffset9 {
+      margin-left: 75%; }
+    .spreactjsclient [dir='rtl'] .ms-lgOffset9 {
+      margin-right: 75%; } }
+  @media (min-width: 640px) {
+    .spreactjsclient [dir='ltr'] .ms-lgOffset8 {
+      margin-left: 66.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-lgOffset8 {
+      margin-right: 66.66667%; } }
+  @media (min-width: 640px) {
+    .spreactjsclient [dir='ltr'] .ms-lgOffset7 {
+      margin-left: 58.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-lgOffset7 {
+      margin-right: 58.33333%; } }
+  @media (min-width: 640px) {
+    .spreactjsclient [dir='ltr'] .ms-lgOffset6 {
+      margin-left: 50%; }
+    .spreactjsclient [dir='rtl'] .ms-lgOffset6 {
+      margin-right: 50%; } }
+  @media (min-width: 640px) {
+    .spreactjsclient [dir='ltr'] .ms-lgOffset5 {
+      margin-left: 41.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-lgOffset5 {
+      margin-right: 41.66667%; } }
+  @media (min-width: 640px) {
+    .spreactjsclient [dir='ltr'] .ms-lgOffset4 {
+      margin-left: 33.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-lgOffset4 {
+      margin-right: 33.33333%; } }
+  @media (min-width: 640px) {
+    .spreactjsclient [dir='ltr'] .ms-lgOffset3 {
+      margin-left: 25%; }
+    .spreactjsclient [dir='rtl'] .ms-lgOffset3 {
+      margin-right: 25%; } }
+  @media (min-width: 640px) {
+    .spreactjsclient [dir='ltr'] .ms-lgOffset2 {
+      margin-left: 16.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-lgOffset2 {
+      margin-right: 16.66667%; } }
+  @media (min-width: 640px) {
+    .spreactjsclient [dir='ltr'] .ms-lgOffset1 {
+      margin-left: 8.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-lgOffset1 {
+      margin-right: 8.33333%; } }
+  @media (min-width: 640px) {
+    .spreactjsclient [dir='ltr'] .ms-lgOffset0 {
+      margin-left: 0; }
+    .spreactjsclient [dir='rtl'] .ms-lgOffset0 {
+      margin-right: 0; } }
   @media (min-width: 1024px) {
     .spreactjsclient .ms-xl12 {
       width: 100%; } }
@@ -7419,119 +7983,195 @@
     .spreactjsclient .ms-xl1 {
       width: 8.333333333333332%; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPull12 {
-      right: 100%; } }
-  @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPull11 {
-      right: 91.66666666666666%; } }
-  @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPull10 {
-      right: 83.33333333333334%; } }
-  @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPull9 {
-      right: 75%; } }
-  @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPull8 {
-      right: 66.66666666666666%; } }
-  @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPull7 {
-      right: 58.333333333333336%; } }
-  @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPull6 {
-      right: 50%; } }
-  @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPull5 {
-      right: 41.66666666666667%; } }
-  @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPull4 {
-      right: 33.33333333333333%; } }
-  @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPull3 {
-      right: 25%; } }
-  @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPull2 {
-      right: 16.666666666666664%; } }
-  @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPull1 {
-      right: 8.333333333333332%; } }
-  @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPull0 {
-      right: auto; } }
-  @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPush12 {
+    .spreactjsclient [dir='ltr'] .ms-xlPull12 {
+      right: 100%; }
+    .spreactjsclient [dir='rtl'] .ms-xlPull12 {
       left: 100%; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPush11 {
-      left: 91.66666666666666%; } }
+    .spreactjsclient [dir='ltr'] .ms-xlPull11 {
+      right: 91.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xlPull11 {
+      left: 91.66667%; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPush10 {
-      left: 83.33333333333334%; } }
+    .spreactjsclient [dir='ltr'] .ms-xlPull10 {
+      right: 83.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xlPull10 {
+      left: 83.33333%; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPush9 {
+    .spreactjsclient [dir='ltr'] .ms-xlPull9 {
+      right: 75%; }
+    .spreactjsclient [dir='rtl'] .ms-xlPull9 {
       left: 75%; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPush8 {
-      left: 66.66666666666666%; } }
+    .spreactjsclient [dir='ltr'] .ms-xlPull8 {
+      right: 66.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xlPull8 {
+      left: 66.66667%; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPush7 {
-      left: 58.333333333333336%; } }
+    .spreactjsclient [dir='ltr'] .ms-xlPull7 {
+      right: 58.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xlPull7 {
+      left: 58.33333%; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPush6 {
+    .spreactjsclient [dir='ltr'] .ms-xlPull6 {
+      right: 50%; }
+    .spreactjsclient [dir='rtl'] .ms-xlPull6 {
       left: 50%; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPush5 {
-      left: 41.66666666666667%; } }
+    .spreactjsclient [dir='ltr'] .ms-xlPull5 {
+      right: 41.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xlPull5 {
+      left: 41.66667%; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPush4 {
-      left: 33.33333333333333%; } }
+    .spreactjsclient [dir='ltr'] .ms-xlPull4 {
+      right: 33.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xlPull4 {
+      left: 33.33333%; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPush3 {
+    .spreactjsclient [dir='ltr'] .ms-xlPull3 {
+      right: 25%; }
+    .spreactjsclient [dir='rtl'] .ms-xlPull3 {
       left: 25%; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPush2 {
-      left: 16.666666666666664%; } }
+    .spreactjsclient [dir='ltr'] .ms-xlPull2 {
+      right: 16.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xlPull2 {
+      left: 16.66667%; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPush1 {
-      left: 8.333333333333332%; } }
+    .spreactjsclient [dir='ltr'] .ms-xlPull1 {
+      right: 8.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xlPull1 {
+      left: 8.33333%; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlPush0 {
+    .spreactjsclient [dir='ltr'] .ms-xlPull0 {
+      right: auto; }
+    .spreactjsclient [dir='rtl'] .ms-xlPull0 {
       left: auto; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlOffset11 {
-      margin-left: 91.66666666666666%; } }
+    .spreactjsclient [dir='ltr'] .ms-xlPush12 {
+      left: 100%; }
+    .spreactjsclient [dir='rtl'] .ms-xlPush12 {
+      right: 100%; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlOffset10 {
-      margin-left: 83.33333333333334%; } }
+    .spreactjsclient [dir='ltr'] .ms-xlPush11 {
+      left: 91.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xlPush11 {
+      right: 91.66667%; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlOffset9 {
-      margin-left: 75%; } }
+    .spreactjsclient [dir='ltr'] .ms-xlPush10 {
+      left: 83.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xlPush10 {
+      right: 83.33333%; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlOffset8 {
-      margin-left: 66.66666666666666%; } }
+    .spreactjsclient [dir='ltr'] .ms-xlPush9 {
+      left: 75%; }
+    .spreactjsclient [dir='rtl'] .ms-xlPush9 {
+      right: 75%; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlOffset7 {
-      margin-left: 58.333333333333336%; } }
+    .spreactjsclient [dir='ltr'] .ms-xlPush8 {
+      left: 66.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xlPush8 {
+      right: 66.66667%; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlOffset6 {
-      margin-left: 50%; } }
+    .spreactjsclient [dir='ltr'] .ms-xlPush7 {
+      left: 58.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xlPush7 {
+      right: 58.33333%; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlOffset5 {
-      margin-left: 41.66666666666667%; } }
+    .spreactjsclient [dir='ltr'] .ms-xlPush6 {
+      left: 50%; }
+    .spreactjsclient [dir='rtl'] .ms-xlPush6 {
+      right: 50%; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlOffset4 {
-      margin-left: 33.33333333333333%; } }
+    .spreactjsclient [dir='ltr'] .ms-xlPush5 {
+      left: 41.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xlPush5 {
+      right: 41.66667%; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlOffset3 {
-      margin-left: 25%; } }
+    .spreactjsclient [dir='ltr'] .ms-xlPush4 {
+      left: 33.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xlPush4 {
+      right: 33.33333%; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlOffset2 {
-      margin-left: 16.666666666666664%; } }
+    .spreactjsclient [dir='ltr'] .ms-xlPush3 {
+      left: 25%; }
+    .spreactjsclient [dir='rtl'] .ms-xlPush3 {
+      right: 25%; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlOffset1 {
-      margin-left: 8.333333333333332%; } }
+    .spreactjsclient [dir='ltr'] .ms-xlPush2 {
+      left: 16.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xlPush2 {
+      right: 16.66667%; } }
   @media (min-width: 1024px) {
-    .spreactjsclient .ms-xlOffset0 {
-      margin-left: 0; } }
+    .spreactjsclient [dir='ltr'] .ms-xlPush1 {
+      left: 8.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xlPush1 {
+      right: 8.33333%; } }
+  @media (min-width: 1024px) {
+    .spreactjsclient [dir='ltr'] .ms-xlPush0 {
+      left: auto; }
+    .spreactjsclient [dir='rtl'] .ms-xlPush0 {
+      right: auto; } }
+  @media (min-width: 1024px) {
+    .spreactjsclient [dir='ltr'] .ms-xlOffset11 {
+      margin-left: 91.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xlOffset11 {
+      margin-right: 91.66667%; } }
+  @media (min-width: 1024px) {
+    .spreactjsclient [dir='ltr'] .ms-xlOffset10 {
+      margin-left: 83.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xlOffset10 {
+      margin-right: 83.33333%; } }
+  @media (min-width: 1024px) {
+    .spreactjsclient [dir='ltr'] .ms-xlOffset9 {
+      margin-left: 75%; }
+    .spreactjsclient [dir='rtl'] .ms-xlOffset9 {
+      margin-right: 75%; } }
+  @media (min-width: 1024px) {
+    .spreactjsclient [dir='ltr'] .ms-xlOffset8 {
+      margin-left: 66.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xlOffset8 {
+      margin-right: 66.66667%; } }
+  @media (min-width: 1024px) {
+    .spreactjsclient [dir='ltr'] .ms-xlOffset7 {
+      margin-left: 58.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xlOffset7 {
+      margin-right: 58.33333%; } }
+  @media (min-width: 1024px) {
+    .spreactjsclient [dir='ltr'] .ms-xlOffset6 {
+      margin-left: 50%; }
+    .spreactjsclient [dir='rtl'] .ms-xlOffset6 {
+      margin-right: 50%; } }
+  @media (min-width: 1024px) {
+    .spreactjsclient [dir='ltr'] .ms-xlOffset5 {
+      margin-left: 41.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xlOffset5 {
+      margin-right: 41.66667%; } }
+  @media (min-width: 1024px) {
+    .spreactjsclient [dir='ltr'] .ms-xlOffset4 {
+      margin-left: 33.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xlOffset4 {
+      margin-right: 33.33333%; } }
+  @media (min-width: 1024px) {
+    .spreactjsclient [dir='ltr'] .ms-xlOffset3 {
+      margin-left: 25%; }
+    .spreactjsclient [dir='rtl'] .ms-xlOffset3 {
+      margin-right: 25%; } }
+  @media (min-width: 1024px) {
+    .spreactjsclient [dir='ltr'] .ms-xlOffset2 {
+      margin-left: 16.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xlOffset2 {
+      margin-right: 16.66667%; } }
+  @media (min-width: 1024px) {
+    .spreactjsclient [dir='ltr'] .ms-xlOffset1 {
+      margin-left: 8.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xlOffset1 {
+      margin-right: 8.33333%; } }
+  @media (min-width: 1024px) {
+    .spreactjsclient [dir='ltr'] .ms-xlOffset0 {
+      margin-left: 0; }
+    .spreactjsclient [dir='rtl'] .ms-xlOffset0 {
+      margin-right: 0; } }
   @media (min-width: 1366px) {
     .spreactjsclient .ms-xxl12 {
       width: 100%; } }
@@ -7569,119 +8209,195 @@
     .spreactjsclient .ms-xxl1 {
       width: 8.333333333333332%; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPull12 {
-      right: 100%; } }
-  @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPull11 {
-      right: 91.66666666666666%; } }
-  @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPull10 {
-      right: 83.33333333333334%; } }
-  @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPull9 {
-      right: 75%; } }
-  @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPull8 {
-      right: 66.66666666666666%; } }
-  @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPull7 {
-      right: 58.333333333333336%; } }
-  @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPull6 {
-      right: 50%; } }
-  @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPull5 {
-      right: 41.66666666666667%; } }
-  @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPull4 {
-      right: 33.33333333333333%; } }
-  @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPull3 {
-      right: 25%; } }
-  @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPull2 {
-      right: 16.666666666666664%; } }
-  @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPull1 {
-      right: 8.333333333333332%; } }
-  @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPull0 {
-      right: auto; } }
-  @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPush12 {
+    .spreactjsclient [dir='ltr'] .ms-xxlPull12 {
+      right: 100%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPull12 {
       left: 100%; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPush11 {
-      left: 91.66666666666666%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxlPull11 {
+      right: 91.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPull11 {
+      left: 91.66667%; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPush10 {
-      left: 83.33333333333334%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxlPull10 {
+      right: 83.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPull10 {
+      left: 83.33333%; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPush9 {
+    .spreactjsclient [dir='ltr'] .ms-xxlPull9 {
+      right: 75%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPull9 {
       left: 75%; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPush8 {
-      left: 66.66666666666666%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxlPull8 {
+      right: 66.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPull8 {
+      left: 66.66667%; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPush7 {
-      left: 58.333333333333336%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxlPull7 {
+      right: 58.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPull7 {
+      left: 58.33333%; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPush6 {
+    .spreactjsclient [dir='ltr'] .ms-xxlPull6 {
+      right: 50%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPull6 {
       left: 50%; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPush5 {
-      left: 41.66666666666667%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxlPull5 {
+      right: 41.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPull5 {
+      left: 41.66667%; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPush4 {
-      left: 33.33333333333333%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxlPull4 {
+      right: 33.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPull4 {
+      left: 33.33333%; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPush3 {
+    .spreactjsclient [dir='ltr'] .ms-xxlPull3 {
+      right: 25%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPull3 {
       left: 25%; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPush2 {
-      left: 16.666666666666664%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxlPull2 {
+      right: 16.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPull2 {
+      left: 16.66667%; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPush1 {
-      left: 8.333333333333332%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxlPull1 {
+      right: 8.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPull1 {
+      left: 8.33333%; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlPush0 {
+    .spreactjsclient [dir='ltr'] .ms-xxlPull0 {
+      right: auto; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPull0 {
       left: auto; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlOffset11 {
-      margin-left: 91.66666666666666%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxlPush12 {
+      left: 100%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPush12 {
+      right: 100%; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlOffset10 {
-      margin-left: 83.33333333333334%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxlPush11 {
+      left: 91.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPush11 {
+      right: 91.66667%; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlOffset9 {
-      margin-left: 75%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxlPush10 {
+      left: 83.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPush10 {
+      right: 83.33333%; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlOffset8 {
-      margin-left: 66.66666666666666%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxlPush9 {
+      left: 75%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPush9 {
+      right: 75%; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlOffset7 {
-      margin-left: 58.333333333333336%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxlPush8 {
+      left: 66.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPush8 {
+      right: 66.66667%; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlOffset6 {
-      margin-left: 50%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxlPush7 {
+      left: 58.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPush7 {
+      right: 58.33333%; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlOffset5 {
-      margin-left: 41.66666666666667%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxlPush6 {
+      left: 50%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPush6 {
+      right: 50%; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlOffset4 {
-      margin-left: 33.33333333333333%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxlPush5 {
+      left: 41.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPush5 {
+      right: 41.66667%; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlOffset3 {
-      margin-left: 25%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxlPush4 {
+      left: 33.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPush4 {
+      right: 33.33333%; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlOffset2 {
-      margin-left: 16.666666666666664%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxlPush3 {
+      left: 25%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPush3 {
+      right: 25%; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlOffset1 {
-      margin-left: 8.333333333333332%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxlPush2 {
+      left: 16.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPush2 {
+      right: 16.66667%; } }
   @media (min-width: 1366px) {
-    .spreactjsclient .ms-xxlOffset0 {
-      margin-left: 0; } }
+    .spreactjsclient [dir='ltr'] .ms-xxlPush1 {
+      left: 8.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPush1 {
+      right: 8.33333%; } }
+  @media (min-width: 1366px) {
+    .spreactjsclient [dir='ltr'] .ms-xxlPush0 {
+      left: auto; }
+    .spreactjsclient [dir='rtl'] .ms-xxlPush0 {
+      right: auto; } }
+  @media (min-width: 1366px) {
+    .spreactjsclient [dir='ltr'] .ms-xxlOffset11 {
+      margin-left: 91.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlOffset11 {
+      margin-right: 91.66667%; } }
+  @media (min-width: 1366px) {
+    .spreactjsclient [dir='ltr'] .ms-xxlOffset10 {
+      margin-left: 83.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlOffset10 {
+      margin-right: 83.33333%; } }
+  @media (min-width: 1366px) {
+    .spreactjsclient [dir='ltr'] .ms-xxlOffset9 {
+      margin-left: 75%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlOffset9 {
+      margin-right: 75%; } }
+  @media (min-width: 1366px) {
+    .spreactjsclient [dir='ltr'] .ms-xxlOffset8 {
+      margin-left: 66.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlOffset8 {
+      margin-right: 66.66667%; } }
+  @media (min-width: 1366px) {
+    .spreactjsclient [dir='ltr'] .ms-xxlOffset7 {
+      margin-left: 58.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlOffset7 {
+      margin-right: 58.33333%; } }
+  @media (min-width: 1366px) {
+    .spreactjsclient [dir='ltr'] .ms-xxlOffset6 {
+      margin-left: 50%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlOffset6 {
+      margin-right: 50%; } }
+  @media (min-width: 1366px) {
+    .spreactjsclient [dir='ltr'] .ms-xxlOffset5 {
+      margin-left: 41.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlOffset5 {
+      margin-right: 41.66667%; } }
+  @media (min-width: 1366px) {
+    .spreactjsclient [dir='ltr'] .ms-xxlOffset4 {
+      margin-left: 33.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlOffset4 {
+      margin-right: 33.33333%; } }
+  @media (min-width: 1366px) {
+    .spreactjsclient [dir='ltr'] .ms-xxlOffset3 {
+      margin-left: 25%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlOffset3 {
+      margin-right: 25%; } }
+  @media (min-width: 1366px) {
+    .spreactjsclient [dir='ltr'] .ms-xxlOffset2 {
+      margin-left: 16.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlOffset2 {
+      margin-right: 16.66667%; } }
+  @media (min-width: 1366px) {
+    .spreactjsclient [dir='ltr'] .ms-xxlOffset1 {
+      margin-left: 8.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xxlOffset1 {
+      margin-right: 8.33333%; } }
+  @media (min-width: 1366px) {
+    .spreactjsclient [dir='ltr'] .ms-xxlOffset0 {
+      margin-left: 0; }
+    .spreactjsclient [dir='rtl'] .ms-xxlOffset0 {
+      margin-right: 0; } }
   @media (min-width: 1920px) {
     .spreactjsclient .ms-xxxl12 {
       width: 100%; } }
@@ -7719,119 +8435,195 @@
     .spreactjsclient .ms-xxxl1 {
       width: 8.333333333333332%; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPull12 {
-      right: 100%; } }
-  @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPull11 {
-      right: 91.66666666666666%; } }
-  @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPull10 {
-      right: 83.33333333333334%; } }
-  @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPull9 {
-      right: 75%; } }
-  @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPull8 {
-      right: 66.66666666666666%; } }
-  @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPull7 {
-      right: 58.333333333333336%; } }
-  @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPull6 {
-      right: 50%; } }
-  @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPull5 {
-      right: 41.66666666666667%; } }
-  @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPull4 {
-      right: 33.33333333333333%; } }
-  @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPull3 {
-      right: 25%; } }
-  @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPull2 {
-      right: 16.666666666666664%; } }
-  @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPull1 {
-      right: 8.333333333333332%; } }
-  @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPull0 {
-      right: auto; } }
-  @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPush12 {
+    .spreactjsclient [dir='ltr'] .ms-xxxlPull12 {
+      right: 100%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPull12 {
       left: 100%; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPush11 {
-      left: 91.66666666666666%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxxlPull11 {
+      right: 91.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPull11 {
+      left: 91.66667%; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPush10 {
-      left: 83.33333333333334%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxxlPull10 {
+      right: 83.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPull10 {
+      left: 83.33333%; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPush9 {
+    .spreactjsclient [dir='ltr'] .ms-xxxlPull9 {
+      right: 75%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPull9 {
       left: 75%; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPush8 {
-      left: 66.66666666666666%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxxlPull8 {
+      right: 66.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPull8 {
+      left: 66.66667%; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPush7 {
-      left: 58.333333333333336%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxxlPull7 {
+      right: 58.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPull7 {
+      left: 58.33333%; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPush6 {
+    .spreactjsclient [dir='ltr'] .ms-xxxlPull6 {
+      right: 50%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPull6 {
       left: 50%; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPush5 {
-      left: 41.66666666666667%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxxlPull5 {
+      right: 41.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPull5 {
+      left: 41.66667%; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPush4 {
-      left: 33.33333333333333%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxxlPull4 {
+      right: 33.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPull4 {
+      left: 33.33333%; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPush3 {
+    .spreactjsclient [dir='ltr'] .ms-xxxlPull3 {
+      right: 25%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPull3 {
       left: 25%; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPush2 {
-      left: 16.666666666666664%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxxlPull2 {
+      right: 16.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPull2 {
+      left: 16.66667%; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPush1 {
-      left: 8.333333333333332%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxxlPull1 {
+      right: 8.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPull1 {
+      left: 8.33333%; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlPush0 {
+    .spreactjsclient [dir='ltr'] .ms-xxxlPull0 {
+      right: auto; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPull0 {
       left: auto; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlOffset11 {
-      margin-left: 91.66666666666666%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxxlPush12 {
+      left: 100%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPush12 {
+      right: 100%; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlOffset10 {
-      margin-left: 83.33333333333334%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxxlPush11 {
+      left: 91.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPush11 {
+      right: 91.66667%; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlOffset9 {
-      margin-left: 75%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxxlPush10 {
+      left: 83.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPush10 {
+      right: 83.33333%; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlOffset8 {
-      margin-left: 66.66666666666666%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxxlPush9 {
+      left: 75%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPush9 {
+      right: 75%; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlOffset7 {
-      margin-left: 58.333333333333336%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxxlPush8 {
+      left: 66.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPush8 {
+      right: 66.66667%; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlOffset6 {
-      margin-left: 50%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxxlPush7 {
+      left: 58.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPush7 {
+      right: 58.33333%; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlOffset5 {
-      margin-left: 41.66666666666667%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxxlPush6 {
+      left: 50%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPush6 {
+      right: 50%; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlOffset4 {
-      margin-left: 33.33333333333333%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxxlPush5 {
+      left: 41.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPush5 {
+      right: 41.66667%; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlOffset3 {
-      margin-left: 25%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxxlPush4 {
+      left: 33.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPush4 {
+      right: 33.33333%; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlOffset2 {
-      margin-left: 16.666666666666664%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxxlPush3 {
+      left: 25%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPush3 {
+      right: 25%; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlOffset1 {
-      margin-left: 8.333333333333332%; } }
+    .spreactjsclient [dir='ltr'] .ms-xxxlPush2 {
+      left: 16.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPush2 {
+      right: 16.66667%; } }
   @media (min-width: 1920px) {
-    .spreactjsclient .ms-xxxlOffset0 {
-      margin-left: 0; } }
+    .spreactjsclient [dir='ltr'] .ms-xxxlPush1 {
+      left: 8.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPush1 {
+      right: 8.33333%; } }
+  @media (min-width: 1920px) {
+    .spreactjsclient [dir='ltr'] .ms-xxxlPush0 {
+      left: auto; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlPush0 {
+      right: auto; } }
+  @media (min-width: 1920px) {
+    .spreactjsclient [dir='ltr'] .ms-xxxlOffset11 {
+      margin-left: 91.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlOffset11 {
+      margin-right: 91.66667%; } }
+  @media (min-width: 1920px) {
+    .spreactjsclient [dir='ltr'] .ms-xxxlOffset10 {
+      margin-left: 83.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlOffset10 {
+      margin-right: 83.33333%; } }
+  @media (min-width: 1920px) {
+    .spreactjsclient [dir='ltr'] .ms-xxxlOffset9 {
+      margin-left: 75%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlOffset9 {
+      margin-right: 75%; } }
+  @media (min-width: 1920px) {
+    .spreactjsclient [dir='ltr'] .ms-xxxlOffset8 {
+      margin-left: 66.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlOffset8 {
+      margin-right: 66.66667%; } }
+  @media (min-width: 1920px) {
+    .spreactjsclient [dir='ltr'] .ms-xxxlOffset7 {
+      margin-left: 58.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlOffset7 {
+      margin-right: 58.33333%; } }
+  @media (min-width: 1920px) {
+    .spreactjsclient [dir='ltr'] .ms-xxxlOffset6 {
+      margin-left: 50%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlOffset6 {
+      margin-right: 50%; } }
+  @media (min-width: 1920px) {
+    .spreactjsclient [dir='ltr'] .ms-xxxlOffset5 {
+      margin-left: 41.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlOffset5 {
+      margin-right: 41.66667%; } }
+  @media (min-width: 1920px) {
+    .spreactjsclient [dir='ltr'] .ms-xxxlOffset4 {
+      margin-left: 33.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlOffset4 {
+      margin-right: 33.33333%; } }
+  @media (min-width: 1920px) {
+    .spreactjsclient [dir='ltr'] .ms-xxxlOffset3 {
+      margin-left: 25%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlOffset3 {
+      margin-right: 25%; } }
+  @media (min-width: 1920px) {
+    .spreactjsclient [dir='ltr'] .ms-xxxlOffset2 {
+      margin-left: 16.66667%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlOffset2 {
+      margin-right: 16.66667%; } }
+  @media (min-width: 1920px) {
+    .spreactjsclient [dir='ltr'] .ms-xxxlOffset1 {
+      margin-left: 8.33333%; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlOffset1 {
+      margin-right: 8.33333%; } }
+  @media (min-width: 1920px) {
+    .spreactjsclient [dir='ltr'] .ms-xxxlOffset0 {
+      margin-left: 0; }
+    .spreactjsclient [dir='rtl'] .ms-xxxlOffset0 {
+      margin-right: 0; } }
   .spreactjsclient .ms-borderBox,
   .spreactjsclient .ms-borderBox::before,
   .spreactjsclient .ms-borderBox::after {
@@ -7855,12 +8647,16 @@
             box-shadow: none;
     margin: 0;
     padding: 0; }
-  .spreactjsclient .ms-textAlignLeft {
+  .spreactjsclient [dir='ltr'] .ms-textAlignLeft {
+    text-align: left; }
+  .spreactjsclient [dir='rtl'] .ms-textAlignLeft {
+    text-align: right; }
+  .spreactjsclient [dir='ltr'] .ms-textAlignRight {
+    text-align: right; }
+  .spreactjsclient [dir='rtl'] .ms-textAlignRight {
     text-align: left; }
   .spreactjsclient .ms-textAlignCenter {
     text-align: center; }
-  .spreactjsclient .ms-textAlignRight {
-    text-align: right; }
   .spreactjsclient .ms-screenReaderOnly {
     position: absolute;
     width: 1px;
@@ -7885,7 +8681,8 @@
     font-family: 'Segoe UI Web (West European)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif;
     font-size: 14px; }
   .spreactjsclient .ms-Fabric button,
-  .spreactjsclient .ms-Fabric input {
+  .spreactjsclient .ms-Fabric input,
+  .spreactjsclient .ms-Fabric textarea {
     font-family: inherit; }
   .spreactjsclient *[lang^='ar'] .ms-Fabric,
   .spreactjsclient .ms-Fabric *[lang^='ar'],
@@ -8071,10 +8868,152 @@
 /**
  * Paths to Sharepoint assets 
  */
+@media screen and (min-width: 780px) {
+  .DialogFlowBot_container {
+    width: 740px !important; } }
+
+@media screen and (max-width: 638.9375px) {
+  .DialogFlowBot_container {
+    width: 350px !important; } }
+
+.DialogFlowBot_container .DialogFlowBot_content_wrapper {
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 15px;
+  margin: 0; }
+  .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_header_content {
+    background-color: #6E48AA;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px; }
+    .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_header_content .DialogFlowBot_header_title {
+      font-weight: bold;
+      font-size: 16px;
+      color: white;
+      background-color: #6E48AA;
+      padding: 15px 0 15px 0; }
+  .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_dialog_content {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    min-height: 400px;
+    max-height: 440px;
+    background-color: #F5F8FB; }
+    .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_dialog_content .DialogFlowBot_wrapper {
+      padding-bottom: 5px;
+      padding-top: 15px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+    .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_dialog_content .DialogFlowBot_message {
+      display: inline-block;
+      padding: 10px;
+      background-color: white;
+      border-radius: 20px;
+      -webkit-box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.15);
+              box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.15);
+      overflow: hidden; }
+    .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_dialog_content .DialogFlowBot_image {
+      display: inline-block; }
+      .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_dialog_content .DialogFlowBot_image img {
+        border-radius: 25px;
+        padding: 0;
+        -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px 0px;
+                box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px 0px;
+        margin-top: 3px;
+        height: 36px; }
+    .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_dialog_content .DialogFlowBot_timestamp_container {
+      padding-bottom: 10px; }
+      .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_dialog_content .DialogFlowBot_timestamp_container .DialogFlowBot_timestamp {
+        font-size: 11px;
+        color: gray; }
+    .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_dialog_content .DialogFlowBot_user_container {
+      text-align: right; }
+      .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_dialog_content .DialogFlowBot_user_container .DialogFlowBot_wrapper {
+        -webkit-box-pack: end;
+            -ms-flex-pack: end;
+                justify-content: flex-end; }
+        .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_dialog_content .DialogFlowBot_user_container .DialogFlowBot_wrapper .DialogFlowBot_message {
+          margin-right: 5px;
+          border-bottom-right-radius: 0;
+          font-weight: bold; }
+        .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_dialog_content .DialogFlowBot_user_container .DialogFlowBot_wrapper .DialogFlowBot_image img {
+          border-bottom-left-radius: 0; }
+      .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_dialog_content .DialogFlowBot_user_container .DialogFlowBot_timestamp_container {
+        padding-right: 40px; }
+    .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_dialog_content .DialogFlowBot_bot_container .DialogFlowBot_wrapper {
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start; }
+      .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_dialog_content .DialogFlowBot_bot_container .DialogFlowBot_wrapper .DialogFlowBot_message {
+        margin-left: 5px;
+        border-bottom-left-radius: 0;
+        color: white;
+        background-color: #6E48AA;
+        font-weight: normal; }
+      .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_dialog_content .DialogFlowBot_bot_container .DialogFlowBot_wrapper .DialogFlowBot_image img {
+        border-bottom-right-radius: 0; }
+    .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_dialog_content .DialogFlowBot_bot_container .DialogFlowBot_timestamp_container {
+      padding-left: 40px; }
+  .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_footer_content {
+    padding: 0; }
+    .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_footer_content .ms-TextField {
+      padding-bottom: 10px; }
+      .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_footer_content .ms-TextField .ms-TextField-fieldGroup {
+        border: 0;
+        border-radius: 15px;
+        border-top: 1px solid #CCD1D1;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        background-color: #EBF5FB; }
+        .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_footer_content .ms-TextField .ms-TextField-fieldGroup .ms-TextField-field {
+          border: 0;
+          border-radius: 10px;
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+          background-color: #EBF5FB;
+          padding-left: 10px;
+          padding-right: 10px;
+          height: 40px; }
+          .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_footer_content .ms-TextField .ms-TextField-fieldGroup .ms-TextField-field:focus {
+            background-color: white; }
+          .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_footer_content .ms-TextField .ms-TextField-fieldGroup .ms-TextField-field::-webkit-input-placeholder {
+            color: #99A3A4; }
+          .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_footer_content .ms-TextField .ms-TextField-fieldGroup .ms-TextField-field:-ms-input-placeholder {
+            color: #99A3A4; }
+          .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_footer_content .ms-TextField .ms-TextField-fieldGroup .ms-TextField-field::placeholder {
+            color: #99A3A4; }
+        .DialogFlowBot_container .DialogFlowBot_content_wrapper .DialogFlowBot_footer_content .ms-TextField .ms-TextField-fieldGroup:focus {
+          background-color: white;
+          outline: 0px solid transparent; }
+/**
+ * Breakpoints
+ */
+/**
+ * Tweakpoints
+ */
+/**
+ * Other variables
+ */
+/**
+ * Colours
+ */
+/**
+ * Paths to Sharepoint assets 
+ */
 .Home_container .Home_top_container {
-  display: block; }
+  display: block;
+  padding-bottom: 40px; }
   .Home_container .Home_top_container .Home_header {
-    display: block; }
+    display: block;
+    padding: 0; }
     .Home_container .Home_top_container .Home_header .Home_header_title,
     .Home_container .Home_top_container .Home_header .Home_header_description {
       display: block;
@@ -8085,6 +9024,54 @@
       font-size: 20px; }
     .Home_container .Home_top_container .Home_header .Home_header_description {
       font-size: 18px; }
+
+.Home_container .Home_content_container {
+  padding-bottom: 30px;
+  margin: 0; }
+  .Home_container .Home_content_container .Home_content_wrapper {
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 15px; }
+    .Home_container .Home_content_container .Home_content_wrapper .Home_header_content {
+      background-color: #7555AD;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      padding-left: 10px;
+      padding-right: 10px; }
+      .Home_container .Home_content_container .Home_content_wrapper .Home_header_content .Home_header_title {
+        font-weight: bold;
+        font-size: 14px;
+        color: white;
+        background-color: #7555AD;
+        padding: 10px 0 10px 0; }
+    .Home_container .Home_content_container .Home_content_wrapper .Home_footer_content {
+      padding: 0; }
+      .Home_container .Home_content_container .Home_content_wrapper .Home_footer_content .ms-TextField .ms-TextField-fieldGroup {
+        border: 0;
+        border-radius: 15px;
+        border-top: 1px solid #CCD1D1;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        background-color: #EBF5FB; }
+        .Home_container .Home_content_container .Home_content_wrapper .Home_footer_content .ms-TextField .ms-TextField-fieldGroup .ms-TextField-field {
+          border: 0;
+          border-radius: 10px;
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+          background-color: #EBF5FB;
+          padding-left: 10px;
+          padding-right: 10px; }
+          .Home_container .Home_content_container .Home_content_wrapper .Home_footer_content .ms-TextField .ms-TextField-fieldGroup .ms-TextField-field:focus {
+            background-color: white; }
+          .Home_container .Home_content_container .Home_content_wrapper .Home_footer_content .ms-TextField .ms-TextField-fieldGroup .ms-TextField-field::-webkit-input-placeholder {
+            color: #99A3A4; }
+          .Home_container .Home_content_container .Home_content_wrapper .Home_footer_content .ms-TextField .ms-TextField-fieldGroup .ms-TextField-field:-ms-input-placeholder {
+            color: #99A3A4; }
+          .Home_container .Home_content_container .Home_content_wrapper .Home_footer_content .ms-TextField .ms-TextField-fieldGroup .ms-TextField-field::placeholder {
+            color: #99A3A4; }
+        .Home_container .Home_content_container .Home_content_wrapper .Home_footer_content .ms-TextField .ms-TextField-fieldGroup:focus {
+          background-color: white;
+          outline: 0px solid transparent; }
 
 .Home_container .Home_bottom_container {
   padding-top: 20px; }

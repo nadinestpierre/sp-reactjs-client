@@ -2,6 +2,8 @@
 // This file contains all @font-face declarations, if any.
 // -----------------------------------------------------------------------------
 
+/* FabricUI fonts start */
+
 @font-face {
     font-family: 'Leelawadee UI Web';
     src: url("https://static2.sharepointonline.com/files/fabric/assets/fonts/leelawadeeui-thai/leelawadeeui-light.woff2") format("woff2"), url("https://static2.sharepointonline.com/files/fabric/assets/fonts/leelawadeeui-thai/leelawadeeui-light.woff") format("woff");
@@ -270,10 +272,12 @@
 
 @font-face {
     font-family: 'FabricMDL2Icons';
-    src: url("https://static2.sharepointonline.com/files/fabric/assets/icons/fabricmdl2icons-2.47.woff2") format("woff2"), url("https://static2.sharepointonline.com/files/fabric/assets/icons/fabricmdl2icons-2.47.woff") format("woff"), url("https://static2.sharepointonline.com/files/fabric/assets/icons/fabricmdl2icons-2.47.ttf") format("truetype");
+    src: url("https://static2.sharepointonline.com/files/fabric/assets/icons/fabricmdl2icons-2.51.woff2") format("woff2"), url("https://static2.sharepointonline.com/files/fabric/assets/icons/fabricmdl2icons-2.51.woff") format("woff"), url("https://static2.sharepointonline.com/files/fabric/assets/icons/fabricmdl2icons-2.51.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
 }
+
+/* FabricUI fonts end */
 
 @font-face {
     font-family: 'FontAwesome';

@@ -1,9 +1,11 @@
 .container {
     .top_container {
         display: block;
+        padding-bottom: 40px;
 
         .header {
             display: block;
+            padding: 0;
 
             .header_title,
             .header_description {
@@ -19,6 +21,72 @@
 
             .header_description {
                 font-size: 18px;
+            }
+        }
+    }
+
+    .content_container {
+        padding-bottom: 30px;
+        margin: 0;
+        
+        .content_wrapper {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 15px;
+
+            .header_content {
+                background-color: #7555AD;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+
+                .header_title {
+                    font-weight: bold;
+                    font-size: 14px;
+                    color: white;
+                    background-color: #7555AD;
+                    padding: 10px 0 10px 0;
+                }
+            }
+
+            .dialog_content {}
+
+            .footer_content {
+                padding: 0;
+
+                :global .ms-TextField {
+                    .ms-TextField-fieldGroup {
+                        border: 0;
+                        border-radius: 15px;
+                        border-top: 1px solid #CCD1D1;
+                        border-top-left-radius: 0;
+                        border-top-right-radius: 0;
+                        background-color: #EBF5FB;
+
+                        .ms-TextField-field {
+                            border: 0;
+                            border-radius: 10px;
+                            border-top-left-radius: 0;
+                            border-top-right-radius: 0;
+                            background-color: #EBF5FB;
+                            padding-left: 10px;
+                            padding-right: 10px;
+
+                            &:focus {
+                                background-color: white;
+                            }
+
+                            &::placeholder {
+                                color: #99A3A4;
+                            }
+                        }
+
+                        &:focus {
+                            background-color: white;
+                            outline: 0px solid transparent;
+                        }
+                    }
+                }
             }
         }
     }

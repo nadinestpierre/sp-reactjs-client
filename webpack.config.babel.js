@@ -8,7 +8,7 @@ import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 const libraryName = 'spreactjsclient';
 
-const siteUrl = 'https://architect365.sharepoint.com/sites/spcrowd';
+const siteUrl = 'https://architect365.sharepoint.com/sites/chatbot';
 const username = 'ddyachenko@architect365.co.uk';
 const password = 'Chancery2017.';
 
